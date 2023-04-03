@@ -1,0 +1,54 @@
+# Project information
+site_name: 'Software Security'
+site_description: 'Repo voor SE/NSE 1.4 Software Security: vakinformatie en opgaven per week, voorbeeldcode'
+site_url: 'https://blackboard.hanze.nl/webapps/blackboard/content/listContentEditable.jsp?content_id=_5908320_1&course_id=_356906_1'
+use_directory_urls: false
+
+theme:
+  name: 'material'
+  palette:
+    primary: 'blue grey'
+    accent: 'orange'
+  icon:
+    logo: 'material/library'
+  language: 'nl'
+  include_sidebar: false
+extra_css:
+  - css/extra.css
+
+markdown_extensions:
+  - markdown.extensions.codehilite:
+      guess_lang: False
+      linenums: True
+  - markdown.extensions.toc:
+      permalink: true
+      toc_depth: 3
+  - markdown.extensions.def_list
+  - markdown.extensions.admonition
+  - markdown.extensions.footnotes
+  - pymdownx.arithmatex
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.critic
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_generator: !!python/name:pymdownx.emoji.to_svg
+  - pymdownx.inlinehilite
+  - pymdownx.magiclink
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.superfences
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
+  - pymdownx.tabbed
+
+extra_javascript:
+  - js/imgs.js
+
+nav:
+
+plugins:
+  - mknotebooks:
+      execute: false

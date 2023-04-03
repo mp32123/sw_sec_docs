@@ -1,0 +1,11 @@
+pytest
+coverage run -m pytest
+coverage report -m
+evt.: coverage html
+
+* Welke tool heb je onderzocht? (zie lijst op Blackboard)
+* In welk deel van de SDLC kan de tool toegepast worden?
+* Bij welke werkzaamheden binnen dit deel van de SDLC (zie vraag 2), die wel moeten gebeuren, helpt de tool niet mee?
+* Wat doet de tool precies (vanuit technisch perspectief)?
+* Wat voor risico’s helpt de tool te voorkomen?
+* Wat voor problemen verwacht je als je de tool zou willen toepassen in een echt project?
