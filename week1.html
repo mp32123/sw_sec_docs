@@ -1,0 +1,408 @@
+
+<!doctype html>
+<html lang="nl" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Repo voor SE/NSE 1.4 Software Security: vakinformatie en opgaven per week, voorbeeldcode">
+      
+      
+      
+        <link rel="canonical" href="https://blackboard.hanze.nl/webapps/blackboard/content/listContentEditable.jsp/week1.html">
+      
+      
+        <link rel="prev" href="index.html">
+      
+      
+      <link rel="icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.5">
+    
+    
+      
+        <title>Opgaven week 1 - Software Security</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.7a7fce14.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.a0c5b2b5.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="css/extra.css">
+    
+      <link rel="stylesheet" href="css/ansi-colours.css">
+    
+      <link rel="stylesheet" href="css/jupyter-cells.css">
+    
+      <link rel="stylesheet" href="css/pandas-dataframe.css">
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue-grey" data-md-color-accent="orange">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#opgaven-week-1" class="md-skip">
+          Ga naar inhoud
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="index.html" title="Software Security" class="md-header__button md-logo" aria-label="Software Security" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Software Security
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Opgaven week 1
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigatie" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="index.html" title="Software Security" class="md-nav__button md-logo" aria-label="Software Security" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Software Security
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="index.html" class="md-nav__link">
+        Welcome to MkDocs
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Opgaven week 1
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="week1.html" class="md-nav__link md-nav__link--active">
+        Opgaven week 1
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Inhoudsopgave">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Inhoudsopgave
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-wachtwoord-fuzzing-met-hydra" class="md-nav__link">
+    1: Wachtwoord-fuzzing met Hydra
+  </a>
+  
+    <nav class="md-nav" aria-label="1: Wachtwoord-fuzzing met Hydra">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#hydra-draaien-op-een-webapp" class="md-nav__link">
+    Hydra draaien op een webapp
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-fuzzing-met-radamsa" class="md-nav__link">
+    2: Fuzzing met Radamsa
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Inhoudsopgave">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Inhoudsopgave
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-wachtwoord-fuzzing-met-hydra" class="md-nav__link">
+    1: Wachtwoord-fuzzing met Hydra
+  </a>
+  
+    <nav class="md-nav" aria-label="1: Wachtwoord-fuzzing met Hydra">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#hydra-draaien-op-een-webapp" class="md-nav__link">
+    Hydra draaien op een webapp
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-fuzzing-met-radamsa" class="md-nav__link">
+    2: Fuzzing met Radamsa
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="opgaven-week-1">Opgaven week 1<a class="headerlink" href="#opgaven-week-1" title="Permanent link">&para;</a></h1>
+<h2 id="1-wachtwoord-fuzzing-met-hydra">1: Wachtwoord-fuzzing met Hydra<a class="headerlink" href="#1-wachtwoord-fuzzing-met-hydra" title="Permanent link">&para;</a></h2>
+<p>Kan op Linux, Mac en Windows (WSL)</p>
+<p>Windows-gebruikers moeten eerst het Windows Subsystem for Linux installeren (wat sowieso een goed idee is); zie <a href="https://learn.microsoft.com/en-us/windows/wsl/install">https://learn.microsoft.com/en-us/windows/wsl/install</a></p>
+<p>Hydra-repo: <a href="https://github.com/vanhauser-thc/thc-hydra">https://github.com/vanhauser-thc/thc-hydra</a></p>
+<p>Commando's om te installeren:
+<div class="highlight"><pre><span></span><code>git clone https://github.com/vanhauser-thc/thc-hydra.git
+cd thc-hydra
+./configure
+make
+make install
+</code></pre></div></p>
+<h3 id="hydra-draaien-op-een-webapp">Hydra draaien op een webapp<a class="headerlink" href="#hydra-draaien-op-een-webapp" title="Permanent link">&para;</a></h3>
+<p>Voorbeeld-commando op een lokale Flask-webapp (poort 5000, met CSRF-controle uitgezet). Hydra probeert hier alle wachtwoorden met 4 cijfers.
+Bestudeer de documentatie van Hydra om te leren hoe de -x-optie en de andere parameters precies werken.</p>
+<p><code>hydra -l t.e.roos@pl.hanze.nl -x 4:4:1 127.0.0.1 http-post-form -s 5000 "/login:email=t.e.roos@pl.hanze.nl&amp;password=^PASS^:Inlog niet correct"</code></p>
+<h2 id="2-fuzzing-met-radamsa">2: Fuzzing met Radamsa<a class="headerlink" href="#2-fuzzing-met-radamsa" title="Permanent link">&para;</a></h2>
+<p>Radamsa is beschikbaar voor Linux, Apple en Windows (via WSL). De broncode is te vinden op gitlab: <a href="https://gitlab.com/akihe/radamsa">https://gitlab.com/akihe/radamsa</a>
+Documentatie is daar ook te vinden: <a href="https://gitlab.com/akihe/radamsa/-/blob/develop/README.md">https://gitlab.com/akihe/radamsa/-/blob/develop/README.md</a>
+Download en installeer de software: 
+De volgende commando’s kunnen hiervoor op Linux, Apple of WSL uitgevoerd worden via de terminal:
+Mochten git, gcc en/of make nog niet geïnstalleerd zijn installeer deze dan eerst via je package manager (bijvoorbeeld: apt-get install git gcc make)</p>
+<div class="highlight"><pre><span></span><code>git clone https://gitlab.com/akihe/radamsa.git radamsa
+cd radamsa
+make
+make install
+</code></pre></div>
+<p>kijk of radamsa goed werkt door te typen: <code>radamsa --help</code>
+of: <code>echo "Dit is een teststring" | radamsa</code></p>
+<p>Voorbeeld 1
+Hier een kort voorbeeld hoe een Radamsa-aanroep werkt.
+Ga terug naar de folder die je hebt aangemaakt en waar je zojuist Radamsa hebt geinstalleerd.
+Maak hier een nieuwe map: examples
+Plaats in deze map een .txt bestand met een korte tekst.
+Voer radamsa een aantal keren uit voor het bestand, bijvoorbeeld: <code>radamsa examples/hello.txt</code>
+Elke keer als radamsa wordt uitgevoerd wordt er een nieuwe fuzzer uitgevoerd en het resultaat getoond.</p>
+<p>Voorbeeld 2
+Met Radamsa kun je meerdere fuzz-cases achter elkaar laten maken en de uitvoer per case opslaan. Het volgende voorbeeld laat dit zien.
+Maak een nieuwe folder fuzz-cases
+Maak in examples een nieuw bestand aan, bijvoorbeeld een python bestand, html of xml.
+Gebruik -n voor het aantal varianten dat je wilt genereren door Radamsa en geef daarnaast met -o het pad naar fuzz-cases op
+Het commando ziet er dan zo uit:  radamsa -n 10 -o 'fuzz-cases/hello-%n.%s' examples/hello.txt
+Ga naar de fuzz-cases folder en bekijk hier de gegenereerde fuzz-cases</p>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": ".", "features": [], "search": "assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Gekopieerd naar klembord", "clipboard.copy": "Kopi\u00ebren naar klembord", "search.result.more.one": "1 extra overeenkomst op deze pagina", "search.result.more.other": "# extra overeenkomsten op deze pagina", "search.result.none": "Geen overeenkomende documenten", "search.result.one": "1 overeenkomende document", "search.result.other": "# overeenkomende documenten", "search.result.placeholder": "Typ om te beginnen met zoeken", "search.result.term.missing": "Ontbreekt", "select.version": "Selecteer versie"}}</script>
+    
+    
+      <script src="assets/javascripts/bundle.407015b8.min.js"></script>
+      
+        <script src="js/imgs.js"></script>
+      
+    
+  </body>
+</html>
