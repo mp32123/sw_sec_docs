@@ -1,0 +1,387 @@
+
+<!doctype html>
+<html lang="nl" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Repo voor SE/NSE 1.4 Software Security: vakinformatie en opgaven per week, voorbeeldcode">
+      
+      
+      
+        <link rel="canonical" href="https://blackboard.hanze.nl/webapps/blackboard/content/listContentEditable.jsp/week2/opgaven.html">
+      
+      
+        <link rel="prev" href="../week1/opgaven.html">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.5">
+    
+    
+      
+        <title>Opgaven week 2: hacking the Juice Shop - Software Security</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.7a7fce14.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.a0c5b2b5.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../css/extra.css">
+    
+      <link rel="stylesheet" href="../css/ansi-colours.css">
+    
+      <link rel="stylesheet" href="../css/jupyter-cells.css">
+    
+      <link rel="stylesheet" href="../css/pandas-dataframe.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue-grey" data-md-color-accent="orange">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#opgaven-week-2-hacking-the-juice-shop" class="md-skip">
+          Ga naar inhoud
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../index.html" title="Software Security" class="md-header__button md-logo" aria-label="Software Security" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Software Security
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Opgaven week 2: hacking the Juice Shop
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigatie" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../index.html" title="Software Security" class="md-nav__button md-logo" aria-label="Software Security" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Software Security
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../index.html" class="md-nav__link">
+        Welkom bij 1.4 Software Security
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          Week1
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Week1
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../week1/opgaven.html" class="md-nav__link">
+        Opgaven week 1
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          Week2
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Week2
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="opgaven.html" class="md-nav__link md-nav__link--active">
+        Opgaven week 2: hacking the Juice Shop
+      </a>
+      
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Inhoudsopgave">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="opgaven-week-2-hacking-the-juice-shop">Opgaven week 2: hacking the Juice Shop<a class="headerlink" href="#opgaven-week-2-hacking-the-juice-shop" title="Permanent link">&para;</a></h1>
+<p>In dit practicum gaan we aan de slag met het opsporen van beveiligingsproblemen binnen een webshop applicatie. Voor deze opdracht gaan we verder met OWASP ZAP, mocht deze nog niet geinstalleerd zijn kijk dan nog onder de opdracht van week 1 voor de installatie.</p>
+<p>Aan de slag met de Juice Shop
+We gaan in deze opdracht aan de slag met een Juice Shop web applicatie welke een aantal grote beveiligingslekken heeft. De Juice Shop applicatie gaan we via Docker draaien op je computer. Hierna gaan we beveiligingslekken opsporen in de applicatie.
+1.  Met Docker is het mogelijk om een webapplicatie te starten in een vooropgezette omgeving, ook wel container genoemd. Je kunt een Docker container downloaden en deze bevat dan zowel een volledige ingerichte serveromgeving als een de geïnstalleerde en geconfigureerde webapplicatie. Let op: Als je VM-software hebt geïnstalleerd zal Docker niet werken. Maak in dit geval een Virtual Machine naar keuze (een servervariant van Linux is echter het snelst) en installeer Docker in deze VM.</p>
+<p>Download en installer Docker via <a href="https://docs.docker.com/get-docker/">https://docs.docker.com/get-docker/</a>
+2.  Download en installeer de Juice Shop Docker container met de volgende commando’s:
+$ docker pull bkimminich/juice-shop
+$ docker run --rm -p 3000:3000 bkimminich/juice-shop
+3.  Als alles goed is gegaan kun je de applicatie bereiken via <a href="http://localhost:3000">http://localhost:3000</a> in de browser.
+4.  Klik door de Juice shop heen en plaats bijvoorbeeld een bestelling</p>
+<p>Opdracht: Het opsporen van beveiligingsproblemen
+ In deze opdracht gaan we daadwerkelijk aan de slag met het opsporen van beveiligingsproblemen in de Juice Shop applicatie. Hiervoor is het belangrijk dat ZAP zonder problemen draait en dan de Juice Shop werkt op je eigen computer.
+1.  Cross-site Scripting, ook wel XSS genoemd, betekent dat een externe partij JavaScript kan uitvoeren binnen de applicatie. Ga op zoek naar een plek in de webapplicatie waar het mogelijk is om javascript in te voeren die daarna wordt uitgevoerd. Tip: Met behulp van alert() in javascript is het mogelijk om een pop-up venster te openen. Het hoorcollege van deze week bevat hier voorbeeldcode voor die je kunt gebruiken.</p>
+<p>Toon je antwoord aan met een of meer screenshots waaruit duidelijk naar voren komt waar de javascript ingevoerd wordt en dat deze uitgevoerd wordt. Laat ook de url zien die de XSS veroorzaakt. Beschrijf hierbij ook kort welke stappen je hebt uitgevoerd om tot je antwoord te komen.   (40%)
+2.  Er zit een groot probleem in Juice Shop waardoor het mogelijk is om een bestelling te plaatsen met een negatief totaalbedrag. Hierdoor zou je in theorie geld toe moeten krijgen. Ga op zoek naar een manier om dit te veroorzaken. Tip: Via ZAP zie je alle uitgaande requests. Maak een aantal bestellingen en ga op zoek naar een PUT- of POST-request die je kunt aanpassen. Om een bestelling te plaatsen zul je eerst moeten inloggen. Hiervoor kun je een account aanmaken, of je kunt proberen om met bv. SQL-injectie het inloggen te omzeilen (zie opdracht 3)...</p>
+<p>Toon je antwoord aan met de PDF van je bestelling waar een negatief te betalen bedrag op staat. Laat daarnaast je aangepaste PUT/POST-request zien, en beschrijf welke stappen je hebt uitgevoerd om tot je antwoord te komen. (40%)
+3.  Ga zelf op zoek naar nog een beveiligingslek en toon deze ook weer aan doormiddel van screenshots en indien van toepassing aangepaste requests. Beschrijf daarnaast welke stappen je hebt uitgevoerd om tot je antwoord te komen. (20%)</p>
+<p>Enkele suggesties om te proberen:
+- Laat een review achter onder andermans naam
+- Log in op het admin-account d.m.v. SQL-injectie
+- Ontdek het patroon in de kortingscoupons en maak je eigen coupon om tot wel 90% korting te krijgen
+Of bedenk zelf iets anders!</p>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Gekopieerd naar klembord", "clipboard.copy": "Kopi\u00ebren naar klembord", "search.result.more.one": "1 extra overeenkomst op deze pagina", "search.result.more.other": "# extra overeenkomsten op deze pagina", "search.result.none": "Geen overeenkomende documenten", "search.result.one": "1 overeenkomende document", "search.result.other": "# overeenkomende documenten", "search.result.placeholder": "Typ om te beginnen met zoeken", "search.result.term.missing": "Ontbreekt", "select.version": "Selecteer versie"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.407015b8.min.js"></script>
+      
+        <script src="../js/imgs.js"></script>
+      
+    
+  </body>
+</html>
