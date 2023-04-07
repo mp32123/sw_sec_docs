@@ -25,6 +25,8 @@ Voorbeeld-commando op een lokale Flask-webapp (poort 5000, met [CSRF-controle](h
 
 ``hydra -l henk -x 4:4:1 127.0.0.1 http-post-form -s 5000 "/login:username=henk&password=^PASS^:Inlog niet correct"``
 
+Let op: ondanks dat het misschien op meerdere regels wordt weergegeven, is bovenstaande één commmando dat op één regel dient te worden uitgevoerd!
+
 ### De opdracht
 
 Je gaat je eigen Webtech- of IOT-applicatie uit de vorige periode brute-forcen! Maak een gebruiker aan met een simpel wachtwoord, bijvoorbeeld bestaande uit 3 cijfers, en kijk hoelang Hydra erover doet om het te kraken. Maak nu het wachtwoord stapsgewijs complexer door meer cijfers en eventueel letters en leestekens (pas dan wel je -x-parameter aan) toe te voegen, en noteer steeds hoelang Hydra erover doet. Welke wachtwoord-complexiteit vind jij veilig genoeg? Schaalt dit naar een echte productie-applicatie of gelden er dan toch nog strengere eisen, en waarom?
