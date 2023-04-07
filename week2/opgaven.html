@@ -16,6 +16,8 @@
         <link rel="prev" href="../week1/opgaven.html">
       
       
+        <link rel="next" href="../week3/opgaven.html">
+      
       <link rel="icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.5">
     
@@ -166,7 +168,7 @@
   
     <li class="md-nav__item">
       <a href="../index.html" class="md-nav__link">
-        Welkom bij 1.4 Software Security
+        Welkom bij Software Security
       </a>
     </li>
   
@@ -208,7 +210,7 @@
   
     <li class="md-nav__item">
       <a href="../week1/opgaven.html" class="md-nav__link">
-        Opgaven week 1
+        Opgaven week 1: fuzzing
       </a>
     </li>
   
@@ -267,10 +269,111 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Opgaven week 2: hacking the Juice Shop
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="opgaven.html" class="md-nav__link md-nav__link--active">
         Opgaven week 2: hacking the Juice Shop
       </a>
       
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Inhoudsopgave">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Inhoudsopgave
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#installatie-van-owasp-zap" class="md-nav__link">
+    Installatie van OWASP ZAP
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installatie-van-docker" class="md-nav__link">
+    Installatie van Docker
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installatie-van-de-juice-shop-container" class="md-nav__link">
+    Installatie van de Juice Shop-container
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#de-opdracht-het-opsporen-van-beveiligingsproblemen" class="md-nav__link">
+    De opdracht: het opsporen van beveiligingsproblemen
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+          Week3
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Week3
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../week3/opgaven.html" class="md-nav__link">
+        Opgaven
+      </a>
     </li>
   
 
@@ -302,6 +405,42 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Inhoudsopgave
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#installatie-van-owasp-zap" class="md-nav__link">
+    Installatie van OWASP ZAP
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installatie-van-docker" class="md-nav__link">
+    Installatie van Docker
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installatie-van-de-juice-shop-container" class="md-nav__link">
+    Installatie van de Juice Shop-container
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#de-opdracht-het-opsporen-van-beveiligingsproblemen" class="md-nav__link">
+    De opdracht: het opsporen van beveiligingsproblemen
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -316,28 +455,37 @@
 
 
 <h1 id="opgaven-week-2-hacking-the-juice-shop">Opgaven week 2: hacking the Juice Shop<a class="headerlink" href="#opgaven-week-2-hacking-the-juice-shop" title="Permanent link">&para;</a></h1>
-<p>In dit practicum gaan we aan de slag met het opsporen van beveiligingsproblemen binnen een webshop applicatie. Voor deze opdracht gaan we verder met OWASP ZAP, mocht deze nog niet geinstalleerd zijn kijk dan nog onder de opdracht van week 1 voor de installatie.</p>
-<p>Aan de slag met de Juice Shop
-We gaan in deze opdracht aan de slag met een Juice Shop web applicatie welke een aantal grote beveiligingslekken heeft. De Juice Shop applicatie gaan we via Docker draaien op je computer. Hierna gaan we beveiligingslekken opsporen in de applicatie.
-1.  Met Docker is het mogelijk om een webapplicatie te starten in een vooropgezette omgeving, ook wel container genoemd. Je kunt een Docker container downloaden en deze bevat dan zowel een volledige ingerichte serveromgeving als een de geïnstalleerde en geconfigureerde webapplicatie. Let op: Als je VM-software hebt geïnstalleerd zal Docker niet werken. Maak in dit geval een Virtual Machine naar keuze (een servervariant van Linux is echter het snelst) en installeer Docker in deze VM.</p>
-<p>Download en installer Docker via <a href="https://docs.docker.com/get-docker/">https://docs.docker.com/get-docker/</a>
-2.  Download en installeer de Juice Shop Docker container met de volgende commando’s:
-$ docker pull bkimminich/juice-shop
-$ docker run --rm -p 3000:3000 bkimminich/juice-shop
-3.  Als alles goed is gegaan kun je de applicatie bereiken via <a href="http://localhost:3000">http://localhost:3000</a> in de browser.
-4.  Klik door de Juice shop heen en plaats bijvoorbeeld een bestelling</p>
-<p>Opdracht: Het opsporen van beveiligingsproblemen
- In deze opdracht gaan we daadwerkelijk aan de slag met het opsporen van beveiligingsproblemen in de Juice Shop applicatie. Hiervoor is het belangrijk dat ZAP zonder problemen draait en dan de Juice Shop werkt op je eigen computer.
-1.  Cross-site Scripting, ook wel XSS genoemd, betekent dat een externe partij JavaScript kan uitvoeren binnen de applicatie. Ga op zoek naar een plek in de webapplicatie waar het mogelijk is om javascript in te voeren die daarna wordt uitgevoerd. Tip: Met behulp van alert() in javascript is het mogelijk om een pop-up venster te openen. Het hoorcollege van deze week bevat hier voorbeeldcode voor die je kunt gebruiken.</p>
-<p>Toon je antwoord aan met een of meer screenshots waaruit duidelijk naar voren komt waar de javascript ingevoerd wordt en dat deze uitgevoerd wordt. Laat ook de url zien die de XSS veroorzaakt. Beschrijf hierbij ook kort welke stappen je hebt uitgevoerd om tot je antwoord te komen.   (40%)
-2.  Er zit een groot probleem in Juice Shop waardoor het mogelijk is om een bestelling te plaatsen met een negatief totaalbedrag. Hierdoor zou je in theorie geld toe moeten krijgen. Ga op zoek naar een manier om dit te veroorzaken. Tip: Via ZAP zie je alle uitgaande requests. Maak een aantal bestellingen en ga op zoek naar een PUT- of POST-request die je kunt aanpassen. Om een bestelling te plaatsen zul je eerst moeten inloggen. Hiervoor kun je een account aanmaken, of je kunt proberen om met bv. SQL-injectie het inloggen te omzeilen (zie opdracht 3)...</p>
-<p>Toon je antwoord aan met de PDF van je bestelling waar een negatief te betalen bedrag op staat. Laat daarnaast je aangepaste PUT/POST-request zien, en beschrijf welke stappen je hebt uitgevoerd om tot je antwoord te komen. (40%)
-3.  Ga zelf op zoek naar nog een beveiligingslek en toon deze ook weer aan doormiddel van screenshots en indien van toepassing aangepaste requests. Beschrijf daarnaast welke stappen je hebt uitgevoerd om tot je antwoord te komen. (20%)</p>
-<p>Enkele suggesties om te proberen:
-- Laat een review achter onder andermans naam
-- Log in op het admin-account d.m.v. SQL-injectie
-- Ontdek het patroon in de kortingscoupons en maak je eigen coupon om tot wel 90% korting te krijgen
-Of bedenk zelf iets anders!</p>
+<p>In dit practicum gaan we aan de slag met het opsporen van beveiligingsproblemen binnen een webshop-applicatie. Voor deze opdracht werken we met OWASP ZAP (Open Web Application Security Project – Zed Attack Proxy) en Docker.</p>
+<h2 id="installatie-van-owasp-zap">Installatie van OWASP ZAP<a class="headerlink" href="#installatie-van-owasp-zap" title="Permanent link">&para;</a></h2>
+<p><a href="https://www.owasp.org/index.php/OWASP_Zed_Attack_Proxy_Project">Download</a> de software. Voltooi de installatie en start de software op.</p>
+<p>Om ZAP te leren kennen, kun je beginnen met de "Automated scan". Als OWASP ZAP is opgestart kun je hier direct voor kiezen. Na deze keuze kan er een URL ingevoerd worden. Dit is de URL naar een webapplicatie inclusief de port. Kies hierna "Aanval". OWASP ZAP zal de gekozen website inladen en past o.a. een fuzzer toe op plekken waar data ingevoerd kan worden. Alle gevonden kwetsbaarheden en uitgevoerde requests worden in de onderste balk gelogd.</p>
+<p>Als je kiest voor "Manual Explore" kun je met een browser naar keuze door een opgegeven website navigeren, terwijl alle requests worden gelogd en eventueel (met aangebrachte wijzigingen) later opnieuw verzonden kunnen worden.</p>
+<p>Aanvullende informatie is <a href="https://github.com/zaproxy/zap-core-help/wiki/HelpStartProxies">hier</a> te vinden.</p>
+<h2 id="installatie-van-docker">Installatie van Docker<a class="headerlink" href="#installatie-van-docker" title="Permanent link">&para;</a></h2>
+<p>We gaan in deze opdracht aan de slag met de Juice Shop-webapplicatie, die een aantal grote beveiligingslekken heeft. De Juice Shop-applicatie gaan we via Docker draaien op je computer. Hierna gaan we beveiligingslekken opsporen in de applicatie.</p>
+<p>Met Docker is het mogelijk om een webapplicatie te starten in een vooropgezette omgeving, ook wel <em>container</em> genoemd. Je kunt een Docker-container downloaden en deze bevat dan zowel een volledige ingerichte serveromgeving als een geïnstalleerde en geconfigureerde webapplicatie. Let op: Als je VM-software hebt geïnstalleerd zal Docker mogelijk niet werken. Maak in dit geval een Virtual Machine naar keuze (een servervariant van Linux is vaak het snelst) en installeer Docker in deze VM.</p>
+<p>Download en installeer Docker via <a href="https://docs.docker.com/get-docker/">deze link</a>.</p>
+<h2 id="installatie-van-de-juice-shop-container">Installatie van de Juice Shop-container<a class="headerlink" href="#installatie-van-de-juice-shop-container" title="Permanent link">&para;</a></h2>
+<p>Download en draai nu de Juice Shop Docker-container met de volgende commando’s:
+<div class="highlight"><pre><span></span><code>docker pull bkimminich/juice-shop
+docker run --rm -p 3000:3000 bkimminich/juice-shop
+</code></pre></div></p>
+<p>Als alles goed is gegaan, kun je de applicatie bereiken via <a href="http://localhost:3000">http://localhost:3000</a> in de browser.</p>
+<p>Klik eerst eens door de Juice Shop heen en plaats bijvoorbeeld een bestelling.</p>
+<h2 id="de-opdracht-het-opsporen-van-beveiligingsproblemen">De opdracht: het opsporen van beveiligingsproblemen<a class="headerlink" href="#de-opdracht-het-opsporen-van-beveiligingsproblemen" title="Permanent link">&para;</a></h2>
+<p>Nu gaan we daadwerkelijk aan de slag met het opsporen van beveiligingsproblemen in de Juice Shop. Hiervoor is het belangrijk dat ZAP zonder problemen draait en dat de Juice Shop werkt op je eigen computer.</p>
+<p>1. Met SQL-injectie is het mogelijk om via een invoerveld eigen SQL-statements door een webapplicatie uit te laten voeren. Denk aan <a href="https://xkcd.com/327/">het verwijderen van tabellen</a> of het omzeilen van de wachtwoord-check bij inloggen. Met dit laatste ga je aan de slag: probeer als administrator in te loggen zonder een wachtwoord op te geven!</p>
+<p>Toon je antwoord aan met een of meer screenshots waaruit duidelijk naar voren komt dat je succesvolbent ingelogd. Laat ook de invoer zien die deze illegale inlog mogelijk maakt. Beschrijf hierbij ook kort welke stappen je hebt uitgevoerd om tot je antwoord te komen. (20%)</p>
+<p>2. Er zit een groot probleem in de Juice Shop waardoor het mogelijk is om een bestelling te plaatsen met een negatief totaalbedrag. Hierdoor zou je in theorie geld toe moeten krijgen. Ga op zoek naar een manier om dit te veroorzaken. Tip: via ZAP zie je alle uitgaande requests. Maak een aantal bestellingen en ga op zoek naar een PUT- of POST-request die je aan kunt passen. Om een bestelling te plaatsen zul je eerst moeten inloggen. Hiervoor kun je een account aanmaken, of je maakt gebruik van de resultaten van je hack-werk bij opgave 1...</p>
+<p>Toon je antwoord aan met de PDF van je bestelling waar een negatief te betalen bedrag op staat. Laat daarnaast je aangepaste PUT/POST-request zien, en beschrijf welke stappen je hebt uitgevoerd om tot je antwoord te komen. (40%)</p>
+<p>3. Ga zelf op zoek naar <strong>nog twee beveiligingslekken</strong> en toon ook deze weer aan door middel van screenshots en, indien van toepassing, aangepaste requests. Beschrijf daarnaast welke stappen je hebt uitgevoerd om tot je antwoord te komen. (40%)</p>
+<p>Enkele suggesties om te proberen:</p>
+<ul>
+<li>Laat een review achter onder andermans naam.</li>
+<li>Laat d.m.v. Cross-Site Scripting (XSS) de website een ongewenste pop-up openen. <em>Tip: Met behulp van alert() in javascript is het mogelijk om een pop-up venster te openen. Het hoorcollege van deze week bevat voorbeeldcode die je hiervoor kunt gebruiken.</em></li>
+<li>Ontdek het patroon in de kortingscoupons en maak je eigen coupon om tot wel 90% korting te krijgen!</li>
+</ul>
+<p>Of bedenk zelf iets anders!</p>
 
 
 
