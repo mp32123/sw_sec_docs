@@ -26,6 +26,8 @@ docker run --rm -p 3000:3000 bkimminich/juice-shop
 
 Als alles goed is gegaan, kun je de applicatie bereiken via [http://localhost:3000](http://localhost:3000) in de browser.
 
+Let even op het gebruik van het Docker **run**-commando. Dit is een combinatie van **create** (container aanmaken) en **start** (container starten). De parameter --rm zorgt ervoor dat een eventuele bestaande container eerst wordt weggegooid. Als je de Juice Shop vaker wilt openen en sluiten, kun je beter eenmalig **create** doen en dan met **start** en **stop** steeds dezelfde container activeren en weer afsluiten.
+
 Klik eerst eens door de Juice Shop heen en plaats bijvoorbeeld een bestelling.
   
 ## De opdracht: het opsporen van beveiligingsproblemen
@@ -33,7 +35,7 @@ Nu gaan we daadwerkelijk aan de slag met het opsporen van beveiligingsproblemen 
 
 1\. Met SQL-injectie is het mogelijk om via een invoerveld eigen SQL-statements door een webapplicatie uit te laten voeren. Denk aan [het verwijderen van tabellen](https://xkcd.com/327/) of het omzeilen van de wachtwoord-check bij inloggen. Met dit laatste ga je aan de slag: probeer als administrator in te loggen zonder een wachtwoord op te geven!
 
-Toon je antwoord aan met een of meer screenshots waaruit duidelijk naar voren komt dat je succesvolbent ingelogd. Laat ook de invoer zien die deze illegale inlog mogelijk maakt. Beschrijf hierbij ook kort welke stappen je hebt uitgevoerd om tot je antwoord te komen. (20%)
+Toon je antwoord aan met een of meer screenshots waaruit duidelijk naar voren komt dat je succesvol bent ingelogd. Laat ook de invoer zien die deze illegale inlog mogelijk maakt. Beschrijf hierbij ook kort welke stappen je hebt uitgevoerd om tot je antwoord te komen. (20%)
 
 2\. Er zit een groot probleem in de Juice Shop waardoor het mogelijk is om een bestelling te plaatsen met een negatief totaalbedrag. Hierdoor zou je in theorie geld toe moeten krijgen. Ga op zoek naar een manier om dit te veroorzaken. Tip: via ZAP zie je alle uitgaande requests. Maak een aantal bestellingen en ga op zoek naar een PUT- of POST-request die je aan kunt passen. Om een bestelling te plaatsen zul je eerst moeten inloggen. Hiervoor kun je een account aanmaken, of je maakt gebruik van de resultaten van je hack-werk bij opgave 1...
 
