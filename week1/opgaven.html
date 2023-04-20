@@ -685,8 +685,7 @@
 <h2 id="opgave-1-wachtwoord-fuzzing-met-hydra">Opgave 1: Wachtwoord-fuzzing met Hydra<a class="headerlink" href="#opgave-1-wachtwoord-fuzzing-met-hydra" title="Permanent link">&para;</a></h2>
 <p>Deze opdracht kan op Linux, Mac en Windows (WSL) worden uitgevoerd.</p>
 <h3 id="hydra-installeren">Hydra installeren<a class="headerlink" href="#hydra-installeren" title="Permanent link">&para;</a></h3>
-<p><strong>Windows-gebruikers</strong> moeten eerst het <a href="https://learn.microsoft.com/en-us/windows/wsl/install">Windows Subsystem for Linux</a> (WSL) installeren. De standaard-distributie, Ubuntu, is prima. Na installatie beschik je over een Linux-prompt en kun je onderstaande opdrachten uitvoeren (en nog veel meer). Bovendien heb je een WSL-installatie nodig om Docker, waar we volgende week mee bezig gaan, te kunnen draaien.</p>
-<p>Lees <a href="https://www.howtogeek.com/426749/how-to-access-your-linux-wsl-files-in-windows-10/">hier</a> hoe je bestanden van en naar je Linux-omgeving kunt kopiëren.</p>
+<p><strong>Windows-gebruikers</strong> moeten eerst het <a href="https://learn.microsoft.com/en-us/windows/wsl/install">Windows Subsystem for Linux</a> (WSL) installeren. De standaard-distributie, Ubuntu, is prima. Na installatie beschik je over een Linux-prompt en kun je onderstaande opdrachten uitvoeren (en nog veel meer). Bovendien heb je een WSL-installatie nodig om Docker, waar we volgende week mee bezig gaan, te kunnen draaien. Lees <a href="https://www.howtogeek.com/426749/how-to-access-your-linux-wsl-files-in-windows-10/">hier</a> hoe je bestanden van en naar je Linux-omgeving kunt kopiëren.</p>
 <p><a href="https://github.com/vanhauser-thc/thc-hydra">Hydra</a> is een tool om wachtwoorden mee te brute-forcen, wat ook een vorm van fuzzing is.</p>
 <p>We beginnen met de installatie van Hydra. Ga naar een geschikte map (maak bijv. een map "software-security" aan in je homedir) en voer één voor één de volgende commmando's uit:
 <div class="highlight"><pre><span></span><code>git clone https://github.com/vanhauser-thc/thc-hydra.git hydra
@@ -696,12 +695,17 @@ make
 make install
 </code></pre></div></p>
 <h3 id="hydra-draaien-op-een-webapp">Hydra draaien op een webapp<a class="headerlink" href="#hydra-draaien-op-een-webapp" title="Permanent link">&para;</a></h3>
-<p>Voorbeeld-commando op een lokale Flask-webapp (poort 5000, met <a href="https://www.geeksforgeeks.org/csrf-protection-in-flask/">CSRF-controle</a> uitgezet door <code>app.config['WTF_CSRF_CHECK_DEFAULT'] = False</code> in de code op te nemen). Hydra probeert hier voor gebruiker "henk" alle wachtwoorden met 4 cijfers. Bestudeer de <a href="https://github.com/vanhauser-thc/thc-hydra">documentatie van Hydra</a> om te leren hoe de -x-optie en de andere parameters precies werken.</p>
+<p>Voorbeeld-commando op het login-formulier van een lokale Flask-webapp, draaiend op poort 5000. Hydra probeert hier voor gebruiker "henk" alle wachtwoorden met 4 cijfers. Bestudeer de <a href="https://github.com/vanhauser-thc/thc-hydra">documentatie van Hydra</a> om te leren hoe de -x-optie en de andere parameters precies werken.</p>
 <p><code>hydra -l henk -x 4:4:1 127.0.0.1 http-post-form -s 5000 "/login:username=henk&amp;password=^PASS^:Inlog niet correct"</code></p>
 <p>Let op: ondanks dat het misschien op meerdere regels wordt weergegeven, is bovenstaande één commmando dat op één regel dient te worden uitgevoerd!</p>
+<p>Om dit werkend te krijgen, zijn er enkele aandachtspunten:</p>
+<ul>
+<li>Zet de <a href="https://www.geeksforgeeks.org/csrf-protection-in-flask/">CSRF-controle</a> uit door <code>app.config['WTF_CSRF_CHECK_DEFAULT'] = False</code> in je code op te nemen, op de plek waar je ook de andere configuratie, zoals de <code>SECRET_KEY</code>, instelt.</li>
+<li>Windows-gebruikers moeten de webapp draaien vanuit hun WSL/Linux-console, dus <strong>niet</strong> vanuit de Windows-omgeving, anders kan Hydra er niet bij.</li>
+</ul>
 <h3 id="de-opdracht">De opdracht<a class="headerlink" href="#de-opdracht" title="Permanent link">&para;</a></h3>
 <p>Je gaat je eigen Webtech- of IOT-applicatie uit de vorige periode brute-forcen! Maak een gebruiker aan met een simpel wachtwoord, bijvoorbeeld bestaande uit 3 cijfers, en kijk hoelang Hydra erover doet om het te kraken. Maak nu het wachtwoord stapsgewijs complexer door meer cijfers en eventueel letters en leestekens (pas dan wel je -x-parameter aan) toe te voegen, en noteer steeds hoelang Hydra erover doet. Welke wachtwoord-complexiteit vind jij veilig genoeg? Schaalt dit naar een echte productie-applicatie of gelden er dan toch nog strengere eisen, en waarom?</p>
-<p>Lever een kort verslagje in over deze "penetration test" (pentest), inclusief een screenshot van je Hydra-aanroeptijd, metingen en conclusies. (50%)</p>
+<p>Lever een kort verslagje in over deze "penetration test" (pentest), inclusief screenshots van je Hydra-aanroeptijden, metingen en conclusies. (50%)</p>
 <h2 id="opgave-2-fuzzing-met-radamsa">Opgave 2: Fuzzing met Radamsa<a class="headerlink" href="#opgave-2-fuzzing-met-radamsa" title="Permanent link">&para;</a></h2>
 <p>Radamsa is beschikbaar voor Linux, Apple en Windows (via WSL). De broncode is te vinden op <a href="https://gitlab.com/akihe/radamsa">Gitlab</a>. De <a href="https://gitlab.com/akihe/radamsa/-/blob/develop/README.md">documentatie</a> is daar ook te vinden.</p>
 <p>Download en installeer de software. De volgende commando’s kunnen hiervoor op Linux, Apple of WSL één voor één uitgevoerd worden via de terminal. Mochten git, gcc en/of make nog niet geïnstalleerd zijn installeer deze dan eerst via je package manager (bijvoorbeeld Ubuntu Linux of WSL: <code>sudo apt-get install git gcc make</code>).</p>
@@ -710,22 +714,20 @@ cd radamsa
 make
 make install
 </code></pre></div>
-<p>Kijk of radamsa goed werkt door te typen: <code>radamsa --help</code>
-of: <code>echo "Dit is een teststring" | radamsa</code></p>
+<p>Kijk of radamsa goed werkt door te typen: <code>radamsa --help</code> of: <code>echo "Dit is een teststring" | radamsa</code></p>
 <h3 id="voorbeeld-1">Voorbeeld 1<a class="headerlink" href="#voorbeeld-1" title="Permanent link">&para;</a></h3>
 <p>Hier een kort voorbeeld hoe een radamsa-aanroep werkt.</p>
 <p>Blijf in de map waar je zojuist radamsa hebt geinstalleerd en maak hier een nieuwe map: examples. Plaats in deze map een .txt-bestand met een korte tekst.Voer radamsa een aantal keren uit voor het bestand, bijvoorbeeld: <code>radamsa examples/hello.txt</code></p>
-<p>Elke keer als radamsa wordt uitgevoerd wordt er een nieuwe fuzz-actie gedaan en het resultaat getoond.</p>
+<p>Elke keer als radamsa wordt uitgevoerd wordt er een nieuwe fuzz-actie gedaan en wordt het resultaat in de terminal getoond.</p>
 <h3 id="voorbeeld-2">Voorbeeld 2<a class="headerlink" href="#voorbeeld-2" title="Permanent link">&para;</a></h3>
 <p>Met Radamsa kun je meerdere fuzz-cases achter elkaar laten maken en de uitvoer per case opslaan. Het volgende voorbeeld laat dit zien.</p>
-<p>Maak eerst een nieuwe submap aan in de radamsa-map: fuzz-cases.</p>
-<p>Ga terug naar de map examples en maak een nieuw bestand aan, bijvoorbeeld een python-bestand, html of xml.</p>
+<p>Maak eerst een nieuwe submap aan in de radamsa-map: fuzz-cases. Ga dan terug naar de map examples en maak een nieuw bestand aan, bijvoorbeeld een python-bestand, html of xml.</p>
 <p>Gebruik -n voor het aantal varianten dat je wilt genereren door radamsa en geef daarnaast met -o het pad naar fuzz-cases op. Het commando ziet er dan zo uit: <code>radamsa -n 10 -o 'fuzz-cases/hello-%n.%s' examples/hello.txt</code>
 Ga naar de map fuzz-cases en bekijk hier de gefuzzde bestanden.</p>
 <h3 id="de-opdracht_1">De opdracht<a class="headerlink" href="#de-opdracht_1" title="Permanent link">&para;</a></h3>
 <p>a. Leer radamsa kennen. Ga er mee aan de slag en kijk wat het doet. Raadpleeg hiervoor ook aanvullende informatie op internet en ga in overleg met klasgenoten.</p>
 <p>b. Kies een aantal bronnen om de fuzzer op toe te passen (minimaal 3). Radamsa kun je toepassen op tekstbestanden, afbeeldingen, codefragmenten etc.  </p>
-<p>c. Pas radamsa toe en analyseer het resultaat. Wat gebeurt er als je gefuzzde bestanden probeert uit te voeren of te laten openen door de applicatie waarmee je ze normaal opent?</p>
+<p>c. Pas radamsa toe en analyseer het resultaat. Wat gebeurt er als je gefuzzde bestanden probeert uit te voeren of te laten openen door de applicatie waarmee je ze normaal opent? Kan dit kwaad en/of kan hier misbruik van gemaakt worden?</p>
 <p>Lever een kort verslagje in over deze "fuzz test". Welke bronnen heb je gekozen en waarom? Beschrijf en laat d.m.v. screenshots zien wat je opvalt: wat voor data wordt er gegenereerd en wat is het effect van deze data? (50%)</p>
 
 
