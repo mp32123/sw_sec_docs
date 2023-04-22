@@ -23,14 +23,15 @@ make install
 
 Voorbeeld-commando op het login-formulier van een lokale Flask-webapp, draaiend op poort 5000. Hydra probeert hier voor gebruiker "henk" alle wachtwoorden met 4 cijfers. Bestudeer de [documentatie van Hydra](https://github.com/vanhauser-thc/thc-hydra) om te leren hoe de -x-optie en de andere parameters precies werken.
 
-``hydra -l henk -x 4:4:1 127.0.0.1 http-post-form -s 5000 "/login:username=henk&password=^PASS^:Inlog niet correct"``
+``hydra -l henk -x 4:4:1 127.0.0.1 http-post-form -s 5000 "/login:username=^USER^&password=^PASS^:Inlog niet correct"``
 
 Let op: ondanks dat het misschien op meerdere regels wordt weergegeven, is bovenstaande één commmando dat op één regel dient te worden uitgevoerd!
 
 Om dit werkend te krijgen, zijn er enkele aandachtspunten:
 
-* Zet de [CSRF-controle](https://www.geeksforgeeks.org/csrf-protection-in-flask/) uit door ``app.config['WTF_CSRF_CHECK_DEFAULT'] = False`` in je code op te nemen, op de plek waar je ook de andere configuratie, zoals de ``SECRET_KEY``, instelt.
-* Windows-gebruikers moeten de webapp draaien vanuit hun WSL/Linux-console, dus **niet** vanuit de Windows-omgeving, anders kan Hydra er niet bij.
+* Zet de [CSRF-controle](https://www.geeksforgeeks.org/csrf-protection-in-flask/) uit door ``app.config['WTF_CSRF_ENABLED'] = False`` in je code op te nemen, op de plek waar je ook de andere configuratie, zoals de ``SECRET_KEY``, instelt.
+* Zorg dat bij een incorrecte inlog de tekst "Inlog niet correct" (of anders - maar pas dan je Hydra-aanroep aan) in beeld komt, zodat Hydra weet wanneer een login-poging mislukt is.
+* Windows-gebruikers moeten de webapp draaien vanuit hun WSL/Linux-console, dus **niet** vanuit de Windows-omgeving, anders kan Hydra er niet bij. Zo'n aanroep ziet er dan bijvoorbeeld zo uit: ``user@LAPTOP:/mnt/c/Users/user/swsec/wc-wk1$ python3 app.py``
 
 ### De opdracht
 
