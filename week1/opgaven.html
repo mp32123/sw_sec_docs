@@ -19,7 +19,7 @@
         <link rel="next" href="../week2/opgaven.html">
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.6">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.7">
     
     
       
@@ -696,12 +696,13 @@ make install
 </code></pre></div></p>
 <h3 id="hydra-draaien-op-een-webapp">Hydra draaien op een webapp<a class="headerlink" href="#hydra-draaien-op-een-webapp" title="Permanent link">&para;</a></h3>
 <p>Voorbeeld-commando op het login-formulier van een lokale Flask-webapp, draaiend op poort 5000. Hydra probeert hier voor gebruiker "henk" alle wachtwoorden met 4 cijfers. Bestudeer de <a href="https://github.com/vanhauser-thc/thc-hydra">documentatie van Hydra</a> om te leren hoe de -x-optie en de andere parameters precies werken.</p>
-<p><code>hydra -l henk -x 4:4:1 127.0.0.1 http-post-form -s 5000 "/login:username=henk&amp;password=^PASS^:Inlog niet correct"</code></p>
+<p><code>hydra -l henk -x 4:4:1 127.0.0.1 http-post-form -s 5000 "/login:username=^USER^&amp;password=^PASS^:Inlog niet correct"</code></p>
 <p>Let op: ondanks dat het misschien op meerdere regels wordt weergegeven, is bovenstaande één commmando dat op één regel dient te worden uitgevoerd!</p>
 <p>Om dit werkend te krijgen, zijn er enkele aandachtspunten:</p>
 <ul>
-<li>Zet de <a href="https://www.geeksforgeeks.org/csrf-protection-in-flask/">CSRF-controle</a> uit door <code>app.config['WTF_CSRF_CHECK_DEFAULT'] = False</code> in je code op te nemen, op de plek waar je ook de andere configuratie, zoals de <code>SECRET_KEY</code>, instelt.</li>
-<li>Windows-gebruikers moeten de webapp draaien vanuit hun WSL/Linux-console, dus <strong>niet</strong> vanuit de Windows-omgeving, anders kan Hydra er niet bij.</li>
+<li>Zet de <a href="https://www.geeksforgeeks.org/csrf-protection-in-flask/">CSRF-controle</a> uit door <code>app.config['WTF_CSRF_ENABLED'] = False</code> in je code op te nemen, op de plek waar je ook de andere configuratie, zoals de <code>SECRET_KEY</code>, instelt.</li>
+<li>Zorg dat bij een incorrecte inlog de tekst "Inlog niet correct" (of anders - maar pas dan je Hydra-aanroep aan) in beeld komt, zodat Hydra weet wanneer een login-poging mislukt is.</li>
+<li>Windows-gebruikers moeten de webapp draaien vanuit hun WSL/Linux-console, dus <strong>niet</strong> vanuit de Windows-omgeving, anders kan Hydra er niet bij. Zo'n aanroep ziet er dan bijvoorbeeld zo uit: <code>user@LAPTOP:/mnt/c/Users/user/swsec/wc-wk1$ python3 app.py</code></li>
 </ul>
 <h3 id="de-opdracht">De opdracht<a class="headerlink" href="#de-opdracht" title="Permanent link">&para;</a></h3>
 <p>Je gaat je eigen Webtech- of IOT-applicatie uit de vorige periode brute-forcen! Maak een gebruiker aan met een simpel wachtwoord, bijvoorbeeld bestaande uit 3 cijfers, en kijk hoelang Hydra erover doet om het te kraken. Maak nu het wachtwoord stapsgewijs complexer door meer cijfers en eventueel letters en leestekens (pas dan wel je -x-parameter aan) toe te voegen, en noteer steeds hoelang Hydra erover doet. Welke wachtwoord-complexiteit vind jij veilig genoeg? Schaalt dit naar een echte productie-applicatie of gelden er dan toch nog strengere eisen, en waarom?</p>
