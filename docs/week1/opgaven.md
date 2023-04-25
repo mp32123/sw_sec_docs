@@ -37,7 +37,9 @@ Om dit werkend te krijgen, zijn er enkele aandachtspunten:
 
 Je gaat je eigen Webtech- of IOT-applicatie uit de vorige periode brute-forcen! Maak een gebruiker aan met een simpel wachtwoord, bijvoorbeeld bestaande uit 3 cijfers, en kijk hoelang Hydra erover doet om het te kraken. Maak nu het wachtwoord stapsgewijs complexer door meer cijfers en eventueel letters en leestekens (pas dan wel je -x-parameter aan) toe te voegen, en noteer steeds hoelang Hydra erover doet. Welke wachtwoord-complexiteit vind jij veilig genoeg? Schaalt dit naar een echte productie-applicatie of gelden er dan toch nog strengere eisen, en waarom?
 
-Lever een kort verslagje in over deze "penetration test" (pentest), inclusief screenshots van je Hydra-aanroeptijden, metingen en conclusies. (50%)
+Benoem daarnaast drie mogelijkheden om dit soort brute-force-aanvallen tegen te gaan.
+
+Lever een kort verslagje in over deze "penetration test" (pentest), inclusief screenshots van je Hydra-aanroeptijden, metingen, conclusies en tegenmaatregelen. (50%)
 
 ## Opgave 2: Fuzzing met Radamsa
 
@@ -77,3 +79,5 @@ b. Kies een aantal bronnen om de fuzzer op toe te passen (minimaal 3). Radamsa k
 c. Pas radamsa toe en analyseer het resultaat. Wat gebeurt er als je gefuzzde bestanden probeert uit te voeren of te laten openen door de applicatie waarmee je ze normaal opent? Kan dit kwaad en/of kan hier misbruik van gemaakt worden?
 
 Lever een kort verslagje in over deze "fuzz test". Welke bronnen heb je gekozen en waarom? Beschrijf en laat d.m.v. screenshots zien wat je opvalt: wat voor data wordt er gegenereerd en wat is het effect van deze data? (50%)
+
+De beide verslagjes mogen worden samengevoegd in één document en als doc(x) of pdf worden ingeleverd via het Inleverpunt.
