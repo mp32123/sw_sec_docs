@@ -14,7 +14,7 @@ De mobiele app en webinterface zullen gebruikers in staat stellen om de thermost
 
 Alle gebruikersgegevens worden opgeslagen in een cloud gebaseerde database. De database bevat informatie over de thermostaatinstellingen en gebruikspatronen van elke gebruiker. De database is alleen toegankelijk voor geautoriseerde gebruikers. De webinterface maakt gebruik van HTTP richting de gebruikers browser.
 
-Om de beveiliging van het systeem te waarborgen, wordt de thermostaat ontworpen met een verzegelde behuizing die ongeautoriseerde toegang voorkomt. Op de behuizing zit een sticker met een nummer(25 random nummers) waarmee je een account kunt maken op de webinterface. De behuizing kan geopend worden met een sleutel voor onderhoud, maar hierdoor verbreekt uiteraard de seal. Tijdens onderhoud kan er via USB commando’s verstuurd worden voor bijv. updates.
+Om de beveiliging van het systeem te waarborgen, wordt de thermostaat ontworpen met een verzegelde behuizing die ongeautoriseerde toegang voorkomt. Op de behuizing zit een sticker met een nummer (25 random getallen) waarmee je een account kunt maken op de webinterface. De behuizing kan geopend worden met een sleutel voor onderhoud, maar hierdoor verbreekt uiteraard het zegel. Tijdens onderhoud kunnen er via USB commando’s verstuurd worden voor bijvoorbeeld updates.
 
 De microfoon en luidspreker zijn standaard ingeschakeld en gebruikers moeten deze handmatig uitschakelen via de app of webinterface.
 
@@ -22,11 +22,11 @@ Het bedrijf is van plan de thermostaat aan te bieden als een abonnementsservice,
 
 ## Opdrachten
 
-1.\ Teken het Data Flow Diagram (DFD) van de beschreven casus. Het diagram moet het systeem op een niveau laten zien die geschikt is voor een risicoanalyse. Zorg dat de DFD overzichtelijk en navolgbaar neergezet wordt. Dit kan op papier, maar mag uiteraard ook met een softwaretool.
+1.\ Teken het Data Flow Diagram (DFD) van de beschreven casus. Het diagram moet het systeem op een niveau laten zien dat geschikt is voor een risicoanalyse. Zorg dat de DFD overzichtelijk en navolgbaar neergezet wordt. Dit kan op papier, maar mag uiteraard ook met een softwaretool (zie het lijstje op Blackboard).
 
 2.\ Pas threat modelling toe op je DFD. Geef in je DFD aan waar welke risico’s zitten (interfaces: plekken waar data over een trust boundary gaat). Gebruik hiervoor de STRIDE-methodiek. Denk hierbij aan de afkorting:
 
-* <b>S</b>poofing: je voordoen als iemand anders of een ander system, 	bijv. doordat er geen wachtwoord eisen zijn
+* <b>S</b>poofing: je voordoen als iemand anders of een ander system, bijv. doordat er geen wachtwoord eisen zijn
 * <b>T</b>ampering: aanpassen van data op een systeem of netwerk, bijv. XSS
 * <b>R</b>epudiation: ontkennen van iets dat je gedaan hebt, bijv. doordat er geen logging is
 * <b>I</b>nformation Disclosure: ongeautoriseerd toegang verschaffen tot data, bijv. mogelijk gemaakt door plaintext versturen van data
