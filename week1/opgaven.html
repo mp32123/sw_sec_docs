@@ -19,7 +19,7 @@
         <link rel="next" href="../week2/opgaven.html">
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.8">
+      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.10">
     
     
       
@@ -27,10 +27,10 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.ded33207.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.85bb2934.min.css">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.a0c5b2b5.min.css">
+        <link rel="stylesheet" href="../assets/stylesheets/palette.a6bdf11c.min.css">
       
       
 
@@ -695,7 +695,8 @@ cd hydra
 ./configure
 make
 make install
-</code></pre></div></p>
+</code></pre></div>
+Mochten git, gcc en/of make nog niet geïnstalleerd zijn, installeer deze dan eerst via je package manager (bijvoorbeeld Ubuntu Linux of WSL: <code>sudo apt-get install git gcc make</code>).</p>
 <h3 id="hydra-draaien-op-een-webapp">Hydra draaien op een webapp<a class="headerlink" href="#hydra-draaien-op-een-webapp" title="Permanent link">&para;</a></h3>
 <p>Voorbeeld-commando op het login-formulier van een lokale Flask-webapp, draaiend op poort 5000. Hydra probeert hier voor gebruiker "henk" alle wachtwoorden met 4 cijfers. Bestudeer de <a href="https://github.com/vanhauser-thc/thc-hydra">documentatie van Hydra</a> om te leren hoe de -x-optie en de andere parameters precies werken.</p>
 <p><code>hydra -l henk -x 4:4:1 127.0.0.1 http-post-form -s 5000 "/login:username=^USER^&amp;password=^PASS^:Inlog niet correct"</code></p>
@@ -712,7 +713,7 @@ make install
 <p>Lever een kort verslagje in over deze "penetration test" (pentest), inclusief screenshots van je Hydra-aanroeptijden, metingen, conclusies en tegenmaatregelen. (50%)</p>
 <h2 id="opgave-2-fuzzing-met-radamsa">Opgave 2: Fuzzing met Radamsa<a class="headerlink" href="#opgave-2-fuzzing-met-radamsa" title="Permanent link">&para;</a></h2>
 <p>Radamsa is beschikbaar voor Linux, Apple en Windows (via WSL). De broncode is te vinden op <a href="https://gitlab.com/akihe/radamsa">Gitlab</a>. De <a href="https://gitlab.com/akihe/radamsa/-/blob/develop/README.md">documentatie</a> is daar ook te vinden.</p>
-<p>Download en installeer de software. De volgende commando’s kunnen hiervoor op Linux, Apple of WSL één voor één uitgevoerd worden via de terminal. Mochten git, gcc en/of make nog niet geïnstalleerd zijn installeer deze dan eerst via je package manager (bijvoorbeeld Ubuntu Linux of WSL: <code>sudo apt-get install git gcc make</code>).</p>
+<p>Download en installeer de software. De volgende commando’s kunnen hiervoor op Linux, Apple of WSL één voor één uitgevoerd worden via de terminal. Mochten git, gcc en/of make nog niet geïnstalleerd zijn, installeer deze dan eerst via je package manager (bijvoorbeeld Ubuntu Linux of WSL: <code>sudo apt-get install git gcc make</code>).</p>
 <div class="highlight"><pre><span></span><code>git clone https://gitlab.com/akihe/radamsa.git radamsa
 cd radamsa
 make
@@ -774,7 +775,7 @@ Ga naar de map fuzz-cases en bekijk hier de gefuzzde bestanden.</p>
     <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Gekopieerd naar klembord", "clipboard.copy": "Kopi\u00ebren naar klembord", "search.result.more.one": "1 extra overeenkomst op deze pagina", "search.result.more.other": "# extra overeenkomsten op deze pagina", "search.result.none": "Geen overeenkomende documenten", "search.result.one": "1 overeenkomende document", "search.result.other": "# overeenkomende documenten", "search.result.placeholder": "Typ om te beginnen met zoeken", "search.result.term.missing": "Ontbreekt", "select.version": "Selecteer versie"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.51198bba.min.js"></script>
+      <script src="../assets/javascripts/bundle.fac441b0.min.js"></script>
       
         <script src="../js/imgs.js"></script>
       
