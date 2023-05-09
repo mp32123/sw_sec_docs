@@ -36,11 +36,13 @@ Om dit werkend te krijgen, zijn er enkele aandachtspunten:
 
 ### De opdracht
 
-Je gaat je eigen Webtech- of IOT-applicatie uit de vorige periode brute-forcen! Maak een gebruiker aan met een simpel wachtwoord, bijvoorbeeld bestaande uit 3 cijfers, en kijk hoelang Hydra erover doet om het te kraken. Maak nu het wachtwoord stapsgewijs complexer door meer cijfers en eventueel letters en leestekens (pas dan wel je -x-parameter aan) toe te voegen, en noteer steeds hoelang Hydra erover doet. Welke wachtwoord-complexiteit vind jij veilig genoeg? Schaalt dit naar een echte productie-applicatie of gelden er dan toch nog strengere eisen, en waarom?
+Je gaat je eigen Webtech- of IOT-applicatie uit de vorige periode<sup>*</sup> brute-forcen! Maak een gebruiker aan met een simpel wachtwoord, bijvoorbeeld bestaande uit 3 cijfers, en kijk hoelang Hydra erover doet om het te kraken. Maak nu het wachtwoord stapsgewijs complexer door meer cijfers en eventueel letters en leestekens (pas dan wel je -x-parameter aan) toe te voegen, en noteer steeds hoelang Hydra erover doet. Welke wachtwoord-complexiteit vind jij veilig genoeg? Schaalt dit naar een echte productie-applicatie of gelden er dan toch nog strengere eisen, en waarom?
 
 Benoem daarnaast drie mogelijkheden om dit soort brute-force-aanvallen tegen te gaan.
 
 Lever een kort verslagje in over deze "penetration test" (pentest), inclusief screenshots van je Hydra-aanroeptijden, metingen, conclusies en tegenmaatregelen. (50%)
+
+<sup>*</sup> Geen webapp (meer) paraat? [Hier](https://github.com/hanze-hbo-ict/sw_sec_docs/tree/master/src/wc-wk1) kun je er eentje vinden die je ook mag gebruiken.
 
 ## Opgave 2: Fuzzing met Radamsa
 
