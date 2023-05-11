@@ -27,18 +27,21 @@ def logout():
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     form = LoginForm()
-    if form.validate_on_submit():
-        user = User.query.filter_by(email=form.email.data).first()
-        if user is not None and user.check_password(form.password.data):
-            login_user(user)
-            session['role'] = 'user' # get from DB: user.role
-            flash('Succesvol ingelogd.')
-            next = request.args.get('next')
-            if next == None or not next[0]=='/':
-                next = url_for('welkom')
-            return redirect(next)
+    if request.method == 'POST':
+        if form.validate_on_submit():
+            user = User.query.filter_by(email=form.email.data).first()
+            if user is not None and user.check_password(form.password.data):
+                login_user(user)
+                session['role'] = 'user' # get from DB: user.role
+                flash('Succesvol ingelogd.')
+                next = request.args.get('next')
+                if next == None or not next[0]=='/':
+                    next = url_for('welkom')
+                return redirect(next)
+            else:
+                flash('Inlog mislukt.')
         else:
-            flash('Inlog mislukt.')
+            flash('Inlogformulier incorrect ingevuld.')
     return render_template('login.html', form=form)
 
 @app.route('/register', methods=['GET', 'POST'])
