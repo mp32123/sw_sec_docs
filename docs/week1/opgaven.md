@@ -22,6 +22,16 @@ Mochten git, gcc en/of make nog niet geïnstalleerd zijn, installeer deze dan ee
 
 Mocht je tijdens het draaien van Hydra de melding krijgen dat bepaalde opties niet beschikbaar zijn, dan kan het helpen om vóór de installatie een aantal extra pakketten te installeren: ``sudo apt-get install libssl-dev libssh-dev libidn11-dev libpcre3-dev libgtk2.0-dev libmysqlclient-dev libpq-dev libsvn-dev firebird2.1-dev libncp-dev``
 
+Mocht je tijdens het clonen van de github repository de volgende foutmelding krijgen:
+"Unable to resolve github.com in WSL" 
+Dan de volgende stappen doorlopen: (aanpassen van default nameserver)
+sudo nano /etc/resolv.conf
+comment originele nameserver uit (met #)
+Toevoegen:
+nameserver 8.8.8.8
+nameserver 8.8.4.4
+Opnieuw proberen, of bijv. eerst 'ping google.com'
+
 ### Hydra draaien op een webapp
 
 Voorbeeld-commando op het login-formulier van een lokale Flask-webapp, draaiend op poort 5000. Hydra probeert hier voor gebruiker "henk" alle wachtwoorden met 4 cijfers. Bestudeer de [documentatie van Hydra](https://github.com/vanhauser-thc/thc-hydra) om te leren hoe de -x-optie en de andere parameters precies werken.
