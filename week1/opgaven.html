@@ -262,6 +262,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#mogelijke-problemen-en-oplossingen-bij-de-hydra-installatie" class="md-nav__link">
+    Mogelijke problemen en oplossingen bij de Hydra-installatie
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#hydra-draaien-op-een-webapp" class="md-nav__link">
     Hydra draaien op een webapp
   </a>
@@ -616,6 +623,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#mogelijke-problemen-en-oplossingen-bij-de-hydra-installatie" class="md-nav__link">
+    Mogelijke problemen en oplossingen bij de Hydra-installatie
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#hydra-draaien-op-een-webapp" class="md-nav__link">
     Hydra draaien op een webapp
   </a>
@@ -695,18 +709,20 @@ cd hydra
 ./configure
 make
 make install
-</code></pre></div>
-Mochten git, gcc en/of make nog niet geïnstalleerd zijn, installeer deze dan eerst via je package manager (bijvoorbeeld Ubuntu Linux of WSL: <code>sudo apt-get install git gcc make</code>).</p>
+</code></pre></div></p>
+<h3 id="mogelijke-problemen-en-oplossingen-bij-de-hydra-installatie">Mogelijke problemen en oplossingen bij de Hydra-installatie<a class="headerlink" href="#mogelijke-problemen-en-oplossingen-bij-de-hydra-installatie" title="Permanent link">&para;</a></h3>
+<p>Mochten git, gcc en/of make nog niet geïnstalleerd zijn, installeer deze dan eerst via je package manager (bijvoorbeeld Ubuntu Linux of WSL: <code>sudo apt-get install git gcc make</code>).</p>
 <p>Mocht je tijdens het draaien van Hydra de melding krijgen dat bepaalde opties niet beschikbaar zijn, dan kan het helpen om vóór de installatie een aantal extra pakketten te installeren: <code>sudo apt-get install libssl-dev libssh-dev libidn11-dev libpcre3-dev libgtk2.0-dev libmysqlclient-dev libpq-dev libsvn-dev firebird2.1-dev libncp-dev</code></p>
-<p>Mocht je tijdens het clonen van de github repository de volgende foutmelding krijgen:
-"Unable to resolve github.com in WSL" 
-Dan de volgende stappen doorlopen: (aanpassen van default nameserver)
-sudo nano /etc/resolv.conf
-comment originele nameserver uit (met #)
-Toevoegen:
-nameserver 8.8.8.8
+<p>Mocht je tijdens het clonen van de github repository de foutmelding "Unable to resolve github.com in WSL" krijgen, dan de volgende stappen doorlopen om de default nameserver aan te passen:</p>
+<ul>
+<li><code>sudo nano /etc/resolv.conf</code></li>
+<li>comment originele nameserver uit (met #)</li>
+<li>Toevoegen:
+<div class="highlight"><pre><span></span><code>nameserver 8.8.8.8
 nameserver 8.8.4.4
-Opnieuw proberen, of bijv. eerst 'ping google.com'</p>
+</code></pre></div></li>
+<li>Opnieuw proberen, of bijv. eerst 'ping google.com'</li>
+</ul>
 <h3 id="hydra-draaien-op-een-webapp">Hydra draaien op een webapp<a class="headerlink" href="#hydra-draaien-op-een-webapp" title="Permanent link">&para;</a></h3>
 <p>Voorbeeld-commando op het login-formulier van een lokale Flask-webapp, draaiend op poort 5000. Hydra probeert hier voor gebruiker "henk" alle wachtwoorden met 4 cijfers. Bestudeer de <a href="https://github.com/vanhauser-thc/thc-hydra">documentatie van Hydra</a> om te leren hoe de -x-optie en de andere parameters precies werken.</p>
 <p><code>hydra -l henk -x 4:4:1 127.0.0.1 http-post-form -s 5000 "/login:username=^USER^&amp;password=^PASS^:Inlog niet correct"</code></p>
@@ -733,7 +749,7 @@ make install
 <p>Kijk of radamsa goed werkt door te typen: <code>radamsa --help</code> of: <code>echo "Dit is een teststring" | radamsa</code></p>
 <h3 id="voorbeeld-1">Voorbeeld 1<a class="headerlink" href="#voorbeeld-1" title="Permanent link">&para;</a></h3>
 <p>Hier een kort voorbeeld hoe een radamsa-aanroep werkt.</p>
-<p>Blijf in de map waar je zojuist radamsa hebt geinstalleerd en maak hier een nieuwe map: examples. Plaats in deze map een .txt-bestand met een korte tekst.Voer radamsa een aantal keren uit voor het bestand, bijvoorbeeld: <code>radamsa examples/hello.txt</code></p>
+<p>Blijf in de map waar je zojuist radamsa hebt geinstalleerd en maak hier een nieuwe map: examples. Plaats in deze map een .txt-bestand met een korte tekst. Voer radamsa een aantal keren uit voor het bestand, bijvoorbeeld: <code>radamsa examples/hello.txt</code></p>
 <p>Elke keer als radamsa wordt uitgevoerd wordt er een nieuwe fuzz-actie gedaan en wordt het resultaat in de terminal getoond.</p>
 <h3 id="voorbeeld-2">Voorbeeld 2<a class="headerlink" href="#voorbeeld-2" title="Permanent link">&para;</a></h3>
 <p>Met Radamsa kun je meerdere fuzz-cases achter elkaar laten maken en de uitvoer per case opslaan. Het volgende voorbeeld laat dit zien.</p>
