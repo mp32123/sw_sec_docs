@@ -64,7 +64,7 @@ Kijk of radamsa goed werkt door te typen: ``radamsa --help`` of: ``echo "Dit is 
 ### Voorbeeld 1
 Hier een kort voorbeeld hoe een radamsa-aanroep werkt.
 
-Blijf in de map waar je zojuist radamsa hebt geinstalleerd en maak hier een nieuwe map: examples. Plaats in deze map een .txt-bestand met een korte tekst.Voer radamsa een aantal keren uit voor het bestand, bijvoorbeeld: ``radamsa examples/hello.txt``
+Blijf in de map waar je zojuist radamsa hebt geinstalleerd en maak hier een nieuwe map: examples. Plaats in deze map een .txt-bestand met een korte tekst. Voer radamsa een aantal keren uit voor het bestand, bijvoorbeeld: ``radamsa examples/hello.txt``
 
 Elke keer als radamsa wordt uitgevoerd wordt er een nieuwe fuzz-actie gedaan en wordt het resultaat in de terminal getoond.
 
