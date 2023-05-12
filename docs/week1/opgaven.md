@@ -43,7 +43,7 @@ nameserver 8.8.4.4
 
 Voorbeeld-commando op het login-formulier van een lokale Flask-webapp, draaiend op poort 5000. Hydra probeert hier voor gebruiker "henk" alle wachtwoorden met 4 cijfers. Bestudeer de [documentatie van Hydra](https://github.com/vanhauser-thc/thc-hydra) om te leren hoe de -x-optie en de andere parameters precies werken.
 
-``hydra -l henk -x 4:4:1 127.0.0.1 -s 5000 http-post-form "/login:username=^USER^&password=^PASS^:Inlog niet correct"``
+``hydra -l henk@hanze.nl -x 4:4:1 127.0.0.1 -s 5000 http-post-form "/login:email=^USER^&password=^PASS^:Inlog niet correct"``
 
 Let op: ondanks dat het misschien op meerdere regels wordt weergegeven, is bovenstaande één commmando dat op één regel dient te worden uitgevoerd!
 
