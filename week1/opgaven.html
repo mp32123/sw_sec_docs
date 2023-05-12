@@ -255,8 +255,15 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#hydra-installeren" class="md-nav__link">
-    Hydra installeren
+  <a href="#hydra-installeren-1-voor-windows" class="md-nav__link">
+    Hydra installeren (1 - voor Windows)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hydra-installeren-2" class="md-nav__link">
+    Hydra installeren (2)
   </a>
   
 </li>
@@ -616,8 +623,15 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#hydra-installeren" class="md-nav__link">
-    Hydra installeren
+  <a href="#hydra-installeren-1-voor-windows" class="md-nav__link">
+    Hydra installeren (1 - voor Windows)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hydra-installeren-2" class="md-nav__link">
+    Hydra installeren (2)
   </a>
   
 </li>
@@ -700,10 +714,11 @@
 <h1 id="opgaven-week-1-fuzzing">Opgaven week 1: fuzzing<a class="headerlink" href="#opgaven-week-1-fuzzing" title="Permanent link">&para;</a></h1>
 <h2 id="opgave-1-wachtwoord-fuzzing-met-hydra">Opgave 1: Wachtwoord-fuzzing met Hydra<a class="headerlink" href="#opgave-1-wachtwoord-fuzzing-met-hydra" title="Permanent link">&para;</a></h2>
 <p>Deze opdracht kan op Linux, Mac en Windows (WSL) worden uitgevoerd.</p>
-<h3 id="hydra-installeren">Hydra installeren<a class="headerlink" href="#hydra-installeren" title="Permanent link">&para;</a></h3>
-<p><strong>Windows-gebruikers</strong> moeten eerst het <a href="https://learn.microsoft.com/en-us/windows/wsl/install">Windows Subsystem for Linux</a> (WSL) installeren. De standaard-distributie, Ubuntu, is prima. Na installatie beschik je over een Linux-prompt en kun je onderstaande opdrachten uitvoeren (en nog veel meer. <a href="https://overthewire.org/wargames/">https://overthewire.org/wargames/</a> is een web-app waar je interactief veel over het gebruiken van verschillende linux tools kunt leren. Een must voor ict'ers. Advies is om te beginnen met de Bandit wargame.). Bovendien heb je een WSL-installatie nodig om Docker, waar we volgende week mee bezig gaan, te kunnen draaien. Lees <a href="https://www.howtogeek.com/426749/how-to-access-your-linux-wsl-files-in-windows-10/">hier</a> hoe je bestanden van en naar je Linux-omgeving kunt kopiëren.</p>
 <p><a href="https://github.com/vanhauser-thc/thc-hydra">Hydra</a> is een tool om wachtwoorden mee te brute-forcen, wat ook een vorm van fuzzing is.</p>
-<p>We beginnen met de installatie van Hydra. Ga naar een geschikte map (maak bijv. een map "software-security" aan in je homedir) en voer één voor één de volgende commmando's uit:
+<h3 id="hydra-installeren-1-voor-windows">Hydra installeren (1 - voor Windows)<a class="headerlink" href="#hydra-installeren-1-voor-windows" title="Permanent link">&para;</a></h3>
+<p>Windows-gebruikers moeten eerst het <a href="https://learn.microsoft.com/en-us/windows/wsl/install">Windows Subsystem for Linux</a> (WSL) installeren. De standaard-distributie, Ubuntu, is prima. Na installatie beschik je over een Linux-prompt en kun je onderstaande opdrachten uitvoeren (en nog veel meer - zo heb je WSL nodig om Docker, waar we volgende week mee bezig gaan, te kunnen draaien). <a href="https://overthewire.org/wargames/">Wargames van Over the Wire</a> is een web-app waar je interactief veel over het gebruiken van verschillende Linuxtools kunt leren. Een must voor ICT'ers. Advies is om te beginnen met de Bandit-wargame. Lees <a href="https://www.howtogeek.com/426749/how-to-access-your-linux-wsl-files-in-windows-10/">hier</a> hoe je bestanden van en naar je Linux-omgeving kunt kopiëren.</p>
+<h3 id="hydra-installeren-2">Hydra installeren (2)<a class="headerlink" href="#hydra-installeren-2" title="Permanent link">&para;</a></h3>
+<p>We beginnen nu met de installatie van Hydra. Ga naar een geschikte map (maak bijv. een map "software-security" aan in je homedir) en voer één voor één de volgende commmando's uit:
 <div class="highlight"><pre><span></span><code>git clone https://github.com/vanhauser-thc/thc-hydra.git hydra
 cd hydra
 ./configure
@@ -712,8 +727,9 @@ make install
 </code></pre></div></p>
 <h3 id="mogelijke-problemen-en-oplossingen-bij-de-hydra-installatie">Mogelijke problemen en oplossingen bij de Hydra-installatie<a class="headerlink" href="#mogelijke-problemen-en-oplossingen-bij-de-hydra-installatie" title="Permanent link">&para;</a></h3>
 <p>Mochten git, gcc en/of make nog niet geïnstalleerd zijn, installeer deze dan eerst via je package manager (bijvoorbeeld Ubuntu Linux of WSL: <code>sudo apt-get install git gcc make</code>).</p>
+<p>Het kan soms helpen om allereerst de package-manager zelf te updaten: <code>sudo apt-get update</code></p>
 <p>Mocht je tijdens het draaien van Hydra de melding krijgen dat bepaalde opties niet beschikbaar zijn, dan kan het helpen om vóór de installatie een aantal extra pakketten te installeren: <code>sudo apt-get install libssl-dev libssh-dev libidn11-dev libpcre3-dev libgtk2.0-dev libmysqlclient-dev libpq-dev libsvn-dev firebird2.1-dev libncp-dev</code></p>
-<p>Mocht je tijdens het clonen van de github repository de foutmelding "Unable to resolve github.com in WSL" krijgen, dan de volgende stappen doorlopen om de default nameserver aan te passen:</p>
+<p>Mocht je tijdens het clonen van de Github-repository de foutmelding "Unable to resolve github.com in WSL" krijgen, dan de volgende stappen doorlopen om de default nameserver aan te passen:</p>
 <ul>
 <li><code>sudo nano /etc/resolv.conf</code></li>
 <li>comment originele nameserver uit (met #)</li>
@@ -725,7 +741,7 @@ nameserver 8.8.4.4
 </ul>
 <h3 id="hydra-draaien-op-een-webapp">Hydra draaien op een webapp<a class="headerlink" href="#hydra-draaien-op-een-webapp" title="Permanent link">&para;</a></h3>
 <p>Voorbeeld-commando op het login-formulier van een lokale Flask-webapp, draaiend op poort 5000. Hydra probeert hier voor gebruiker "henk" alle wachtwoorden met 4 cijfers. Bestudeer de <a href="https://github.com/vanhauser-thc/thc-hydra">documentatie van Hydra</a> om te leren hoe de -x-optie en de andere parameters precies werken.</p>
-<p><code>hydra -l henk -x 4:4:1 127.0.0.1 http-post-form -s 5000 "/login:username=^USER^&amp;password=^PASS^:Inlog niet correct"</code></p>
+<p><code>hydra -l henk -x 4:4:1 127.0.0.1 -s 5000 http-post-form "/login:username=^USER^&amp;password=^PASS^:Inlog niet correct"</code></p>
 <p>Let op: ondanks dat het misschien op meerdere regels wordt weergegeven, is bovenstaande één commmando dat op één regel dient te worden uitgevoerd!</p>
 <p>Om dit werkend te krijgen, zijn er enkele aandachtspunten:</p>
 <ul>
