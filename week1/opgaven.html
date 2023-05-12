@@ -741,7 +741,7 @@ nameserver 8.8.4.4
 </ul>
 <h3 id="hydra-draaien-op-een-webapp">Hydra draaien op een webapp<a class="headerlink" href="#hydra-draaien-op-een-webapp" title="Permanent link">&para;</a></h3>
 <p>Voorbeeld-commando op het login-formulier van een lokale Flask-webapp, draaiend op poort 5000. Hydra probeert hier voor gebruiker "henk" alle wachtwoorden met 4 cijfers. Bestudeer de <a href="https://github.com/vanhauser-thc/thc-hydra">documentatie van Hydra</a> om te leren hoe de -x-optie en de andere parameters precies werken.</p>
-<p><code>hydra -l henk -x 4:4:1 127.0.0.1 -s 5000 http-post-form "/login:username=^USER^&amp;password=^PASS^:Inlog niet correct"</code></p>
+<p><code>hydra -l henk@hanze.nl -x 4:4:1 127.0.0.1 -s 5000 http-post-form "/login:email=^USER^&amp;password=^PASS^:Inlog niet correct"</code></p>
 <p>Let op: ondanks dat het misschien op meerdere regels wordt weergegeven, is bovenstaande één commmando dat op één regel dient te worden uitgevoerd!</p>
 <p>Om dit werkend te krijgen, zijn er enkele aandachtspunten:</p>
 <ul>
