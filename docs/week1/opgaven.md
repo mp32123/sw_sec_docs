@@ -17,8 +17,8 @@ We beginnen nu met de installatie van Hydra. Ga naar een geschikte map (maak bij
 git clone https://github.com/vanhauser-thc/thc-hydra.git hydra
 cd hydra
 ./configure
-make
-make install
+sudo make
+sudo make install
 ```
 
 ### Mogelijke problemen en oplossingen bij de Hydra-installatie
@@ -26,7 +26,7 @@ Mochten git, gcc en/of make nog niet geïnstalleerd zijn, installeer deze dan ee
 
 Het kan soms helpen om allereerst de package-manager zelf te updaten: ``sudo apt-get update``
 
-Mocht je tijdens het draaien van Hydra de melding krijgen dat bepaalde opties niet beschikbaar zijn, dan kan het helpen om vóór de installatie een aantal extra pakketten te installeren: ``sudo apt-get install libssl-dev libssh-dev libidn11-dev libpcre3-dev libgtk2.0-dev libmysqlclient-dev libpq-dev libsvn-dev firebird2.1-dev libncp-dev``
+Mocht je tijdens het draaien van Hydra de melding krijgen dat bepaalde opties niet beschikbaar zijn, dan kan het helpen om vóór de installatie een aantal extra pakketten te installeren: ``sudo apt-get install libssl-dev libssh-dev libidn11-dev libpcre3-dev libgtk2.0-dev libmysqlclient-dev libpq-dev libsvn-dev``
 
 Mocht je tijdens het clonen van de Github-repository de foutmelding "Unable to resolve github.com in WSL" krijgen, dan de volgende stappen doorlopen om de default nameserver aan te passen:
 
@@ -41,7 +41,7 @@ nameserver 8.8.4.4
 
 ### Hydra draaien op een webapp
 
-Voorbeeld-commando op het login-formulier van een lokale Flask-webapp, draaiend op poort 5000. Hydra probeert hier voor gebruiker "henk" alle wachtwoorden met 4 cijfers. Bestudeer de [documentatie van Hydra](https://github.com/vanhauser-thc/thc-hydra) om te leren hoe de -x-optie en de andere parameters precies werken.
+Voorbeeld-commando op het login-formulier van een lokale Flask-webapp, draaiend op poort 5000. Hydra probeert hier voor gebruiker (email) "henk@hanze.nl" alle wachtwoorden met 4 cijfers. Bestudeer de [documentatie van Hydra](https://github.com/vanhauser-thc/thc-hydra) om te leren hoe de -x-optie en de andere parameters precies werken.
 
 ``hydra -l henk@hanze.nl -x 4:4:1 127.0.0.1 -s 5000 http-post-form "/login:email=^USER^&password=^PASS^:Inlog niet correct"``
 
@@ -72,8 +72,8 @@ Download en installeer de software. De volgende commando’s kunnen hiervoor op 
 ```
 git clone https://gitlab.com/akihe/radamsa.git radamsa
 cd radamsa
-make
-make install
+sudo make
+sudo make install
 ```
 
 Kijk of radamsa goed werkt door te typen: ``radamsa --help`` of: ``echo "Dit is een teststring" | radamsa``
