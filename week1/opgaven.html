@@ -722,13 +722,13 @@
 <div class="highlight"><pre><span></span><code>git clone https://github.com/vanhauser-thc/thc-hydra.git hydra
 cd hydra
 ./configure
-make
-make install
+sudo make
+sudo make install
 </code></pre></div></p>
 <h3 id="mogelijke-problemen-en-oplossingen-bij-de-hydra-installatie">Mogelijke problemen en oplossingen bij de Hydra-installatie<a class="headerlink" href="#mogelijke-problemen-en-oplossingen-bij-de-hydra-installatie" title="Permanent link">&para;</a></h3>
 <p>Mochten git, gcc en/of make nog niet geïnstalleerd zijn, installeer deze dan eerst via je package manager (bijvoorbeeld Ubuntu Linux of WSL: <code>sudo apt-get install git gcc make</code>).</p>
 <p>Het kan soms helpen om allereerst de package-manager zelf te updaten: <code>sudo apt-get update</code></p>
-<p>Mocht je tijdens het draaien van Hydra de melding krijgen dat bepaalde opties niet beschikbaar zijn, dan kan het helpen om vóór de installatie een aantal extra pakketten te installeren: <code>sudo apt-get install libssl-dev libssh-dev libidn11-dev libpcre3-dev libgtk2.0-dev libmysqlclient-dev libpq-dev libsvn-dev firebird2.1-dev libncp-dev</code></p>
+<p>Mocht je tijdens het draaien van Hydra de melding krijgen dat bepaalde opties niet beschikbaar zijn, dan kan het helpen om vóór de installatie een aantal extra pakketten te installeren: <code>sudo apt-get install libssl-dev libssh-dev libidn11-dev libpcre3-dev libgtk2.0-dev libmysqlclient-dev libpq-dev libsvn-dev</code></p>
 <p>Mocht je tijdens het clonen van de Github-repository de foutmelding "Unable to resolve github.com in WSL" krijgen, dan de volgende stappen doorlopen om de default nameserver aan te passen:</p>
 <ul>
 <li><code>sudo nano /etc/resolv.conf</code></li>
@@ -740,7 +740,7 @@ nameserver 8.8.4.4
 <li>Opnieuw proberen, of bijv. eerst 'ping google.com'</li>
 </ul>
 <h3 id="hydra-draaien-op-een-webapp">Hydra draaien op een webapp<a class="headerlink" href="#hydra-draaien-op-een-webapp" title="Permanent link">&para;</a></h3>
-<p>Voorbeeld-commando op het login-formulier van een lokale Flask-webapp, draaiend op poort 5000. Hydra probeert hier voor gebruiker "henk" alle wachtwoorden met 4 cijfers. Bestudeer de <a href="https://github.com/vanhauser-thc/thc-hydra">documentatie van Hydra</a> om te leren hoe de -x-optie en de andere parameters precies werken.</p>
+<p>Voorbeeld-commando op het login-formulier van een lokale Flask-webapp, draaiend op poort 5000. Hydra probeert hier voor gebruiker (email) "<a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#104;&#101;&#110;&#107;&#64;&#104;&#97;&#110;&#122;&#101;&#46;&#110;&#108;">&#104;&#101;&#110;&#107;&#64;&#104;&#97;&#110;&#122;&#101;&#46;&#110;&#108;</a>" alle wachtwoorden met 4 cijfers. Bestudeer de <a href="https://github.com/vanhauser-thc/thc-hydra">documentatie van Hydra</a> om te leren hoe de -x-optie en de andere parameters precies werken.</p>
 <p><code>hydra -l henk@hanze.nl -x 4:4:1 127.0.0.1 -s 5000 http-post-form "/login:email=^USER^&amp;password=^PASS^:Inlog niet correct"</code></p>
 <p>Let op: ondanks dat het misschien op meerdere regels wordt weergegeven, is bovenstaande één commmando dat op één regel dient te worden uitgevoerd!</p>
 <p>Om dit werkend te krijgen, zijn er enkele aandachtspunten:</p>
@@ -759,8 +759,8 @@ nameserver 8.8.4.4
 <p>Download en installeer de software. De volgende commando’s kunnen hiervoor op Linux, Apple of WSL één voor één uitgevoerd worden via de terminal. Mochten git, gcc en/of make nog niet geïnstalleerd zijn, installeer deze dan eerst via je package manager (bijvoorbeeld Ubuntu Linux of WSL: <code>sudo apt-get install git gcc make</code>).</p>
 <div class="highlight"><pre><span></span><code>git clone https://gitlab.com/akihe/radamsa.git radamsa
 cd radamsa
-make
-make install
+sudo make
+sudo make install
 </code></pre></div>
 <p>Kijk of radamsa goed werkt door te typen: <code>radamsa --help</code> of: <code>echo "Dit is een teststring" | radamsa</code></p>
 <h3 id="voorbeeld-1">Voorbeeld 1<a class="headerlink" href="#voorbeeld-1" title="Permanent link">&para;</a></h3>
