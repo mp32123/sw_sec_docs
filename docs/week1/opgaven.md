@@ -4,13 +4,15 @@
 
 Deze opdracht kan op Linux, Mac en Windows (WSL) worden uitgevoerd.
 
-### Hydra installeren
-
-**Windows-gebruikers** moeten eerst het [Windows Subsystem for Linux](https://learn.microsoft.com/en-us/windows/wsl/install) (WSL) installeren. De standaard-distributie, Ubuntu, is prima. Na installatie beschik je over een Linux-prompt en kun je onderstaande opdrachten uitvoeren (en nog veel meer. https://overthewire.org/wargames/ is een web-app waar je interactief veel over het gebruiken van verschillende linux tools kunt leren. Een must voor ict'ers. Advies is om te beginnen met de Bandit wargame.). Bovendien heb je een WSL-installatie nodig om Docker, waar we volgende week mee bezig gaan, te kunnen draaien. Lees [hier](https://www.howtogeek.com/426749/how-to-access-your-linux-wsl-files-in-windows-10/) hoe je bestanden van en naar je Linux-omgeving kunt kopiëren.
-
 [Hydra](https://github.com/vanhauser-thc/thc-hydra) is een tool om wachtwoorden mee te brute-forcen, wat ook een vorm van fuzzing is.
 
-We beginnen met de installatie van Hydra. Ga naar een geschikte map (maak bijv. een map "software-security" aan in je homedir) en voer één voor één de volgende commmando's uit:
+### Hydra installeren (1 - voor Windows)
+
+Windows-gebruikers moeten eerst het [Windows Subsystem for Linux](https://learn.microsoft.com/en-us/windows/wsl/install) (WSL) installeren. De standaard-distributie, Ubuntu, is prima. Na installatie beschik je over een Linux-prompt en kun je onderstaande opdrachten uitvoeren (en nog veel meer - zo heb je WSL nodig om Docker, waar we volgende week mee bezig gaan, te kunnen draaien). [Wargames van Over the Wire](https://overthewire.org/wargames/) is een web-app waar je interactief veel over het gebruiken van verschillende Linuxtools kunt leren. Een must voor ICT'ers. Advies is om te beginnen met de Bandit-wargame. Lees [hier](https://www.howtogeek.com/426749/how-to-access-your-linux-wsl-files-in-windows-10/) hoe je bestanden van en naar je Linux-omgeving kunt kopiëren.
+
+### Hydra installeren (2)
+
+We beginnen nu met de installatie van Hydra. Ga naar een geschikte map (maak bijv. een map "software-security" aan in je homedir) en voer één voor één de volgende commmando's uit:
 ```
 git clone https://github.com/vanhauser-thc/thc-hydra.git hydra
 cd hydra
@@ -22,9 +24,11 @@ make install
 ### Mogelijke problemen en oplossingen bij de Hydra-installatie
 Mochten git, gcc en/of make nog niet geïnstalleerd zijn, installeer deze dan eerst via je package manager (bijvoorbeeld Ubuntu Linux of WSL: ``sudo apt-get install git gcc make``).
 
+Het kan soms helpen om allereerst de package-manager zelf te updaten: ``sudo apt-get update``
+
 Mocht je tijdens het draaien van Hydra de melding krijgen dat bepaalde opties niet beschikbaar zijn, dan kan het helpen om vóór de installatie een aantal extra pakketten te installeren: ``sudo apt-get install libssl-dev libssh-dev libidn11-dev libpcre3-dev libgtk2.0-dev libmysqlclient-dev libpq-dev libsvn-dev firebird2.1-dev libncp-dev``
 
-Mocht je tijdens het clonen van de github repository de foutmelding "Unable to resolve github.com in WSL" krijgen, dan de volgende stappen doorlopen om de default nameserver aan te passen:
+Mocht je tijdens het clonen van de Github-repository de foutmelding "Unable to resolve github.com in WSL" krijgen, dan de volgende stappen doorlopen om de default nameserver aan te passen:
 
 * ``sudo nano /etc/resolv.conf``
 * comment originele nameserver uit (met #)
@@ -39,7 +43,7 @@ nameserver 8.8.4.4
 
 Voorbeeld-commando op het login-formulier van een lokale Flask-webapp, draaiend op poort 5000. Hydra probeert hier voor gebruiker "henk" alle wachtwoorden met 4 cijfers. Bestudeer de [documentatie van Hydra](https://github.com/vanhauser-thc/thc-hydra) om te leren hoe de -x-optie en de andere parameters precies werken.
 
-``hydra -l henk -x 4:4:1 127.0.0.1 http-post-form -s 5000 "/login:username=^USER^&password=^PASS^:Inlog niet correct"``
+``hydra -l henk -x 4:4:1 127.0.0.1 -s 5000 http-post-form "/login:username=^USER^&password=^PASS^:Inlog niet correct"``
 
 Let op: ondanks dat het misschien op meerdere regels wordt weergegeven, is bovenstaande één commmando dat op één regel dient te worden uitgevoerd!
 
