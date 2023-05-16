@@ -8,7 +8,7 @@ Om ZAP te leren kennen, kun je beginnen met de "Automated scan". Als OWASP ZAP i
 
 Als je kiest voor "Manual Explore" kun je met een browser naar keuze door een opgegeven website navigeren, terwijl alle requests worden gelogd en eventueel (met aangebrachte wijzigingen) later opnieuw verzonden kunnen worden.
  
-Aanvullende informatie is [hier](https://github.com/zaproxy/zap-core-help/wiki/HelpStartProxies) te vinden.
+Aanvullende informatie is [hier](https://www.zaproxy.org/docs/desktop/start/) te vinden.
 
 ## Installatie van Docker
 We gaan in deze opdracht aan de slag met de Juice Shop-webapplicatie, die een aantal grote beveiligingslekken heeft. De Juice Shop-applicatie gaan we via Docker draaien op je computer. Hierna gaan we beveiligingslekken opsporen in de applicatie.
@@ -26,7 +26,12 @@ docker run --rm -p 3000:3000 bkimminich/juice-shop
 
 Als alles goed is gegaan, kun je de applicatie bereiken via [http://localhost:3000](http://localhost:3000) in de browser.
 
-Let even op het gebruik van het Docker **run**-commando. Dit is een combinatie van **create** (container aanmaken) en **start** (container starten). De parameter --rm zorgt ervoor dat een eventuele bestaande container eerst wordt weggegooid. Als je de Juice Shop vaker wilt openen en sluiten, kun je beter eenmalig **create** doen en dan met **start** en **stop** steeds dezelfde container activeren en weer afsluiten.
+Let even op het gebruik van het Docker **run**-commando. Dit is een combinatie van **create** (container aanmaken) en **start** (container starten). De parameter --rm zorgt ervoor dat een eventuele bestaande container eerst wordt weggegooid. Als je de Juice Shop vaker wilt openen en sluiten, kun je beter eenmalig **create** doen en dan met **start** en **stop** steeds dezelfde container activeren en weer afsluiten:
+```
+docker create -p 3000:3000 --name juiceshop bkimminich/juice-shop
+docker start juiceshop
+docker stop juiceshop
+```
 
 Klik eerst eens door de Juice Shop heen en plaats bijvoorbeeld een bestelling.
   
