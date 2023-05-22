@@ -19,7 +19,7 @@
         <link rel="next" href="../week4/opgaven.html">
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.12">
+      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.14">
     
     
       
@@ -629,15 +629,15 @@
 
 <h1 id="opgaven-week-3-security-tooling-in-software-development">Opgaven week 3: security tooling in software development<a class="headerlink" href="#opgaven-week-3-security-tooling-in-software-development" title="Permanent link">&para;</a></h1>
 <p>Deze week gaan we niet bezig met een technische opgave, maar gaan we zelfstandig onderzoek doen naar een belangrijke vraag voor de praktijk: wat is de toegevoegde waarde van security tooling in het proces van softwareontwikkeling? </p>
-<p>Software-ontwikkelingsprojecten bestaan uit meerdere trajecten, en omvatten meer dan alleen ontwikkeling en testen: voor elk project moet rekening worden gehouden met regionale en internationale wetgeving en standaarden, die niet alleen een impact kunnen hebben op de requirements van het project, maar ook op verscheidene aspecten van security. Deployment en operationeel onderhoud zijn daarnaast ook onderdeel van het proces van softwareontwikkeling, en in moderne omgevingen maken DevOps teams (een werkmethode waarbij development en post-deployment onderhoud &amp; support door hetzelfde team worden uitgevoerd) de grens tussen Software Security en IT Security nóg waziger. </p>
-<p>Tijdens deze opdracht kijken we naar de niche die software security tooling kan vullen in een softwareontwikkelingsproject, en voor welke aspecten het minder of helemaal niet nuttig is. Het is voor een bedrijf namelijk heel makkelijk om veel geld uit te geven aan tooling die in de praktijk weinig toegevoegde waarde heeft, maar tegelijkertijd zijn sommige aspecten van software security nagenoeg onmogelijk zonder het gebruik van de juiste tooling. </p>
+<p>Software-ontwikkelingsprojecten bestaan uit meerdere trajecten en omvatten meer dan alleen ontwikkeling en testen: voor elk project moet rekening worden gehouden met regionale en internationale wetgeving en standaarden, die niet alleen een impact kunnen hebben op de requirements van het project, maar ook op verscheidene aspecten van security. Deployment en operationeel onderhoud zijn daarnaast ook onderdeel van het proces van softwareontwikkeling en in moderne omgevingen maken DevOps-teams (een werkmethode waarbij development en post-deployment onderhoud &amp; support door hetzelfde team worden uitgevoerd) de grens tussen Software Security en IT Security nóg waziger. </p>
+<p>Tijdens deze opdracht kijken we naar de niche die software security tooling kan vullen in een softwareontwikkelingsproject en voor welke aspecten het minder of helemaal niet nuttig is. Het is voor een bedrijf namelijk heel makkelijk om veel geld uit te geven aan tooling die in de praktijk weinig toegevoegde waarde heeft, maar tegelijkertijd zijn sommige aspecten van software security nagenoeg onmogelijk zonder het gebruik van de juiste tooling. </p>
 <h2 id="opdracht-1">Opdracht 1<a class="headerlink" href="#opdracht-1" title="Permanent link">&para;</a></h2>
 <p>Voor je begint met je daadwerkelijke analyse is het bijzonder handig om wat extra informatie tot je te nemen. Lees vooral eens de onderstaande bronnen door:</p>
-<ol>
+<ul>
 <li>De <a href="https://www.bsimm.com/framework/">BSIMM software security activity list</a> is een software security framework dat in de praktijk vaak gebruikt wordt. Het framework is onderverdeeld in vier domeinen met elk drie aspecten van het softwareontwikkelingsproces. Onder elk van deze aspecten kun je vervolgens lezen over de verscheidene activiteiten die in de praktijk worden gebruikt. </li>
-<li>In <a href="https://www.microsoft.com/en-us/download/details.aspx?id=12379">deze whitepaper van de versimpelde implementatie van Microsoft’s SDL</a> kun je lezen over de verschillende eisen die Microsoft stelt aan hun eigen ontwikkelproces. </li>
-</ol>
-<p>Niet alles wat in deze bronnen staat is trouwens perse een goed idee, en je moet ze vooral ook niet interpreteren als een harde eis waar elk softwareontwikkelingsproject aan moet voldoen. Het zijn meningen en voorbeelden - al zij het meningen en voorbeelden van teams met ervaring. Probeer tijdens het lezen van de bronnen alvast te denken aan hoe je de informatie kunt gebruiken om opdracht 2 te maken. Hiervoor kun je jezelf de volgende vragen stellen:</p>
+<li>In <a href="https://www.microsoft.com/en-us/download/details.aspx?id=12379">deze whitepaper van de versimpelde implementatie van Microsofts SDL</a> kun je lezen over de verschillende eisen die Microsoft stelt aan hun eigen ontwikkelproces. </li>
+</ul>
+<p>Niet alles wat in deze bronnen staat is trouwens per se een goed idee, en je moet ze vooral ook niet interpreteren als een harde eis waar elk softwareontwikkelingsproject aan moet voldoen. Het zijn meningen en voorbeelden - al zij het meningen en voorbeelden van teams met ervaring. Probeer tijdens het lezen van de bronnen alvast te denken aan hoe je de informatie kunt gebruiken om opdracht 2 te maken. Hiervoor kun je jezelf de volgende vragen stellen:</p>
 <ol>
 <li>Lijkt er een bepaalde soort activiteit binnen het softwareontwikkelingsproces te zijn waar vaak tooling bij wordt gebruikt? Waarom is dit denk je? </li>
 <li>Zijn er ook activiteiten waar juist nooit enige vorm van tooling of automatisering wordt toegepast? Is er een gemene deler tussen deze activiteiten? </li>
@@ -645,41 +645,58 @@
 <p>Verwacht je dat er een verschil is tussen de hoeveelheid en soorten tools die worden gebruikt in verschillende software projecten? Onderstaande enkele voorbeelden van verschillende projecten:</p>
 <p>A. Een Agile/Scrum-project waarbij een boel nieuwe code wordt geschreven voor Node.js</p>
 <p>B. Een project dat een gigantische C++ codebase uit 1992 moet onderhouden</p>
-<p>C. Een C-project voor medische apparatuur die een kritische rol speelt in patiëntveiligheid</p>
-<p>D. Een open-source Python-project die GNU GPL code schrijft en publiceert op GitHub</p>
+<p>C. Een C-project voor medische apparatuur die een kritieke rol speelt in patiëntveiligheid</p>
+<p>D. Een open-source Python-project dat GNU GPL code schrijft en publiceert op GitHub</p>
 <p>E. Een topgeheim militair project in Erlang</p>
 </li>
 </ol>
 <h3 id="wat-moet-je-inleveren">Wat moet je inleveren?<a class="headerlink" href="#wat-moet-je-inleveren" title="Permanent link">&para;</a></h3>
-<p>Kopieer de bovenstaande vragen en geef daarop antwoord. Voor vraag 3 wordt niet verwacht dat je diepgaande kennis van de relevante talen, projectvormen, en bedrijfsprocessen hebt of toont, maar probeer met de kennis die je wel hebt zo oprecht mogelijk de vragen te beantwoorden: maak een schatting of extrapoleer op basis van de kennis die je wél hebt. </p>
+<p>Kopieer bovenstaande drie vragen en geef daarop antwoord. Voor vraag 3 wordt niet verwacht dat je diepgaande kennis van de relevante talen, projectvormen en bedrijfsprocessen hebt of toont, maar probeer met de kennis die je wel hebt zo oprecht mogelijk de vragen te beantwoorden: maak een schatting of extrapoleer op basis van de kennis die je wél hebt. </p>
 <p>Opdracht 1 wordt beoordeeld met een voldoende/onvoldoende op basis van getoonde inzet; je cijfer van deze week wordt vervolgens bepaald door opdracht 2. Voor opdracht 1 geldt geen ondergrens qua woordental, maar er geldt een bovengrens van <strong>500 woorden</strong> (exclusief de vragen). </p>
 <h2 id="opdracht-2">Opdracht 2<a class="headerlink" href="#opdracht-2" title="Permanent link">&para;</a></h2>
-<p>Kies één commerciële of niet-commerciële tool die zich hoofdzakelijk richt op het verbeteren van software security. Hieronder staat een kleine lijst voorbeelden om uit te kiezen, maar je bent vrij om zelf een andere tool te vinden. Let er wel op dat wanneer je zelf een tool kiest, dit een is die een directe impact heeft op softwareontwikkeling of -onderhoud. Kies dus niet iets als een firewall, VPN, IDS, of antivirussoftware. Bij twijfel kun je altijd aan je docent vragen of de software geschikt is.</p>
-<p>Op Blackboard staat een lijst die vaker wordt geüpdate, inclusief een link die je als startpunt van je leerproces kunt gebruiken.</p>
+<p>Kies één commerciële of niet-commerciële tool die zich hoofdzakelijk richt op het verbeteren van software security. Hieronder staat een lijst voorbeelden om uit te kiezen, maar je bent vrij om zelf een andere tool te vinden. Sommige zijn voorzien van een link die je als startpunt van je leerproces kunt gebruiken. Let er wel op dat wanneer je zelf een tool kiest, dit er een is die een directe impact heeft op softwareontwikkeling of -onderhoud. Kies dus niet iets als een firewall, VPN, IDS, of antivirussoftware. Bij twijfel kun je altijd aan je docent vragen of de software geschikt is.</p>
 <p><strong>Vulnerability Scanners</strong></p>
 <ul>
-<li>Acunetix</li>
-<li>HP Webinspect</li>
-<li>Nessus</li>
+<li><a href="https://www.softwaretestinghelp.com/acunetix-web-vulnerability-scanner-wvs-review/">Acunetix</a></li>
+<li><a href="https://medium.com/@PenTest_duck/offensive-nessus-installation-simple-windows-vulnerability-scanning-2d4d707859ae">Nessus</a></li>
+<li>OWASP ZAP (is toegestaan, maar omdat deze tool al enigszins bekend is, verwachten we hier wel wat extra diepgang)</li>
 </ul>
 <p><strong>Security Testing Frameworks</strong></p>
 <ul>
-<li>Metasploit</li>
+<li><a href="https://medium.com/swlh/intro-to-metasploit-19e3d07ff725">Metasploit</a></li>
 </ul>
-<p><strong>Static Analysis</strong></p>
+<p><strong><a href="https://unicorn-dev.medium.com/the-way-static-analyzers-fight-against-false-positives-and-why-they-do-it-743de1f2a1bd">Static Analysis</a></strong></p>
 <ul>
-<li>PyLint</li>
-<li>Checkmarx</li>
-<li>Coverity </li>
-<li>snyk</li>
-<li>Veracode</li>
+<li><a href="https://medium.com/@ryangordon210/build-a-python-ci-cd-system-code-quality-with-pylint-f6dea78461c6">PyLint</a></li>
+<li><a href="https://www.synopsys.com/blogs/software-security/coverity-setting-the-standard/">Coverity</a></li>
+<li><a href="https://eldadfux.medium.com/this-is-how-we-use-snyk-to-protect-our-open-source-projects-from-evil-dependencies-6ee258ca5815">snyk</a></li>
+<li><a href="https://betterprogramming.pub/how-to-improve-code-quality-with-sonarqube-465744eb66db">SonarQube</a></li>
+<li><a href="https://medium.com/@AccompliceVC/the-veracode-journey-origin-and-introspection-13c0c74b82e2">Veracode</a></li>
+</ul>
+<p><strong>Source code compliance scanners / Software Composition Analysis (SCA)</strong></p>
+<ul>
+<li><a href="https://www.synopsys.com/software-integrity/security-testing/software-composition-analysis.html">Black Duck</a></li>
 </ul>
 <p><strong>Threat Modeling Tools</strong></p>
 <ul>
-<li>Attack Trees</li>
-<li>Microsoft SDL</li>
+<li><a href="https://medium.com/@tashjnorris/using-threat-models-for-incidents-and-how-incidents-helped-me-like-attack-trees-a27eb65f9039">Attack Trees</a></li>
+<li><a href="https://www.youtube.com/watch?v=wUt8gVxmO-0">Microsoft SDL</a></li>
 </ul>
-<p>Verdiep je na het selecteren van een tool in de functionaliteit ervan d.m.v. feature lists, whitepapers, handleidingen, demovideo’s, Medium-artikelen etc. Let hierbij op de redenen die worden gegeven voor waarom je het product zou moeten gaan gebruiken, wat het precies doet (“scanning” is een nogal vage term...) en wat de tool belooft op te leveren. 
+<p><strong>Configuratiecheckers</strong></p>
+<ul>
+<li><a href="https://www.blackhillsinfosec.com/testssl-sh-assessing-ssltls-configurations-at-scale/">testssl.sh</a></li>
+<li>Docker Bench for Security</li>
+</ul>
+<p><strong>Load-testers</strong></p>
+<ul>
+<li>Zie <a href="https://theqalead.com/tools/load-testing-tools/">https://theqalead.com/tools/load-testing-tools/</a></li>
+</ul>
+<p><strong>Modellen (beide aangestipt in het HC)</strong></p>
+<ul>
+<li><a href="https://www.synopsys.com/software-integrity/software-security-services/bsimm-maturity-model.html">BSIMM</a></li>
+<li><a href="https://owaspsamm.org/">OWASP SAMM</a></li>
+</ul>
+<p>Verdiep je na het selecteren van een tool in de functionaliteit ervan d.m.v. feature lists, whitepapers, handleidingen, demovideo’s, Medium-artikelen etc. Let hierbij op de redenen die worden gegeven voor waarom je het product zou moeten gaan gebruiken, wat het precies doet ("scanning" is een nogal vage term...) en wat de tool belooft op te leveren. 
  </p>
 <h3 id="wat-moet-je-inleveren_1">Wat moet je inleveren?<a class="headerlink" href="#wat-moet-je-inleveren_1" title="Permanent link">&para;</a></h3>
 <p>Beantwoord de onderstaande vragen. Kopieer de vragen en schrijf je antwoord daar direct onder. Je hoeft slechts een paar zinnen per vraag te schrijven, maar <strong>let erop dat je antwoord duidelijk laat zien dat je een doordachte analyse hebt uitgevoerd</strong>. Let voor een voldoende hierbij ook goed op dat je de waarom-vragen beantwoordt.</p>
@@ -687,7 +704,7 @@
 <li>Welke tool heb je onderzocht? </li>
 <li>In welk deel van het softwareontwikkelingsproces kan de tool het beste worden toegepast (bijv. projectbeheer, productbeheer, testen, deployment, post-deployment support)? Waarom juist daar en niet een ander deel? Onderbouw je antwoord a.d.h.v. de kwaliteiten &amp; gebreken van de tool.</li>
 <li>Noem minstens twee werkzaamheden binnen dit deel van het softwareontwikkelingsproces die wel moeten gebeuren, maar waar de tool niet bij helpt, maar die wel moeten gebeuren. Waarom past de tool hier niet bij? </li>
-<li>Leg uit hoe de tool werkt vanuit een technisch perspectief. M.a.w.: omschrijf de onderliggende technieken die de tool gebruikt om zijn functionaliteit te leveren. <em>Bijvoorbeeld: Radamsa is een generator voor fuzzing testcases. Deze tool werkt door a.d.h.v van een set mogelijke wijzigingen (e.g. bit flipping, byte insertion, line deletion, etc.) een gegeven string te muteren. Door vele verschillende versies van deze mutaties te genereren bouwt Radamsa een representatieve set mogelijke mutaties van een realistische inputstring.</em></li>
+<li>Leg uit hoe de tool werkt vanuit een technisch perspectief. M.a.w.: omschrijf de onderliggende technieken die de tool gebruikt om zijn functionaliteit te leveren. <em>Bijvoorbeeld: Radamsa is een generator voor fuzzing-testcases. Deze tool werkt door a.d.h.v van een set mogelijke wijzigingen (e.g. bit flipping, byte insertion, line deletion, etc.) een gegeven string te muteren. Door vele verschillende versies van deze mutaties te genereren bouwt Radamsa een representatieve set mogelijke mutaties van een realistische inputstring.</em></li>
 <li>Wat voor risico’s helpt te tool om te voorkomen? Hoe? Onderbouw je antwoord door uit te leggen hoe specifieke functionaliteit van de tool leidt ot mitigatie van de genoemde risico’s. In het geval dat de tool geen risico’s afdekt: onderbouw hoe je tot die conclusie bent gekomen.</li>
 <li>Wat voor problemen zul je rekening mee moeten houden je als je de tool zou willen toepassen in een echt project? En belangrijker: waarom verwacht deze problemen tegen te komen? <em>(Voorbeelden van dergelijke problemen zijn: er is veel specialistische kennis nodig om te tool te gebruiken; kan de tool opschalen voor grotere organisaties; is het veel werk om de tool überhaupt op te zetten; zullen developers de tool willen gebruiken gezien de tijdsdruk waar ze onder werken; vertraagt het andere onderdelen van het ontwikkelproces; kost het veel handmatig werk om te gebruiken of in de bestaande ‘toolchain’ te integreren; past de tool binnen een agile werkproces; etc.)</em></li>
 </ol>
@@ -735,7 +752,7 @@
     <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Gekopieerd naar klembord", "clipboard.copy": "Kopi\u00ebren naar klembord", "search.result.more.one": "1 extra overeenkomst op deze pagina", "search.result.more.other": "# extra overeenkomsten op deze pagina", "search.result.none": "Geen overeenkomende documenten", "search.result.one": "1 overeenkomende document", "search.result.other": "# overeenkomende documenten", "search.result.placeholder": "Typ om te beginnen met zoeken", "search.result.term.missing": "Ontbreekt", "select.version": "Selecteer versie"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.c2be25ad.min.js"></script>
+      <script src="../assets/javascripts/bundle.b4d07000.min.js"></script>
       
         <script src="../js/imgs.js"></script>
       
