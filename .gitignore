@@ -3,3 +3,5 @@
 grab.js
 *.swp
 *-venv
+/src/pract-wk3/__pycache__
+/src/pract-wk3/data/__pycache__

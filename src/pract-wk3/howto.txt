@@ -1,9 +1,9 @@
 pytest
-coverage run -m pytest
-coverage report -m
-evt.: coverage html
+python -m coverage run -m pytest
+python -m coverage report -m
+evt.: python -m coverage html
 
-* Welke tool heb je onderzocht? (zie lijst op Blackboard)
+* Welke tool heb je onderzocht? (zie lijst bij opgave)
 * In welk deel van de SDLC kan de tool toegepast worden?
 * Bij welke werkzaamheden binnen dit deel van de SDLC (zie vraag 2), die wel moeten gebeuren, helpt de tool niet mee?
 * Wat doet de tool precies (vanuit technisch perspectief)?
