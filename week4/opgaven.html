@@ -19,7 +19,7 @@
         <link rel="next" href="../week5/opgaven.html">
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.14">
+      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.15">
     
     
       
@@ -27,10 +27,10 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.85bb2934.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.26e3688c.min.css">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.a6bdf11c.min.css">
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ecc896b0.min.css">
       
       
 
@@ -578,13 +578,12 @@
 <h1 id="opgave-week-4-threat-modelling-van-een-slimme-thermostaat">Opgave week 4: threat modelling van een "slimme" thermostaat<a class="headerlink" href="#opgave-week-4-threat-modelling-van-een-slimme-thermostaat" title="Permanent link">&para;</a></h1>
 <p>We gaan deze week bezig met het bepalen van risico’s van een geheel systeem in een voorbeeldcasus aan de hand van de STRIDE-methode. </p>
 <h2 id="casus">Casus<a class="headerlink" href="#casus" title="Permanent link">&para;</a></h2>
-<p>Een bedrijf heeft contact met je opgenomen om een systeem te ontwerpen voor een nieuwe slimme thermostaat. De thermostaat zal gebruikers in staat stellen om de temperatuur van hun huis op afstand te regelen met behulp van een mobiele app of webinterface. Het bedrijf heeft je de volgende informatie verstrekt ( vul waar nodig aan op een logische manier).</p>
-<p>De thermostaat wordt geïnstalleerd in het huis van een gebruiker en wordt aangesloten op hun AIRCO-systeem. Het wordt van stroom voorzien door een standaard stopcontact en maakt verbinding met internet via Wi-Fi. De thermostaat heeft een temperatuursensor en een touchscreen-interface die de huidige temperatuur weergeeft en gebruikers in staat stelt de gewenste temperatuur in te stellen.</p>
-<p>De thermostaat heeft ook een ingebouwde microfoon en luidspreker waarmee gebruikers het kunnen bedienen met behulp van spraakopdrachten. Het bedrijf van plan om natuurlijke taalverwerkingsalgoritmen te gebruiken om de spraakopdrachten van de gebruiker te begrijpen en hierop gepast te reageren.</p>
-<p>De mobiele app en webinterface zullen gebruikers in staat stellen om de thermostaat op afstand te bedienen. Ze kunnen de huidige temperatuur bekijken en de gewenste temperatuur aanpassen met behulp van het touchscreen of spraakopdrachten. Ze kunnen ook schema's instellen voor wanneer de temperatuur moet veranderen, zoals wanneer ze aan het werk zijn of slapen.</p>
-<p>Alle gebruikersgegevens worden opgeslagen in een cloud gebaseerde database. De database bevat informatie over de thermostaatinstellingen en gebruikspatronen van elke gebruiker. De database is alleen toegankelijk voor geautoriseerde gebruikers. De webinterface maakt gebruik van HTTP richting de gebruikers browser.</p>
-<p>Om de beveiliging van het systeem te waarborgen, wordt de thermostaat ontworpen met een verzegelde behuizing die ongeautoriseerde toegang voorkomt. Op de behuizing zit een sticker met een nummer (25 random getallen) waarmee je een account kunt maken op de webinterface. De behuizing kan geopend worden met een sleutel voor onderhoud, maar hierdoor verbreekt uiteraard het zegel. Tijdens onderhoud kunnen er via USB commando’s verstuurd worden voor bijvoorbeeld updates.</p>
-<p>De microfoon en luidspreker zijn standaard ingeschakeld en gebruikers moeten deze handmatig uitschakelen via de app of webinterface.</p>
+<p>Een bedrijf heeft contact met je opgenomen om een systeem te ontwerpen voor een nieuwe slimme thermostaat. De thermostaat zal gebruikers in staat stellen om de temperatuur van hun huis op afstand te regelen met behulp van een mobiele app of webinterface. Het bedrijf heeft je de volgende informatie verstrekt (vul waar nodig aan op een fantasievolle maar logische manier).</p>
+<p>De thermostaat wordt geïnstalleerd in het huis van een gebruiker en wordt aangesloten op hun airco-systeem. Hij maakt verbinding met internet via Wi-Fi. De thermostaat heeft een temperatuursensor en een touchscreen-interface die de huidige temperatuur weergeeft en gebruikers in staat stelt de gewenste temperatuur in te stellen.</p>
+<p>De thermostaat heeft ook een ingebouwde microfoon en luidspreker waarmee gebruikers hem kunnen bedienen met behulp van spraakopdrachten. Het bedrijf is namelijk van plan om natuurlijke taalverwerkingsalgoritmen te gebruiken om de spraakopdrachten van de gebruiker te begrijpen en hierop gepast te reageren. De microfoon en luidspreker zijn standaard ingeschakeld en gebruikers moeten deze handmatig uitschakelen via de app of webinterface.</p>
+<p>De mobiele app en webinterface zullen gebruikers in staat stellen om de thermostaat waar ook ter wereld op afstand te bedienen. Ze kunnen de huidige temperatuur bekijken en de gewenste temperatuur aanpassen. Ze kunnen ook schema's instellen voor wanneer de temperatuur moet veranderen, zoals wanneer ze aan het werk zijn of slapen.</p>
+<p>Om de beveiliging van het systeem te waarborgen, wordt de thermostaat ontworpen met een verzegelde behuizing die ongeautoriseerde toegang voorkomt. Op de behuizing zit een sticker met een nummer (25 random getallen) waarmee je een account kunt maken op de webinterface. De behuizing kan geopend worden met een sleutel voor onderhoud, maar hierdoor verbreekt uiteraard het zegel. Tijdens onderhoud, door een gecertificeerde monteur, kunnen er via USB commando’s verstuurd worden voor bijvoorbeeld updates.</p>
+<p>Alle gebruikersgegevens worden opgeslagen in een cloud-gebaseerde database. De database bevat informatie over de thermostaatinstellingen en gebruikspatronen van elke gebruiker. De database is alleen toegankelijk voor geautoriseerde gebruikers. De admin-webinterface die de database ontsluit, maakt gebruik van HTTP.</p>
 <p>Het bedrijf is van plan de thermostaat aan te bieden als een abonnementsservice, waarbij gebruikers een maandelijks bedrag betalen om het apparaat te gebruiken en toegang te krijgen tot de app en webinterface. Het bedrijf biedt ook klantenondersteuning en onderhoudsdiensten aan als onderdeel van het abonnement. De klantgegevens worden door de afdeling Facturatie gebruikt om de kosten door te berekenen aan de klant. Deze afdeling maakt via een intern netwerk verbinding met de database over TCP.</p>
 <h2 id="opdrachten">Opdrachten<a class="headerlink" href="#opdrachten" title="Permanent link">&para;</a></h2>
 <p>1. Teken het Data Flow Diagram (DFD) van de beschreven casus. Het diagram moet het systeem op een niveau laten zien dat geschikt is voor een risicoanalyse. Zorg dat de DFD overzichtelijk en navolgbaar neergezet wordt. Dit kan op papier, maar mag uiteraard ook met een softwaretool (zie het lijstje op Blackboard).</p>
