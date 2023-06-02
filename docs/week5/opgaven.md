@@ -16,9 +16,9 @@ Tijdens follow-up afspraken in het ziekenhuis kan de arts de ruggenmergstimulato
 
 1.\ Teken het Data Flow Diagram van de beschreven casus. 
 
-2.\ Definieer welke privacyrisico’s er per interface (plekken waar data over een trust boundary gaat) in de DFD aanwezig zijn. Hierbij komt kijken:
+2.\ Definieer welke privacyrisico’s er **per interface** (plekken waar data over een trust boundary gaat) én **per data store** in de DFD aanwezig zijn. Hierbij komt kijken:
 
-* Wat voor privacygevoelige informatie er over de interface gaat
+* Wat voor privacygevoelige informatie er over de interface gaat of in de data store staat
 * Wat voor probleem het is als deze informatie uitlekt, voor de verschillende stakeholders (bijv. patiënt, systeemverkoper, ziekenhuis)
 * Waar mogelijk gebruik maken van de LINDDUN-afkorting om de types risico’s aan te geven in de DFD: 
     * <b>L</b>inkability: data aan elkaar koppelen
@@ -37,4 +37,4 @@ B. Prioriteer deze risico’s en onderbouw deze prioritering ook.
 
 C. Bedenk zo veel mogelijke maatregelen om deze risico’s te verminderen.
 
-*Tip: je kunt 2, 3A, B en C in één keer maken door gebruik te maken een tabel met kolommen voor de interfaces, de LINDDUN-letters, de scenario's, de stakeholders, de prioriteiten en de tegenmaatregelen. Zie bijvoorbeeld de Excel-sheet die op Blackboard staat. Denk er wel om dat je de **onderbouwing** van je prioritering erbij vermeldt!*
+*Tip: je kunt 2, 3A, B en C in één keer maken door gebruik te maken een tabel met kolommen voor de interfaces / data stores, de LINDDUN-letters, de scenario's, de stakeholders, de prioriteiten en de tegenmaatregelen. Zie bijvoorbeeld de Excel-sheet die op Blackboard staat. Denk er wel om dat je de **onderbouwing** van je prioritering erbij vermeldt!*
