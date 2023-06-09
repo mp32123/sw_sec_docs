@@ -10,7 +10,7 @@ Na een periode in het ziekenhuis krijgt de patiënt een ontvanger mee naar huis,
 
 De server slaat deze gegevens op in een standaard MySQL-database, die toegankelijk is voor de behandelend arts van de patiënt via een desktopcomputer in het ziekenhuis. De arts gebruikt deze gegevens om de voortgang van de patiënt te bewaken.
 
-Tijdens follow-up afspraken in het ziekenhuis kan de arts de ruggenmergstimulator opnieuw programmeren met behulp van een laptop die is aangesloten op een USB RF-module. Het herprogrammeringsproces stelt de arts in staat om de instellingen van het apparaat aan te passen, zoals het aanpassen van de frequentie en intensiteit van de elektrische impulsen, om de pijnverlichting van de patiënt te optimaliseren.
+Tijdens follow-up afspraken in het ziekenhuis kan de arts de ruggenmergstimulator opnieuw programmeren met behulp van een RF-module die aan de computer van de arts verbonden is. Het herprogrammeringsproces stelt de arts in staat om de instellingen van het apparaat aan te passen, zoals de frequentie en intensiteit van de elektrische impulsen, om de pijnverlichting van de patiënt te optimaliseren.
 
 ## Opdrachten
 
