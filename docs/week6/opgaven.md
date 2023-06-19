@@ -24,7 +24,7 @@ _Voorbeeld: er moet een security-expert, intern of van een extern bureau, bij he
 
 ## Oplevering
 
-Maak van bovenstaande punten een lopend verhaal, en voeg een korte inleiding en conclusie toe. Schrijf het in de vorm van een advies aan het management van de firma Initech. Richtlijn: 300 woorden, +/- 10%.
+Maak van bovenstaande punten een lopend verhaal, en voeg een korte inleiding en conclusie toe. Schrijf het in de vorm van een advies aan het management van de firma Initech. Richtlijn: 1 A4'tje, ongeveer 300 woorden.
 
 -----
 <sup>*</sup> _Lees hier, afhankelijk van je gekozen richting, software engineer danwel network & security engineer._
