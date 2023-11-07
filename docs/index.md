@@ -1,4 +1,4 @@
-# Welkom bij Software Security
+# Welkom bij (Software) Security
 
 ## Informatie en opgaven per week
 * [Week 1](week1/opgaven.md)
