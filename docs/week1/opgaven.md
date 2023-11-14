@@ -55,9 +55,11 @@ Om dit werkend te krijgen, zijn er enkele aandachtspunten:
 
 ### De opdracht
 
-Je gaat een (misschien wel je eigen) Webtech- of IOT-applicatie<sup>*</sup> brute-forcen! Maak een gebruiker aan met een simpel wachtwoord, bijvoorbeeld bestaande uit 3 cijfers, en kijk hoelang Hydra erover doet om het te kraken. Maak nu het wachtwoord stapsgewijs complexer door meer cijfers en eventueel letters en leestekens (pas dan wel je -x-parameter aan) toe te voegen, en noteer steeds hoelang Hydra erover doet. Welke wachtwoord-complexiteit vind jij veilig genoeg? Schaalt dit naar een echte productie-applicatie of gelden er dan toch nog strengere eisen, en waarom?
+1\. Je gaat een (misschien wel je eigen) Webtech- of IOT-applicatie<sup>*</sup> brute-forcen! Maak een gebruiker aan met een simpel wachtwoord, bijvoorbeeld bestaande uit 3 cijfers, en kijk hoelang Hydra erover doet om het te kraken. Maak nu het wachtwoord stapsgewijs complexer door meer cijfers en eventueel letters en leestekens (pas dan wel je -x-parameter aan) toe te voegen, en noteer steeds hoelang Hydra erover doet. Welke wachtwoord-complexiteit vind jij veilig genoeg? Schaalt dit naar een echte productie-applicatie of gelden er dan toch nog strengere eisen, en waarom?
 
-Benoem daarnaast drie mogelijkheden om dit soort brute-force-aanvallen tegen te gaan.
+2\. Een andere, vaak succesvollere, aanpak die hackers gebruiken, is een _dictionary attack_. Hierbij wordt een lijst met (gestolen) wachtwoorden gebruikt. Een bekende lijst is RockYou.txt, die we [hier]() al voor je klaar hebben gezet. Pas je Hydra-aanroep aan door het -x-gedeelte weg te halen en te vervangen door -P &lt;pad naar RockYou.txt&gt;. Maak weer een gebruiker aan, ditmaal met een willekeurig wachtwoord uit de lijst. Hoe lang duurt het kraken nu?
+
+3\. Benoem drie mogelijkheden om dit soort brute-force-aanvallen tegen te gaan.
 
 Lever een kort verslagje in over deze "penetration test" (pentest), inclusief screenshots van je Hydra-aanroeptijden, metingen, conclusies en drie tegenmaatregelen. (50%)
 
@@ -94,12 +96,12 @@ Gebruik -n voor het aantal varianten dat je wilt genereren door radamsa en geef 
 Ga naar de map fuzz-cases en bekijk hier de gefuzzde bestanden.
 
 ### De opdracht
-a. Leer radamsa kennen. Ga er mee aan de slag en kijk wat het doet. Raadpleeg hiervoor ook aanvullende informatie op internet en ga in overleg met klasgenoten.
+1\. Leer radamsa kennen. Ga er mee aan de slag en kijk wat het doet. Raadpleeg hiervoor ook aanvullende informatie op internet en ga in overleg met klasgenoten.
 
-b. Kies een aantal bronnen om de fuzzer op toe te passen (minimaal 3). Radamsa kun je toepassen op tekstbestanden, afbeeldingen, codefragmenten etc.  
+2\. Kies een aantal bronnen om de fuzzer op toe te passen (minimaal 3). Radamsa kun je toepassen op tekstbestanden, afbeeldingen, codefragmenten etc.  
 
-c. Pas radamsa toe en analyseer het resultaat. Wat gebeurt er als je gefuzzde bestanden probeert uit te voeren of te laten openen door de applicatie waarmee je ze normaal opent? Kan dit kwaad en/of kan hier misbruik van gemaakt worden?
+3\. Pas radamsa toe en analyseer het resultaat. Wat gebeurt er als je gefuzzde bestanden probeert uit te voeren of te laten openen door de applicatie waarmee je ze normaal opent? Kan dit kwaad en/of kan hier misbruik van gemaakt worden?
 
 Lever een kort verslagje in over deze "fuzz test". Welke bronnen heb je gekozen en waarom? Beschrijf en laat d.m.v. screenshots zien wat je opvalt: wat voor data wordt er gegenereerd en wat is het effect van deze data? (50%)
 
-De beide verslagjes mogen worden samengevoegd in één document en als doc(x) of pdf worden ingeleverd via het Inleverpunt.
+De beide verslagjes (Hydra en Radamsa) mogen worden samengevoegd in één document en als doc(x) of pdf worden ingeleverd via het Inleverpunt.
