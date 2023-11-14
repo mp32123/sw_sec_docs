@@ -850,8 +850,9 @@ nameserver 8.8.4.4
 <li>Windows-gebruikers moeten de webapp draaien vanuit hun WSL/Linux-console, dus <strong>niet</strong> vanuit de Windows-omgeving, anders kan Hydra er niet bij. Zo'n aanroep ziet er dan bijvoorbeeld zo uit: <code>user@LAPTOP:/mnt/c/Users/user/swsec/wc-wk1$ python3 app.py</code></li>
 </ul>
 <h3 id="de-opdracht">De opdracht<a class="headerlink" href="#de-opdracht" title="Permanent link">&para;</a></h3>
-<p>Je gaat een (misschien wel je eigen) Webtech- of IOT-applicatie<sup>*</sup> brute-forcen! Maak een gebruiker aan met een simpel wachtwoord, bijvoorbeeld bestaande uit 3 cijfers, en kijk hoelang Hydra erover doet om het te kraken. Maak nu het wachtwoord stapsgewijs complexer door meer cijfers en eventueel letters en leestekens (pas dan wel je -x-parameter aan) toe te voegen, en noteer steeds hoelang Hydra erover doet. Welke wachtwoord-complexiteit vind jij veilig genoeg? Schaalt dit naar een echte productie-applicatie of gelden er dan toch nog strengere eisen, en waarom?</p>
-<p>Benoem daarnaast drie mogelijkheden om dit soort brute-force-aanvallen tegen te gaan.</p>
+<p>1. Je gaat een (misschien wel je eigen) Webtech- of IOT-applicatie<sup>*</sup> brute-forcen! Maak een gebruiker aan met een simpel wachtwoord, bijvoorbeeld bestaande uit 3 cijfers, en kijk hoelang Hydra erover doet om het te kraken. Maak nu het wachtwoord stapsgewijs complexer door meer cijfers en eventueel letters en leestekens (pas dan wel je -x-parameter aan) toe te voegen, en noteer steeds hoelang Hydra erover doet. Welke wachtwoord-complexiteit vind jij veilig genoeg? Schaalt dit naar een echte productie-applicatie of gelden er dan toch nog strengere eisen, en waarom?</p>
+<p>2. Een andere, vaak succesvollere, aanpak die hackers gebruiken, is een <em>dictionary attack</em>. Hierbij wordt een lijst met (gestolen) wachtwoorden gebruikt. Een bekende lijst is RockYou.txt, die we <a href="">hier</a> al voor je klaar hebben gezet. Pas je Hydra-aanroep aan door het -x-gedeelte weg te halen en te vervangen door -P &lt;pad naar RockYou.txt&gt;. Maak weer een gebruiker aan, ditmaal met een willekeurig wachtwoord uit de lijst. Hoe lang duurt het kraken nu?</p>
+<p>3. Benoem drie mogelijkheden om dit soort brute-force-aanvallen tegen te gaan.</p>
 <p>Lever een kort verslagje in over deze "penetration test" (pentest), inclusief screenshots van je Hydra-aanroeptijden, metingen, conclusies en drie tegenmaatregelen. (50%)</p>
 <p><sup>*</sup> Geen eigen webapp (meer) paraat? <a href="https://github.com/hanze-hbo-ict/sw_sec_docs/tree/master/src/wc-wk1">Hier</a> kun je er eentje vinden die je ook mag gebruiken. Vraag eventueel je werkcollegedocent om hulp om deze aan de praat te krijgen.</p>
 <h2 id="opgave-2-fuzzing-met-radamsa">Opgave 2: Fuzzing met Radamsa<a class="headerlink" href="#opgave-2-fuzzing-met-radamsa" title="Permanent link">&para;</a></h2>
@@ -873,11 +874,11 @@ sudo make install
 <p>Gebruik -n voor het aantal varianten dat je wilt genereren door radamsa en geef daarnaast met -o het pad naar fuzz-cases op. Het commando ziet er dan zo uit: <code>radamsa -n 10 -o 'fuzz-cases/hello-%n.%s' examples/hello.txt</code>
 Ga naar de map fuzz-cases en bekijk hier de gefuzzde bestanden.</p>
 <h3 id="de-opdracht_1">De opdracht<a class="headerlink" href="#de-opdracht_1" title="Permanent link">&para;</a></h3>
-<p>a. Leer radamsa kennen. Ga er mee aan de slag en kijk wat het doet. Raadpleeg hiervoor ook aanvullende informatie op internet en ga in overleg met klasgenoten.</p>
-<p>b. Kies een aantal bronnen om de fuzzer op toe te passen (minimaal 3). Radamsa kun je toepassen op tekstbestanden, afbeeldingen, codefragmenten etc.  </p>
-<p>c. Pas radamsa toe en analyseer het resultaat. Wat gebeurt er als je gefuzzde bestanden probeert uit te voeren of te laten openen door de applicatie waarmee je ze normaal opent? Kan dit kwaad en/of kan hier misbruik van gemaakt worden?</p>
+<p>1. Leer radamsa kennen. Ga er mee aan de slag en kijk wat het doet. Raadpleeg hiervoor ook aanvullende informatie op internet en ga in overleg met klasgenoten.</p>
+<p>2. Kies een aantal bronnen om de fuzzer op toe te passen (minimaal 3). Radamsa kun je toepassen op tekstbestanden, afbeeldingen, codefragmenten etc.  </p>
+<p>3. Pas radamsa toe en analyseer het resultaat. Wat gebeurt er als je gefuzzde bestanden probeert uit te voeren of te laten openen door de applicatie waarmee je ze normaal opent? Kan dit kwaad en/of kan hier misbruik van gemaakt worden?</p>
 <p>Lever een kort verslagje in over deze "fuzz test". Welke bronnen heb je gekozen en waarom? Beschrijf en laat d.m.v. screenshots zien wat je opvalt: wat voor data wordt er gegenereerd en wat is het effect van deze data? (50%)</p>
-<p>De beide verslagjes mogen worden samengevoegd in één document en als doc(x) of pdf worden ingeleverd via het Inleverpunt.</p>
+<p>De beide verslagjes (Hydra en Radamsa) mogen worden samengevoegd in één document en als doc(x) of pdf worden ingeleverd via het Inleverpunt.</p>
 
 
 
