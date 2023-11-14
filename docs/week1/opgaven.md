@@ -57,7 +57,7 @@ Om dit werkend te krijgen, zijn er enkele aandachtspunten:
 
 1\. Je gaat een (misschien wel je eigen) Webtech- of IOT-applicatie<sup>*</sup> brute-forcen! Maak een gebruiker aan met een simpel wachtwoord, bijvoorbeeld bestaande uit 3 cijfers, en kijk hoelang Hydra erover doet om het te kraken. Maak nu het wachtwoord stapsgewijs complexer door meer cijfers en eventueel letters en leestekens (pas dan wel je -x-parameter aan) toe te voegen, en noteer steeds hoelang Hydra erover doet. Welke wachtwoord-complexiteit vind jij veilig genoeg? Schaalt dit naar een echte productie-applicatie of gelden er dan toch nog strengere eisen, en waarom?
 
-2\. Een andere, vaak succesvollere, aanpak die hackers gebruiken, is een _dictionary attack_. Hierbij wordt een lijst met (gestolen) wachtwoorden gebruikt. Een bekende lijst is RockYou.txt, die we [hier]() al voor je klaar hebben gezet. Pas je Hydra-aanroep aan door het -x-gedeelte weg te halen en te vervangen door -P &lt;pad naar RockYou.txt&gt;. Maak weer een gebruiker aan, ditmaal met een willekeurig wachtwoord uit de lijst. Hoe lang duurt het kraken nu?
+2\. Een andere, vaak succesvollere, aanpak die hackers gebruiken, is een _dictionary attack_. Hierbij wordt een lijst met (gestolen) wachtwoorden gebruikt. Een bekende lijst is RockYou.txt, die we [hier](https://github.com/hanze-hbo-ict/sw_sec_docs/tree/master/src/pract-wk1) al voor je klaar hebben gezet (in twee delen). Pas je Hydra-aanroep aan door het -x-gedeelte weg te halen en te vervangen door -P &lt;pad naar rockyou1/2.txt&gt;. Maak weer een gebruiker aan, ditmaal met een willekeurig wachtwoord uit de lijst. Hoe lang duurt het kraken nu?
 
 3\. Benoem drie mogelijkheden om dit soort brute-force-aanvallen tegen te gaan.
 
