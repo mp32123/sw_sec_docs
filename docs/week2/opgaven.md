@@ -4,7 +4,7 @@ In dit practicum gaan we aan de slag met het opsporen van beveiligingsproblemen 
 ## Installatie van OWASP ZAP
 [Download](https://www.owasp.org/index.php/OWASP_Zed_Attack_Proxy_Project) de software. Voltooi de installatie en start de software op.
 
-Om ZAP te leren kennen, kun je beginnen met de "Automated scan". Als OWASP ZAP is opgestart kun je hier direct voor kiezen. Na deze keuze kan er een URL ingevoerd worden. Dit is de URL naar een webapplicatie inclusief de port. Kies hierna "Aanval". OWASP ZAP zal de gekozen website inladen en past o.a. een fuzzer toe op plekken waar data ingevoerd kan worden. Alle gevonden kwetsbaarheden en uitgevoerde requests worden in de onderste balk gelogd.
+Om ZAP te leren kennen, kun je beginnen met de "Automated scan". Als OWASP ZAP is opgestart kun je hier direct voor kiezen. Na deze keuze kan er een URL ingevoerd worden. Dit is de URL naar een webapplicatie inclusief de poort. Kies hierna "Aanval". OWASP ZAP zal de gekozen website inladen en past o.a. een fuzzer toe op plekken waar data ingevoerd kan worden. Alle gevonden kwetsbaarheden en uitgevoerde requests worden in de onderste balk gelogd.
 
 Als je kiest voor "Manual Explore" kun je met een browser naar keuze door een opgegeven website navigeren, terwijl alle requests worden gelogd en eventueel (met aangebrachte wijzigingen) later opnieuw verzonden kunnen worden.
  

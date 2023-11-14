@@ -10,7 +10,7 @@
     {% if session['comment']: %}
         <div style="margin-bottom: 20px;">
             <p><strong>U schreef:</strong></p>
-            {{ session['comment'] }}
+            {{ session['comment'] | safe }}
         </div>
     {% endif %}
 
