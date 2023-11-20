@@ -41,7 +41,7 @@ def login():
             else:
                 flash('Inlog mislukt.')
         else:
-            flash('Inlogformulier incorrect ingevuld.')
+            flash('Inlog mislukt.')
     return render_template('login.html', form=form)
 
 @app.route('/register', methods=['GET', 'POST'])

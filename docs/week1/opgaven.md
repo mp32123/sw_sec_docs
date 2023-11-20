@@ -12,6 +12,8 @@ Windows-gebruikers moeten eerst het [Windows Subsystem for Linux](https://learn.
 
 ### Hydra installeren (2)
 
+_Tip: lees éérst onderstaande paragraaf (Mogelijke problemen en oplossingen bij de Hydra-installatie)._
+
 We beginnen nu met de installatie van Hydra. Ga naar een geschikte map (maak bijv. een map "software-security" aan in je homedir) en voer één voor één de volgende commmando's uit:
 ```
 git clone https://github.com/vanhauser-thc/thc-hydra.git hydra
@@ -22,6 +24,7 @@ sudo make install
 ```
 
 ### Mogelijke problemen en oplossingen bij de Hydra-installatie
+
 Mochten git, gcc en/of make nog niet geïnstalleerd zijn, installeer deze dan eerst via je package manager (bijvoorbeeld Ubuntu Linux of WSL: ``sudo apt-get install git gcc make``).
 
 Het kan soms helpen om allereerst de package-manager zelf te updaten: ``sudo apt-get update``
@@ -43,9 +46,9 @@ nameserver 8.8.4.4
 
 Voorbeeld-commando op het login-formulier van een lokale Flask-webapp, draaiend op poort 5000. Hydra probeert hier voor gebruiker (email) "henk@hanze.nl" alle wachtwoorden met 4 cijfers. Bestudeer de [documentatie van Hydra](https://github.com/vanhauser-thc/thc-hydra) om te leren hoe de -x-optie en de andere parameters precies werken.
 
-``hydra -l henk@hanze.nl -x 4:4:1 127.0.0.1 -s 5000 http-post-form "/login:email=^USER^&password=^PASS^:Inlog niet correct"``
+``hydra -l henk@hanze.nl -x 4:4:1 127.0.0.1 -s 5000 http-post-form "/login:email=^USER^&password=^PASS^:Inlog mislukt."``
 
-Let op: ondanks dat het misschien op meerdere regels wordt weergegeven, is bovenstaande één commmando dat op één regel dient te worden uitgevoerd!
+Let op: ondanks dat het misschien op meerdere regels wordt weergegeven, is bovenstaande één commmando dat op één regel dient te worden uitgevoerd! De volgorde die is weergegeven werkt onder Windows; Mac-gebruikers moeten mogelijk de volgorde van de argumenten iets aanpassen.
 
 Om dit werkend te krijgen, zijn er enkele aandachtspunten:
 
@@ -72,7 +75,7 @@ Radamsa is beschikbaar voor Linux, Apple en Windows (via WSL). De broncode is te
 Download en installeer de software. De volgende commando’s kunnen hiervoor op Linux, Apple of WSL één voor één uitgevoerd worden via de terminal. Mochten git, gcc en/of make nog niet geïnstalleerd zijn, installeer deze dan eerst via je package manager (bijvoorbeeld Ubuntu Linux of WSL: ``sudo apt-get install git gcc make``).
 
 ```
-git clone https://gitlab.com/akihe/radamsa.git radamsa
+git clone https://gitlab.com/akihe/radamsa.git radamsa
 cd radamsa
 sudo make
 sudo make install
