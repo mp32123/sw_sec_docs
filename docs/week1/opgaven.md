@@ -53,7 +53,7 @@ Let op: ondanks dat het misschien op meerdere regels wordt weergegeven, is boven
 Om dit werkend te krijgen, zijn er enkele aandachtspunten:
 
 * Zet de [CSRF-controle](https://www.geeksforgeeks.org/csrf-protection-in-flask/) uit door ``app.config['WTF_CSRF_ENABLED'] = False`` in je code op te nemen, op de plek waar je ook de andere configuratie, zoals de ``SECRET_KEY``, instelt.
-* Zorg dat bij een incorrecte inlog de tekst "Inlog niet correct" (of anders - maar pas dan je Hydra-aanroep aan) in beeld komt, zodat Hydra weet wanneer een login-poging mislukt is.
+* Zorg dat bij een incorrecte inlog de tekst "Inlog mislukt." (of anders - maar pas dan je Hydra-aanroep aan) in beeld komt, zodat Hydra weet wanneer een login-poging mislukt is.
 * Windows-gebruikers moeten de webapp draaien vanuit hun WSL/Linux-console, dus **niet** vanuit de Windows-omgeving, anders kan Hydra er niet bij. Zo'n aanroep ziet er dan bijvoorbeeld zo uit: ``user@LAPTOP:/mnt/c/Users/user/swsec/wc-wk1$ python3 app.py``
 
 ### De opdracht
