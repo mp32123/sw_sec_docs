@@ -887,7 +887,7 @@ nameserver 8.8.4.4
 <p>Om dit werkend te krijgen, zijn er enkele aandachtspunten:</p>
 <ul>
 <li>Zet de <a href="https://www.geeksforgeeks.org/csrf-protection-in-flask/">CSRF-controle</a> uit door <code>app.config['WTF_CSRF_ENABLED'] = False</code> in je code op te nemen, op de plek waar je ook de andere configuratie, zoals de <code>SECRET_KEY</code>, instelt.</li>
-<li>Zorg dat bij een incorrecte inlog de tekst "Inlog niet correct" (of anders - maar pas dan je Hydra-aanroep aan) in beeld komt, zodat Hydra weet wanneer een login-poging mislukt is.</li>
+<li>Zorg dat bij een incorrecte inlog de tekst "Inlog mislukt." (of anders - maar pas dan je Hydra-aanroep aan) in beeld komt, zodat Hydra weet wanneer een login-poging mislukt is.</li>
 <li>Windows-gebruikers moeten de webapp draaien vanuit hun WSL/Linux-console, dus <strong>niet</strong> vanuit de Windows-omgeving, anders kan Hydra er niet bij. Zo'n aanroep ziet er dan bijvoorbeeld zo uit: <code>user@LAPTOP:/mnt/c/Users/user/swsec/wc-wk1$ python3 app.py</code></li>
 </ul>
 <h3 id="de-opdracht">De opdracht<a class="headerlink" href="#de-opdracht" title="Permanent link">&para;</a></h3>
