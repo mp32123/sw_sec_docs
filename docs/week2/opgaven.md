@@ -2,13 +2,13 @@
 In dit practicum gaan we aan de slag met het opsporen van beveiligingsproblemen binnen een webshop-applicatie. Voor deze opdracht werken we met OWASP ZAP (Open Web Application Security Project – Zed Attack Proxy) en Docker.
 
 ## Installatie van OWASP ZAP
-[Download](https://www.owasp.org/index.php/OWASP_Zed_Attack_Proxy_Project) de software. Voltooi de installatie en start de software op.
+[Download](https://www.zaproxy.org/download/) de software. Voltooi de installatie en start de software op. Krijg je tijdens de installatie een foutmelding met betrekking tot de Java-JDK of -JRE? Het kan helpen om [de JDK van Adoptium](https://adoptium.net/) te installeren.
 
 Om ZAP te leren kennen, kun je beginnen met de "Automated scan". Als OWASP ZAP is opgestart kun je hier direct voor kiezen. Na deze keuze kan er een URL ingevoerd worden. Dit is de URL naar een webapplicatie inclusief de poort. Kies hierna "Aanval". OWASP ZAP zal de gekozen website inladen en past o.a. een fuzzer toe op plekken waar data ingevoerd kan worden. Alle gevonden kwetsbaarheden en uitgevoerde requests worden in de onderste balk gelogd.
 
 Als je kiest voor "Manual Explore" kun je met een browser naar keuze door een opgegeven website navigeren, terwijl alle requests worden gelogd en eventueel (met aangebrachte wijzigingen) later opnieuw verzonden kunnen worden.
  
-Aanvullende informatie is [hier](https://www.zaproxy.org/docs/desktop/start/) te vinden.
+Aanvullende informatie is [hier](https://www.zaproxy.org/getting-started/) te vinden.
 
 ## Installatie van Docker
 We gaan in deze opdracht aan de slag met de Juice Shop-webapplicatie, die een aantal grote beveiligingslekken heeft. De Juice Shop-applicatie gaan we via Docker draaien op je computer. Hierna gaan we beveiligingslekken opsporen in de applicatie.
