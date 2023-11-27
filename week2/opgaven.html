@@ -20,7 +20,7 @@
       
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.10">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.14">
     
     
       
@@ -172,6 +172,7 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../index.html" class="md-nav__link">
         
@@ -188,6 +189,7 @@
     
       
       
+  
   
   
   
@@ -227,6 +229,7 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../week1/opgaven.html" class="md-nav__link">
         
@@ -254,6 +257,7 @@
   
   
     
+  
   
   
     
@@ -292,6 +296,7 @@
   
   
     
+  
   
   
     <li class="md-nav__item md-nav__item--active">
@@ -395,6 +400,7 @@
   
   
   
+  
     
     
     
@@ -431,6 +437,7 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../week3/opgaven.html" class="md-nav__link">
         
@@ -455,6 +462,7 @@
     
       
       
+  
   
   
   
@@ -494,6 +502,7 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../week4/opgaven.html" class="md-nav__link">
         
@@ -518,6 +527,7 @@
     
       
       
+  
   
   
   
@@ -557,6 +567,7 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../week5/opgaven.html" class="md-nav__link">
         
@@ -581,6 +592,7 @@
     
       
       
+  
   
   
   
@@ -617,6 +629,7 @@
             
               
                 
+  
   
   
   
@@ -722,10 +735,10 @@
 <h1 id="opgaven-week-2-hacking-the-juice-shop">Opgaven week 2: hacking the Juice Shop<a class="headerlink" href="#opgaven-week-2-hacking-the-juice-shop" title="Permanent link">&para;</a></h1>
 <p>In dit practicum gaan we aan de slag met het opsporen van beveiligingsproblemen binnen een webshop-applicatie. Voor deze opdracht werken we met OWASP ZAP (Open Web Application Security Project – Zed Attack Proxy) en Docker.</p>
 <h2 id="installatie-van-owasp-zap">Installatie van OWASP ZAP<a class="headerlink" href="#installatie-van-owasp-zap" title="Permanent link">&para;</a></h2>
-<p><a href="https://www.owasp.org/index.php/OWASP_Zed_Attack_Proxy_Project">Download</a> de software. Voltooi de installatie en start de software op.</p>
+<p><a href="https://www.zaproxy.org/download/">Download</a> de software. Voltooi de installatie en start de software op. Krijg je tijdens de installatie een foutmelding met betrekking tot de Java-JDK of -JRE? Het kan helpen om <a href="https://adoptium.net/">de JDK van Adoptium</a> te installeren.</p>
 <p>Om ZAP te leren kennen, kun je beginnen met de "Automated scan". Als OWASP ZAP is opgestart kun je hier direct voor kiezen. Na deze keuze kan er een URL ingevoerd worden. Dit is de URL naar een webapplicatie inclusief de poort. Kies hierna "Aanval". OWASP ZAP zal de gekozen website inladen en past o.a. een fuzzer toe op plekken waar data ingevoerd kan worden. Alle gevonden kwetsbaarheden en uitgevoerde requests worden in de onderste balk gelogd.</p>
 <p>Als je kiest voor "Manual Explore" kun je met een browser naar keuze door een opgegeven website navigeren, terwijl alle requests worden gelogd en eventueel (met aangebrachte wijzigingen) later opnieuw verzonden kunnen worden.</p>
-<p>Aanvullende informatie is <a href="https://www.zaproxy.org/docs/desktop/start/">hier</a> te vinden.</p>
+<p>Aanvullende informatie is <a href="https://www.zaproxy.org/getting-started/">hier</a> te vinden.</p>
 <h2 id="installatie-van-docker">Installatie van Docker<a class="headerlink" href="#installatie-van-docker" title="Permanent link">&para;</a></h2>
 <p>We gaan in deze opdracht aan de slag met de Juice Shop-webapplicatie, die een aantal grote beveiligingslekken heeft. De Juice Shop-applicatie gaan we via Docker draaien op je computer. Hierna gaan we beveiligingslekken opsporen in de applicatie.</p>
 <p>Met Docker is het mogelijk om een webapplicatie te starten in een vooropgezette omgeving, ook wel <em>container</em> genoemd. Je kunt een Docker-container downloaden en deze bevat dan zowel een volledige ingerichte serveromgeving als een geïnstalleerde en geconfigureerde webapplicatie. Let op: Als je VM-software hebt geïnstalleerd zal Docker mogelijk niet werken. Maak in dit geval een Virtual Machine naar keuze (een servervariant van Linux is vaak het snelst) en installeer Docker in deze VM.</p>
@@ -797,7 +810,7 @@ docker stop juiceshop
     <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Gekopieerd naar klembord", "clipboard.copy": "Kopi\u00ebren naar klembord", "search.result.more.one": "1 extra overeenkomst op deze pagina", "search.result.more.other": "# extra overeenkomsten op deze pagina", "search.result.none": "Geen overeenkomende documenten", "search.result.one": "1 overeenkomende document", "search.result.other": "# overeenkomende documenten", "search.result.placeholder": "Typ om te beginnen met zoeken", "search.result.term.missing": "Ontbreekt", "select.version": "Selecteer versie"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.6c14ae12.min.js"></script>
+      <script src="../assets/javascripts/bundle.cd18aaf1.min.js"></script>
       
         <script src="../js/imgs.js"></script>
       
