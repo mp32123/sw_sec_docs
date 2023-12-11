@@ -1,6 +1,6 @@
 # Opgave week 5: privacy threat modelling van een ruggenmergstimulator
 
-We gaan deze week bezig met het bepalen van privacyrisico’s van een voorbeeldcasus aan de hand van de LINDUNN-methode. 
+We gaan deze week bezig met het bepalen van privacyrisico’s van een voorbeeldcasus aan de hand van de LINDDUN-methode. 
 
 ## Casus
 
