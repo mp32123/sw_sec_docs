@@ -37,4 +37,4 @@ B. Prioriteer deze risico’s en onderbouw deze prioritering ook.
 
 C. Bedenk zo veel mogelijke maatregelen om deze risico’s te verminderen.
 
-*Tip: je kunt 2, 3A, B en C in één keer maken door gebruik te maken een tabel met kolommen voor de interfaces / data stores, de LINDDUN-letters, de scenario's, de stakeholders, de prioriteiten en de tegenmaatregelen. Zie bijvoorbeeld de Excel-sheet die op Blackboard staat. Denk er wel om dat je de **onderbouwing** van je prioritering erbij vermeldt!*
+*Tip: je kunt 2, 3A, B en C in één keer maken door gebruik te maken één of meer tabellen met kolommen voor de interfaces / data stores, de LINDDUN-letters, de scenario's, de stakeholders, de prioriteiten en de tegenmaatregelen. Zie bijvoorbeeld de Excel-sheet die op Blackboard staat. Denk er wel om dat je de **onderbouwing** van je prioritering erbij vermeldt!*
