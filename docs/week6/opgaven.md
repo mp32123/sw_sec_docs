@@ -1,6 +1,6 @@
-# Opgave week 6 – software security: de verantwoordelijkheid van de ontwikkelaar(?)
+# Opgave week 6 – security: de verantwoordelijkheid van de ontwikkelaar(?)
  
-Je hebt in deze cursus allemaal tools aangereikt gekregen om veilige(re) applicaties te bouwen. Betekent dit nu dat security exclusief jouw verantwoordelijkheid als engineer<sup>*</sup> is? Ben je als engineer immers niet ook onderdeel van een groter geheel (team, bedrijf, sector, land, EU...) en is security niet eerder een gedeelde verantwoordelijkheid? Welke partijen kun je allemaal aanwijzen en voor welk aspect van security (welk onderdeel van de Software Development LifeCycle) zouden zij verantwoordelijk kunnen/moeten zijn?
+Je hebt in deze cursus allemaal tools aangereikt gekregen om veilige(re) applicaties te bouwen. Betekent dit nu dat security exclusief jouw verantwoordelijkheid als engineer<sup>*</sup> is? Ben je als engineer immers niet ook onderdeel van een groter geheel (team, bedrijf, sector, land, EU...) en is security niet eerder een gedeelde verantwoordelijkheid? Welke partijen kun je allemaal aanwijzen en voor welk aspect van security (welk onderdeel van de Software Development Life Cycle) zouden zij verantwoordelijk kunnen/moeten zijn?
 
 Ga eerst over deze vragen in discussie je klasgenoten en vorm zo je eigen mening.
 

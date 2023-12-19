@@ -20,16 +20,16 @@ Het bedrijf is van plan de thermostaat aan te bieden als een abonnementsservice,
 
 ## Opdrachten
 
-1.\ Teken het Data Flow Diagram (DFD) van de beschreven casus. Het diagram moet het systeem op een niveau laten zien dat geschikt is voor een risicoanalyse. Zorg dat de DFD overzichtelijk en navolgbaar neergezet wordt. Dit kan op papier, maar mag uiteraard ook met een softwaretool (zie het lijstje op Blackboard).
+1.\ Teken het Data Flow Diagram (DFD) van de beschreven casus. Het diagram moet het systeem op een niveau laten zien dat geschikt is voor een risicoanalyse. Zorg dat de DFD overzichtelijk en navolgbaar neergezet wordt. Dit kan op papier, maar mag uiteraard ook met een softwaretool (zie onderstaande lijst).
 
 2.\ Pas threat modelling toe op je DFD. Geef in je DFD aan waar welke risico’s zitten (interfaces: plekken waar data over een trust boundary gaat). Gebruik hiervoor de STRIDE-methodiek. Denk hierbij aan de afkorting:
 
-* <b>S</b>poofing: je voordoen als iemand anders of een ander system, bijv. doordat er geen wachtwoord eisen zijn
-* <b>T</b>ampering: aanpassen van data op een systeem of netwerk, bijv. XSS
-* <b>R</b>epudiation: ontkennen van iets dat je gedaan hebt, bijv. doordat er geen logging is
-* <b>I</b>nformation Disclosure: ongeautoriseerd toegang verschaffen tot data, bijv. mogelijk gemaakt door plaintext versturen van data
-* <b>D</b>enial of Service: werking van services verhinderen, bijv. DDOS-aanval
-* <b>E</b>levation of Privilege: toegang krijgen tot rechten die je niet had, bijv. door gebruik te maken van kwetsbaarheden in slechte/oude software
+* <b>S</b>poofing: je voordoen als iemand anders of een ander system, bijv. doordat er geen wachtwoordeisen zijn.
+* <b>T</b>ampering: aanpassen van data op een systeem of netwerk, bijv. XSS.
+* <b>R</b>epudiation: ontkennen van iets dat je gedaan hebt, bijv. doordat er geen logging is.
+* <b>I</b>nformation Disclosure: ongeautoriseerd toegang verschaffen tot data, bijv. mogelijk gemaakt door *plain text* versturen van data.
+* <b>D</b>enial of Service: werking van services verhinderen, bijv. DDOS-aanval.
+* <b>E</b>levation of Privilege: toegang krijgen tot rechten die je niet had, bijv. door gebruik te maken van kwetsbaarheden in slechte/oude software.
 
 3.\ 
 
@@ -45,3 +45,16 @@ C. Beschrijf voor de top 3 van kwetsbare interfaces welke maatregelen er genomen
 * <b>A</b>ccept: het risico voor lief nemen en niets doen
 
 *Tip: je kunt 2, 3A, B en C grotendeels in één keer maken door gebruik te maken een tabel met kolommen voor de interfaces, de STRIDE-letters, de scenario's, de prioriteiten en de tegenmaatregelen, en deze te sorteren op prioriteit. Zie bijvoorbeeld de Excel-sheet die op Blackboard staat. Denk er wel om dat je de **onderbouwing** van je prioritering erbij vermeldt!*
+
+## Tools voor het tekenen van DFD's
+
+De DFD is de basis voor de opdracht van deze (en volgende) week. Je mag hem op papier tekenen of desnoods in MS Paint, maar er zijn betere (gratis) tools beschikbaar die je het leven wat gemakkelijker kunnen maken, zoals:
+
+* [LucidChart](https://www.lucidchart.com/pages/data-flow-diagram)
+* [Draw.io](https://app.diagrams.net/) met [deze plugin](https://github.com/michenriksen/drawio-threatmodeling)
+* [Miro](https://miro.com/templates/data-flow-diagram/)
+* [Drawboard PDF](https://www.drawboard.com/pdf/)
+* [GraphViz](https://graphviz.org/)
+* [SDL: de Microsoft Threat Modeling Tool](https://www.microsoft.com/en-us/securityengineering/sdl/threatmodeling)
+
+Om maar een paar te noemen. Aanvullingen (in de vorm van een [pull request](https://github.com/hanze-hbo-ict/sw_sec_docs)) zijn van harte welkom.
