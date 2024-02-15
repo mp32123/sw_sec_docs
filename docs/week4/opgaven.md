@@ -1,22 +1,22 @@
-# Opgave week 4: threat modelling van een "slimme" thermostaat
+# Opgave week 4: threat modelling van een slimme koelkast
 
 We gaan deze week bezig met het bepalen van risico’s van een geheel systeem in een voorbeeldcasus aan de hand van de STRIDE-methode. 
 
 ## Casus
 
-Een bedrijf heeft contact met je opgenomen om een systeem te ontwerpen voor een nieuwe slimme thermostaat. De thermostaat zal gebruikers in staat stellen om de temperatuur van hun huis op afstand te regelen met behulp van een mobiele app of webinterface. Het bedrijf heeft je de volgende informatie verstrekt (vul waar nodig aan op een fantasievolle maar logische manier).
+Een bedrijf heeft een nieuwe slimme koelkast ontwikkeld die is verbonden met het internet. Het bedrijf heeft je de volgende informatie verstrekt (vul waar nodig aan op een fantasievolle maar logische manier).
 
-De thermostaat wordt geïnstalleerd in het huis van een gebruiker en wordt aangesloten op hun klimaatsysteem (verwarming en eventueel airco). Hij maakt verbinding met internet via Wi-Fi. De thermostaat heeft een temperatuursensor en een touchscreen-interface die de huidige temperatuur weergeeft en gebruikers in staat stelt de gewenste temperatuur in te stellen.
+De koelkast heeft een touchscreen-interface waarmee gebruikers hun boodschappenlijstjes kunnen beheren, receptsuggesties kunnen ontvangen en de temperatuur van de koelkast kunnen regelen. De koelkast is verbonden met het WiFi-netwerk. Er is een mobiele app en een webinterface (via HTTP) om op afstand toegang te bieden tot de functies. Op de koelkast zit bij aankoop een zegel-sticker met daarop een nummer (bestaande uit 25 willekeurige cijfers), waarmee je een account kunt maken op de webinterface.
 
-De thermostaat heeft ook een ingebouwde microfoon waarmee gebruikers hem kunnen bedienen met behulp van spraakopdrachten. Het bedrijf gebruikt namelijk natuurlijke taalverwerkingsalgoritmen om de spraakopdrachten van de gebruiker te begrijpen en hierop gepast te reageren. De microfoon is standaard ingeschakeld en gebruikers moeten -als ze dat niet willen- deze handmatig uitschakelen via de webinterface.
+Naast het touchscreen heeft de koelkast ook spraakherkenningssoftware, zodat gebruikers gesproken commando's kunnen geven om bijvoorbeeld de temperatuur aan te passen of om herinneringen in te stellen. De microfoon en de spraakherkenningsfunctie zijn standaard ingeschakeld, maar gebruikers kunnen deze handmatig uitschakelen via de instellingen.
 
-Deze webinterface (via HTTP) stelt gebruikers in staat om de thermostaat waar ook ter wereld op afstand te bedienen. Ze kunnen de huidige temperatuur bekijken en de gewenste temperatuur aanpassen. Ze kunnen ook schema's instellen voor wanneer de temperatuur moet veranderen, zoals wanneer ze aan het werk zijn of slapen.
+De koelkast is ontworpen om automatisch bij te houden welke producten erin liggen en hun vervaldatums. Het systeem kan gebruikers waarschuwen wanneer producten dreigen te bederven. Deze informatie wordt opgeslagen in de cloud en is toegankelijk via de mobiele app en webinterface.
 
-Alle gebruikersgegevens worden opgeslagen in een database die draait op de server van de leverancier. Deze database bevat informatie over de thermostaatinstellingen en gebruikspatronen van elke gebruiker. De database is alleen toegankelijk voor geautoriseerde gebruikers. De admin-webinterface die de database ontsluit, maakt gebruik van HTTP.
+Om het abonnementssysteem mogelijk te maken, betalen gebruikers maandelijks een vergoeding voor de toegang tot de extra functies. Het bedrijf biedt ook klantenondersteuning en onderhoudsdiensten aan als onderdeel van het abonnement. De klantgegevens die worden gebruikt voor facturering staan in een database en zijn toegankelijk voor de factureringsafdeling via TCP over een intern netwerk. De facturen worden via e-mail naar de klanten verzonden.
 
-Om de beveiliging van het systeem te waarborgen, wordt de thermostaat ontworpen met een verzegeling die ongeautoriseerde toegang voorkomt. Op de behuizing zit een zegel-sticker met daarop ook een nummer (bestaande uit 25 willekeurige cijfers), waarmee je een account kunt maken op de webinterface. De behuizing kan geopend worden met een sleutel voor onderhoud, maar hierdoor verbreekt uiteraard het zegel. Tijdens onderhoud, door een gecertificeerde monteur, kunnen er via USB commando’s verstuurd worden voor bijvoorbeeld updates.
+De koelkast heeft ook een USB-poort voor software-updates en onderhoudsdoeleinden. Tijdens onderhoud kunnen gecertificeerde monteurs het onderhoudsgedeelte, waar de USB-poort onderdeel van is, openen met een specifieke sleutel.
 
-Het bedrijf is van plan de thermostaat aan te bieden als een abonnementsservice, waarbij gebruikers een maandelijks bedrag betalen om het apparaat te gebruiken en toegang te krijgen tot de webinterface. Het bedrijf biedt ook klantenondersteuning en onderhoudsdiensten aan, als onderdeel van het abonnement. De klantgegevens worden door de afdeling Facturatie gebruikt om de kosten door te berekenen aan de klant. Deze afdeling maakt via een intern netwerk verbinding met de database over TCP. De facturen worden via e-mail naar de klanten verzonden.
+Het bedrijf heeft ook plannen om samen te werken met supermarkten om automatisch boodschappenlijstjes te genereren op basis van de inhoud van de koelkast. Hierbij wordt informatie gedeeld tussen de slimme koelkast en de supermarkt-apps.
 
 ## Opdrachten
 

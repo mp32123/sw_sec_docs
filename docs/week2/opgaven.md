@@ -1,23 +1,27 @@
 # Opgaven week 2: hacking the Juice Shop
-In dit practicum gaan we aan de slag met het opsporen van beveiligingsproblemen binnen een webshop-applicatie. Voor deze opdracht werken we met OWASP ZAP (Open Web Application Security Project – Zed Attack Proxy) en Docker.
+
+In dit practicum gaan we aan de slag met het opsporen van beveiligingsproblemen binnen een webshop-applicatie. Voor deze opdracht werken we met Docker en OWASP ZAP (Open Web Application Security Project – Zed Attack Proxy).
 
 ## Installatie van OWASP ZAP
+
 [Download](https://www.zaproxy.org/download/) de software. Voltooi de installatie en start de software op. Krijg je tijdens de installatie een foutmelding met betrekking tot de Java-JDK of -JRE? Het kan helpen om [de JDK van Adoptium](https://adoptium.net/) te installeren.
 
-Om ZAP te leren kennen, kun je beginnen met de "Automated scan". Als OWASP ZAP is opgestart kun je hier direct voor kiezen. Na deze keuze kan er een URL ingevoerd worden. Dit is de URL naar een webapplicatie inclusief de poort. Kies hierna "Aanval". OWASP ZAP zal de gekozen website inladen en past o.a. een fuzzer toe op plekken waar data ingevoerd kan worden. Alle gevonden kwetsbaarheden en uitgevoerde requests worden in de onderste balk gelogd.
+Om ZAP te leren kennen, begin je met een "Automated scan". Als OWASP ZAP is opgestart kun je hier direct voor kiezen. Na deze keuze kan er een URL ingevoerd worden. Dit is de URL naar een webapplicatie, inclusief de poort. Kies hierna "Aanval". OWASP ZAP zal de gekozen website inladen en past o.a. een fuzzer toe op plekken waar data ingevoerd kan worden. Alle gevonden kwetsbaarheden en uitgevoerde requests worden in de onderste balk gelogd.
 
-Als je kiest voor "Manual Explore" kun je met een browser naar keuze door een opgegeven website navigeren, terwijl alle requests worden gelogd en eventueel (met aangebrachte wijzigingen) later opnieuw verzonden kunnen worden.
+Als je kiest voor "Manual Explore", kun je met een browser naar keuze door een opgegeven website navigeren, terwijl alle requests worden gelogd en eventueel (met aangebrachte wijzigingen) later opnieuw verzonden kunnen worden.
  
 Aanvullende informatie is [hier](https://www.zaproxy.org/getting-started/) te vinden.
 
 ## Installatie van Docker
+
 We gaan in deze opdracht aan de slag met de Juice Shop-webapplicatie, die een aantal grote beveiligingslekken heeft. De Juice Shop-applicatie gaan we via Docker draaien op je computer. Hierna gaan we beveiligingslekken opsporen in de applicatie.
 
-Met Docker is het mogelijk om een webapplicatie te starten in een vooropgezette omgeving, ook wel *container* genoemd. Je kunt een Docker-container downloaden en deze bevat dan zowel een volledige ingerichte serveromgeving als een geïnstalleerde en geconfigureerde webapplicatie. Let op: Als je VM-software hebt geïnstalleerd zal Docker mogelijk niet werken. Maak in dit geval een Virtual Machine naar keuze (een servervariant van Linux is vaak het snelst) en installeer Docker in deze VM.
+Met Docker is het mogelijk om een webapplicatie te starten in een vooropgezette omgeving, ook wel *container* genoemd. Je kunt een Docker-container downloaden en deze bevat dan zowel een volledige ingerichte serveromgeving als een geïnstalleerde en geconfigureerde webapplicatie. Let op: als je VM-software hebt geïnstalleerd, zal Docker mogelijk niet werken. Maak in dit geval een Virtual Machine naar keuze (een servervariant van Linux is vaak het snelst) en installeer Docker in deze VM.
 
 Download en installeer Docker via [deze link](https://docs.docker.com/get-docker/).
 
 ## Installatie van de Juice Shop-container
+
 Download en draai nu de Juice Shop Docker-container met de volgende commando’s:
 ```
 docker pull bkimminich/juice-shop
@@ -36,6 +40,7 @@ docker stop juiceshop
 Klik eerst eens door de Juice Shop heen en plaats bijvoorbeeld een bestelling.
   
 ## De opdracht: het opsporen van beveiligingsproblemen
+
 Nu gaan we daadwerkelijk aan de slag met het opsporen van beveiligingsproblemen in de Juice Shop. Hiervoor is het belangrijk dat ZAP zonder problemen draait en dat de Juice Shop werkt op je eigen computer.
 
 1\. Met SQL-injectie is het mogelijk om via een invoerveld eigen SQL-statements door een webapplicatie uit te laten voeren. Denk aan [het verwijderen van tabellen](https://xkcd.com/327/) of het omzeilen van de wachtwoord-check bij inloggen. Met dit laatste ga je aan de slag: probeer als administrator in te loggen zonder een wachtwoord op te geven!
@@ -54,4 +59,4 @@ Enkele suggesties om te proberen:
 * Laat d.m.v. Cross-Site Scripting (XSS) de website een ongewenste pop-up openen. *Tip: Met behulp van alert() in javascript is het mogelijk om een pop-up venster te openen. Het hoorcollege van week 1 bevat voorbeeldcode die je hiervoor kunt gebruiken.*
 * Ontdek het patroon in de kortingscoupons en maak je eigen coupon om tot wel 90% korting te krijgen!
 
-Of bedenk zelf iets anders!
+Of bedenk zelf iets!

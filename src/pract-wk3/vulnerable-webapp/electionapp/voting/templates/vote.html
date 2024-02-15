@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block title %}
+Stemformulier
+{% endblock %}
+
+{% block contents %}
+<h1>Welkom bij de Verkiezingen</h1>
+<form method="post" action="{{ url_for('voting.vote') }}">
+    <div class="mb-3 formgroup">
+        <div class="formlabel">{{ form.name.label }}</div>
+        <div class="forminput">{{ form.name }}</div>
+    </div>
+    <div class="mb-3 formgroup">
+        <div class="formlabel">{{ form.party.label }}</div>
+        <div class="forminput">{{ form.party }}</div>
+    </div>
+    <div class="mb-3 formgroup">
+        <input type="submit" class="btn btn-primary" value="Stem">
+    </div>
+</form>
+{% endblock %}

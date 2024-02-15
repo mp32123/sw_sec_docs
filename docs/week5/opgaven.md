@@ -1,16 +1,20 @@
-# Opgave week 5: privacy threat modelling van een ruggenmergstimulator
+# Opgave week 5: privacy threat modelling van een slimme spiegel
 
 We gaan deze week bezig met het bepalen van privacyrisico’s van een voorbeeldcasus aan de hand van de LINDDUN-methode. 
 
 ## Casus
 
-Een patiënt met chronische rugpijn ondergaat een operatie waarbij een implantaat wordt geplaatst bij het ruggenmerg. Het stimulatorapparaat is ontworpen om elektrische impulsen naar het ruggenmerg te sturen, wat verlichting van pijn biedt aan de patiënt.
+Een start-up heeft een nieuw platform ontwikkeld dat gebruikers in staat stelt om een slimme spiegel in hun woning te installeren. De slimme spiegel heeft een ingebouwde camera en sensoren om gebruikers te voorzien van gepersonaliseerde fitnessinstructies, weerberichten, kledingadviezen, en andere nuttige informatie tijdens het gebruik. De spiegel is verbonden met een mobiele app en een webinterface voor gebruikersbeheer.
 
-Na een periode in het ziekenhuis krijgt de patiënt een ontvanger mee naar huis, die naast het bed geïnstalleerd wordt om verdere monitoring vanuit het ziekenhuis mogelijk te maken. De stimulator stuurt draadloos zijn activiteitsgegevens naar deze ontvanger via RF / MICS (Medical Implant Communication Service) technologie. De ontvanger slaat deze gegevens op in zijn interne geheugen en stuurt deze elk uur door naar een server in het ziekenhuis via het WiFi-netwerk en het HTTP-protocol.
+De camera in de spiegel kan worden gebruikt voor gezichtsherkenning, zodat de spiegel automatisch de fitnessprogramma's kan aanpassen op basis van de gebruiker die ervoor staat. De informatie over het fitnessgedrag van de gebruiker, zoals trainingsduur en hartslag, wordt opgeslagen op de servers van het bedrijf en is toegankelijk via de mobiele app en de webinterface.
 
-De server slaat deze gegevens op in een standaard MySQL-database, die toegankelijk is voor de behandelend arts van de patiënt via een desktopcomputer in het ziekenhuis. De arts gebruikt deze gegevens om de voortgang van de patiënt te bewaken.
+Naast de fitnessinformatie slaat het bedrijf ook gegevens op over het kijkgedrag van gebruikers voor advertentiedoeleinden. Deze gegevens worden gebruikt om gerichte advertenties aan te bieden via de mobiele app.
 
-Tijdens follow-up afspraken in het ziekenhuis kan de arts de ruggenmergstimulator opnieuw programmeren met behulp van een RF-module die aan de computer van de arts verbonden is. Het herprogrammeringsproces stelt de arts in staat om de instellingen van het apparaat aan te passen, zoals de frequentie en intensiteit van de elektrische impulsen, om de pijnverlichting van de patiënt te optimaliseren.
+Om het platform verder te financieren, biedt het bedrijf een premium abonnement aan waarvoor gebruikers maandelijks betalen. Dit abonnement geeft toegang tot geavanceerde fitnessprogramma's, uitgebreide weer- en verkeersinformatie en exclusieve kledingadviezen.
+
+Het platform heeft een functie waarmee gebruikers hun slimme spiegel kunnen delen op sociale media. Via deze functie, die standaard aan staat, kunnen vrienden en volgers live meekijken met hun fitness-sessies via de mobiele app.
+
+Om het platform verder te verbeteren, overweegt het bedrijf samenwerkingen met zorgverzekeraars, waarbij gebruikers gezondheidsgegevens delen in ruil voor korting op hun premie.
 
 ## Opdrachten
 

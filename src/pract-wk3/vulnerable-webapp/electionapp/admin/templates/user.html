@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block title %}
+Mijn account
+{% endblock %}
+
+{% block contents %}
+    <div>Uw gebruikersnaam: {{ user.username }}</div>
+    <div>Uw politieke voorkeur: {{ user.polpref }}</div>
+{% endblock %}
