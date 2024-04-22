@@ -3,6 +3,7 @@
 grab.js
 *.swp
 *-venv
+*-venv-win
 /src/pract-wk3/__pycache__
 /src/pract-wk3/data/__pycache__
 src/pract-wk3/.coverage
