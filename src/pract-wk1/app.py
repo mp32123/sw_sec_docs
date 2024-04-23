@@ -3,6 +3,7 @@ from flask import render_template, redirect, request, url_for, flash, session
 from flask_login import login_user, login_required, logout_user
 from mijnproject.models import User
 from mijnproject.forms import LoginForm, RegistrationForm
+from wtforms import ValidationError
 
 @app.route('/')
 def home():
@@ -47,12 +48,21 @@ def login():
 @app.route('/register', methods=['GET', 'POST'])
 def register():
     form = RegistrationForm()
-    if form.validate_on_submit() and form.check_email(form.email) and form.check_username(form.username):
-        user = User(email=form.email.data, username=form.username.data, password=form.password.data)
-        db.session.add(user)
-        db.session.commit()
-        flash('Dank voor de registratie. Er kan nu ingelogd worden!')
-        return redirect(url_for('login'))
+    if form.validate_on_submit():
+        try:
+            if form.check_email(form.email) and form.check_username(form.username):
+                user = User(email=form.email.data, username=form.username.data, password=form.password.data)
+                db.session.add(user)
+                db.session.commit()
+                flash('Dank voor de registratie. Er kan nu ingelogd worden!')
+                return redirect(url_for('login'))
+            else:
+                flash('Registratie mislukt.')
+                return redirect(url_for('register'))
+        except ValidationError as ve:
+            flash('Registratie mislukt:', getattr(ve, 'message', repr(ve)))
+            return redirect(url_for('register'))
+
     return render_template('register.html', form=form)
 
 @app.route('/info')
