@@ -2,7 +2,7 @@
 
 Deze week gaan we bezig met een technische opgave én doen we zelfstandig onderzoek naar een belangrijke vraag voor de praktijk: wat is de toegevoegde waarde van security tooling?
 
-## Deel 1: problemen oplossen in een webapplicatie
+## Deel 1: problemen oplossen in een webapplicatie (40%)
 
 [Hier](https://github.com/hanze-hbo-ict/sw_sec_docs/tree/master/src/pract-wk3/vulnerable-webapp/) hebben we een eenvoudige python/flask-webapp klaargezet, met drie grote kwetsbaarheden erin. Het is de bedoeling dat je deze kwetsbaarheden opspoort en voor elk een mitigatie aanbrengt in de code. Lees eerst de README en zorg dat de app up-and-running is. De kwetsbaarheden betreffen:
 
@@ -14,7 +14,7 @@ Kom je er niet uit? Overleg met klasgenoten en/of de practicumdocent.
 
 Laat je oplossing zien d.m.v. screenshots van de code, vóór en na je bugfix. Geef bij elk van de screenshots duidelijk aan om welke bug het gaat en highlight de relevante code. Je mag je uitwerking samengevoegen met die van deel 2 in één document en als doc(x) of pdf inleveren via het Inleverpunt.
 
-## Deel 2: onderzoek naar security tooling
+## Deel 2: onderzoek naar security tooling (60%)
 
 Software-ontwikkelingsprojecten bestaan uit meerdere stappen en omvatten meer dan alleen ontwikkeling en testen. Bij elk project moet bijvoorbeeld rekening worden gehouden met regionale en internationale wetgeving en standaarden, die impact kunnen hebben op de requirements van het project. Deployment en operationeel onderhoud zijn daarnaast ook onderdeel van het proces van softwareontwikkeling en in moderne omgevingen maken DevOps-teams (een werkmethode waarbij development en post-deployment onderhoud & support door hetzelfde team worden uitgevoerd) de grens tussen Software Security en IT Security nog waziger. 
 
