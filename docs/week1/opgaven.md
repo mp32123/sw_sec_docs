@@ -105,7 +105,7 @@ Leer radamsa verder kennen. Ga er mee aan de slag en kijk wat het doet. Raadplee
 
 ### De opdracht
 
-Kies een aantal bronnen om de fuzzer op toe te passen (minimaal 3). Radamsa kun je toepassen op tekstbestanden, afbeeldingen, codefragmenten etc. Pas radamsa toe en analyseer het resultaat. Wat gebeurt er als je gefuzzde bestanden probeert uit te voeren of te laten openen door de applicatie waarmee je ze normaal opent? Kan dit kwaad en/of kan hier misbruik van gemaakt worden?
+Radamsa kun je toepassen op tekstbestanden, afbeeldingen, codefragmenten etc. Kies een aantal bronnen om de fuzzer op toe te passen (minimaal 3, bijvoorbeeld een tekst-, een audio- en een codebestand). Pas radamsa toe en analyseer het resultaat. Wat gebeurt er als je gefuzzde bestanden probeert uit te voeren of te laten openen door de applicatie waarmee je ze normaal opent? Kan dit kwaad en/of kan hier misbruik van gemaakt worden?
 
 Lever een kort verslagje in over deze "fuzz test". Welke bronnen heb je gekozen en waarom? Beschrijf en laat d.m.v. screenshots zien wat je opvalt: wat voor data wordt er gegenereerd en wat is het effect van deze data? (50%)
 
