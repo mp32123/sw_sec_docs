@@ -1,6 +1,6 @@
 # Opgaven week 1: fuzzing
 
-## Opgave 1: Wachtwoorden kraken met Hydra
+## Deel 1: Wachtwoorden kraken met Hydra
 
 Deze opdracht kan op Linux, Mac en Windows (WSL) worden uitgevoerd.
 
@@ -71,7 +71,7 @@ Lever een kort verslagje in over deze "penetration test" (pentest), inclusief sc
 
 <sup>*</sup> Geen eigen webapp (meer) paraat? [Hier](https://github.com/hanze-hbo-ict/sw_sec_docs/tree/master/src/pract-wk1) kun je er eentje vinden die je ook mag gebruiken. Vraag eventueel je werkcollegedocent om hulp om deze aan de praat te krijgen.
 
-## Opgave 2: Fuzzing met Radamsa
+## Deel 2: Fuzzing met Radamsa
 
 Radamsa is beschikbaar voor Linux, Apple en Windows (via WSL). De broncode is te vinden op [Gitlab](https://gitlab.com/akihe/radamsa). De [documentatie](https://gitlab.com/akihe/radamsa/-/blob/develop/README.md) is daar ook te vinden.
 
@@ -80,7 +80,7 @@ Download en installeer de software. De volgende commando’s kunnen hiervoor op 
 ```
 git clone https://gitlab.com/akihe/radamsa.git radamsa
 cd radamsa
-sudo make
+make
 sudo make install
 ```
 
