@@ -6,19 +6,19 @@ Deze week gaan we bezig met een technische opgave én doen we zelfstandig onderz
 
 [Hier](https://github.com/hanze-hbo-ict/sw_sec_docs/tree/master/src/pract-wk3/vulnerable-webapp/) hebben we een eenvoudige python/flask-webapp klaargezet, met drie grote kwetsbaarheden erin. Het is de bedoeling dat je deze kwetsbaarheden opspoort en voor elk een mitigatie aanbrengt in de code. Lees eerst de README en zorg dat de app up-and-running is. De kwetsbaarheden betreffen:
 
-* de manier waarop wachtwoorden worden opgeslagen (40%);
-* CSRF op het stemformulier (20%);
-* _authorization bypass_ in bepaalde URL's (40%).
+* De manier waarop wachtwoorden worden opgeslagen (40%);
+* CSRF, of beter: het gebrek daaraan, op het stemformulier (20%);
+* _Authorization bypass_, ook wel bekend als [Insecure direct object reference](https://cheatsheetseries.owasp.org/cheatsheets/Insecure_Direct_Object_Reference_Prevention_Cheat_Sheet.html), in bepaalde URL's (40%).
 
-Kom je er niet uit? Overleg met klasgenoten en/of de practicumdocent.
+Dat je anoniem mag stemmen is **niet** één van de drie bugs. Kom je er niet uit? Overleg met klasgenoten en/of de practicumdocent.
 
 Laat je oplossing zien d.m.v. screenshots van de code, vóór en na je bugfix. Geef bij elk van de screenshots duidelijk aan om welke bug het gaat en highlight de relevante code. Je mag je uitwerking samengevoegen met die van deel 2 in één document en als doc(x) of pdf inleveren via het Inleverpunt.
 
 ## Deel 2: onderzoek naar security tooling (60%)
 
-Software-ontwikkelingsprojecten bestaan uit meerdere stappen en omvatten meer dan alleen ontwikkeling en testen. Bij elk project moet bijvoorbeeld rekening worden gehouden met regionale en internationale wetgeving en standaarden, die impact kunnen hebben op de requirements van het project. Deployment en operationeel onderhoud zijn daarnaast ook onderdeel van het proces van softwareontwikkeling en in moderne omgevingen maken DevOps-teams (een werkmethode waarbij development en post-deployment onderhoud & support door hetzelfde team worden uitgevoerd) de grens tussen Software Security en IT Security nog waziger. 
+Software-ontwikkelingsprojecten bestaan uit meerdere stappen en omvatten meer dan alleen ontwikkeling en testen. Bij elk project moet bijvoorbeeld rekening worden gehouden met regionale en internationale wetgeving en standaarden, die impact kunnen hebben op de requirements van het project. Deployment en onderhoud zijn daarnaast ook onderdeel van het proces van softwareontwikkeling en in moderne omgevingen maken DevOps-teams (een werkmethode waarbij development en onderhoud & support door hetzelfde team worden uitgevoerd) de grens tussen Software Security en IT Security nog waziger. 
 
-Tijdens deze opdracht kijken we naar de rol die security tooling kan vervullen in een project en voor welke aspecten het minder (of helemaal niet) nuttig is. Het is voor een bedrijf namelijk heel makkelijk om veel geld uit te geven aan tooling die in de praktijk weinig toegevoegde waarde heeft, maar tegelijkertijd zijn sommige aspecten van software security alleen mogelijk met gebruik van de juiste tooling. 
+Tijdens deze opdracht kijken we naar de rol die security tooling kan vervullen in een project en voor welke aspecten het minder of helemaal niet nuttig is. Het is voor een bedrijf namelijk heel makkelijk om veel geld uit te geven aan tooling die in de praktijk weinig toegevoegde waarde heeft, maar tegelijkertijd zijn sommige aspecten van software security alleen mogelijk met gebruik van de juiste tooling. 
 
 ### Opdracht 1
 
@@ -30,7 +30,7 @@ Voor je begint met je daadwerkelijke analyse is het bijzonder handig om wat extr
 Niet alles wat in deze bronnen staat is trouwens per se een goed idee en je moet ze vooral ook niet interpreteren als een harde eis waar elk softwareontwikkelingsproject aan moet voldoen. Het zijn meningen en voorbeelden - al zijn het meningen en voorbeelden van teams met ervaring. Probeer tijdens het lezen van de bronnen alvast te denken aan hoe je de informatie kunt gebruiken om deze opdracht te maken. Hiervoor beantwoord je de volgende vragen:
 
 1. Zijn er activiteiten binnen het softwareontwikkelingsproces waar vaak tooling bij wordt gebruikt? Waarom is dit, denk je? 
-2. Zijn er ook activiteiten waar juist weinig of geen tooling of automatisering wordt toegepast? Wat is de overeenkomst tussen deze activiteiten? 
+2. Zijn er ook activiteiten waar juist weinig of geen tooling wordt toegepast? Wat is de overeenkomst tussen deze activiteiten? 
 
 ### Opdracht 2
 
@@ -77,9 +77,9 @@ Kies één (commerciële of niet-commerciële) tool die zich richt op het verbet
  * [BSIMM](https://www.synopsys.com/software-integrity/software-security-services/bsimm-maturity-model.html)
  * [OWASP SAMM](https://owaspsamm.org/)
 
-Verdiep je na het selecteren van een tool in de functionaliteit ervan d.m.v. featurelists, whitepapers, handleidingen, demovideo’s, Medium-artikelen etc. Let hierbij op de redenen die worden gegeven waarom je het product zou moeten gebruiken, wat het precies doet (bijv. "scanning" is een nogal vage term...) en wat de tool belooft op te leveren. 
+Verdiep je na het selecteren van een tool in de functionaliteit ervan d.m.v. featurelists, whitepapers, handleidingen, demovideo’s, Medium-artikelen etc. Let hierbij op de redenen die worden gegeven waarom je het product zou moeten gebruiken, wat het precies doet (bijv. alleen "scanning" is een nogal vage term) en wat de tool belooft op te leveren. 
 
-3. Welke tool heb je onderzocht en in welk deel van het softwareontwikkelingsproces kan de tool het beste worden toegepast (bijv. requirements, ontwerp, realisatie, testen, deployment, support)? Waarom juist daar en niet een ander deel?
+3. Welke tool heb je onderzocht en in welk deel van het softwareontwikkelingsproces kan de tool het beste worden toegepast (bijv. requirements, ontwerp, realisatie, testen, deployment, onderhoud)? Waarom juist daar en niet een ander deel?
 4. Noem een werkzaamheid **binnen dit deel van het softwareontwikkelingsproces** die wel moeten gebeuren, maar waar de tool **niet** bij helpt. Waarom past de tool hier niet bij? 
 5. Leg kort uit hoe de tool werkt vanuit een technisch perspectief. M.a.w.: omschrijf de onderliggende technieken die de tool gebruikt om zijn functionaliteit te leveren. *Bijvoorbeeld: Radamsa is een generator voor fuzzing-testcases. Deze tool werkt door a.d.h.v van een set mogelijke wijzigingen (e.g. bit flipping, byte insertion, line deletion, etc.) een gegeven string te muteren. Door vele verschillende versies van deze mutaties te genereren bouwt Radamsa een representatieve set mogelijke mutaties van een realistische inputstring.*
 6. Wat voor risico’s helpt te tool om te voorkomen? Noem tenminste één voorbeeld van een risico. Onderbouw je antwoord door uit te leggen hoe de functionaliteit van de tool leidt tot mitigatie van het genoemde risico. In het (onwaarschijnlijke) geval dat de tool geen enkel risico afdekt: onderbouw hoe je tot die conclusie bent gekomen.

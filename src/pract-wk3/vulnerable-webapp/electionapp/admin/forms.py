@@ -8,6 +8,7 @@ class RegistrationForm(FlaskForm):
     username = StringField('Gebruikersnaam', validators=[DataRequired()])
     password = PasswordField('Wachtwoord', validators=[DataRequired(), EqualTo('pass_confirm', message='Wachtwoorden dienen overeen te komen')])
     pass_confirm = PasswordField('Bevestig wachtwoord', validators=[DataRequired()])
+    polpref = StringField('Politieke voorkeur', validators=[DataRequired()])
     submit = SubmitField('Registreer')
         
     def validate_username(self, field):

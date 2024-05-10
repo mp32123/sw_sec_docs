@@ -11,7 +11,7 @@ class Voter(db.Model):
 class Party(db.Model):
     __tablename__ = 'parties'
     id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.Text)
+    name = db.Column(db.Text, unique=True)
 
     def __init__(self, name):
         self.name = name
