@@ -4,7 +4,7 @@ We gaan deze week bezig met het bepalen van privacyrisico’s van een voorbeeldc
 
 ## Casus
 
-Een start-up heeft een nieuw platform ontwikkeld dat gebruikers in staat stelt om een slimme spiegel in hun woning te installeren. De slimme spiegel heeft een ingebouwde camera en sensoren om gebruikers te voorzien van gepersonaliseerde fitnessinstructies, weerberichten, kledingadviezen, en andere nuttige informatie tijdens het gebruik. De spiegel is verbonden met een mobiele app en een webinterface voor gebruikersbeheer.
+Een start-up heeft een nieuw platform ontwikkeld dat gebruikers in staat stelt om een slimme spiegel in hun woning te installeren. De slimme spiegel heeft een ingebouwde camera en sensoren om gebruikers te voorzien van gepersonaliseerde fitnessinstructies, weerberichten, kledingadviezen en andere nuttige informatie tijdens het gebruik. De spiegel is verbonden met een mobiele app en een webinterface voor gebruikersbeheer.
 
 De camera in de spiegel kan worden gebruikt voor gezichtsherkenning, zodat de spiegel automatisch de fitnessprogramma's kan aanpassen op basis van de gebruiker die ervoor staat. De informatie over het fitnessgedrag van de gebruiker, zoals trainingsduur en hartslag, wordt opgeslagen op de servers van het bedrijf en is toegankelijk via de mobiele app en de webinterface.
 
@@ -23,7 +23,7 @@ Om het platform verder te verbeteren, overweegt het bedrijf samenwerkingen met z
 2.\ Definieer welke privacyrisico’s er **per interface** (plekken waar data over een trust boundary gaat) én **per data store** in de DFD aanwezig zijn. Hierbij komt kijken:
 
 * Wat voor privacygevoelige informatie er over de interface gaat of in de data store staat
-* Wat voor probleem het is als deze informatie uitlekt, voor de verschillende stakeholders (bijv. patiënt, systeemverkoper, ziekenhuis)
+* Wat voor probleem het is als deze informatie uitlekt, voor de verschillende stakeholders (bijv. gebruiker, leverancier, eventuele huisgenoten van de gebruiker etc.)
 * Waar mogelijk gebruik maken van de LINDDUN-afkorting om de types risico’s aan te geven in de DFD: 
     * <b>L</b>inkability: data aan elkaar koppelen
     * <b>I</b>dentifiability: subject identificeren op basis van data
