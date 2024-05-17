@@ -20,31 +20,29 @@ Het bedrijf heeft ook plannen om samen te werken met supermarkten om automatisch
 
 ## Opdrachten
 
-1.\ Teken het Data Flow Diagram (DFD) van de beschreven casus. Het diagram moet het systeem op een niveau laten zien dat geschikt is voor een risicoanalyse. Zorg dat de DFD overzichtelijk en navolgbaar neergezet wordt. Dit kan op papier, maar mag uiteraard ook met een softwaretool (zie onderstaande lijst).
+1.\ Teken het Data Flow Diagram (DFD) van de beschreven casus. Het diagram moet het systeem op een niveau laten zien dat geschikt is voor een risicoanalyse. Zorg dat de DFD overzichtelijk en navolgbaar neergezet wordt. Dit kan op papier, maar mag uiteraard ook met een softwaretool (zie onderstaande lijst). Tip: nummer de interfaces, zodat je er bij 2 en 3 gemakkelijk naar kunt verwijzen.
 
-2.\ Pas threat modelling toe op je DFD. Geef in je DFD aan waar welke risico’s zitten (interfaces: plekken waar data over een trust boundary gaat). Gebruik hiervoor de STRIDE-methodiek. Denk hierbij aan de afkorting:
+2.\ Pas threat modelling toe op je DFD. Geef in je DFD aan waar welke risico’s zitten. Beperk je hierbij tot de interfaces: plekken waar data over een trust boundary gaat. Gebruik hiervoor de STRIDE-methodiek:
 
-* <b>S</b>poofing: je voordoen als iemand anders of een ander system, bijv. doordat er geen wachtwoordeisen zijn.
+* <b>S</b>poofing: je voordoen als iemand anders of een ander systeem, bijv. doordat er geen wachtwoordeisen zijn.
 * <b>T</b>ampering: aanpassen van data op een systeem of netwerk, bijv. XSS.
-* <b>R</b>epudiation: ontkennen van iets dat je gedaan hebt, bijv. doordat er geen logging is.
+* <b>R</b>epudiation: kunnen ontkennen van iets dat je gedaan hebt, doordat er geen logging is.
 * <b>I</b>nformation Disclosure: ongeautoriseerd toegang verschaffen tot data, bijv. mogelijk gemaakt door *plain text* versturen van data.
 * <b>D</b>enial of Service: werking van services verhinderen, bijv. DDOS-aanval.
 * <b>E</b>levation of Privilege: toegang krijgen tot rechten die je niet had, bijv. door gebruik te maken van kwetsbaarheden in slechte/oude software.
 
-3.\ 
+3.\ Geef per interface minstens één concreet aanvalsscenario waarin één of meer van de door jou gekozen STRIDE-letters terugkomen.
 
-A. Maak een opsomming van de interfaces waarvan jij denk dat ze getest moeten worden op security-aspecten.
+4.\ Maak nu een lijst van de interfaces, gesorteerd op prioriteit, dus de in jouw optiek meest kwetsbare bovenaan. Onderbouw je keuze!
 
-B. Prioriteer deze lijst en onderbouw je keuzes daarin. 
-
-C. Beschrijf voor de top 3 van kwetsbare interfaces welke maatregelen er genomen kunnen worden (geef meerdere opties; denk ook aan tijd-/geld-investering van het bedrijf!). Denk hierbij aan de afkorting META:
+5.\ Beschrijf voor de top 3 van kwetsbare interfaces welke maatregelen er genomen kunnen worden (geef meerdere opties; denk ook aan tijd-/geld-investering van het bedrijf!). Denk hierbij aan de afkorting META:
 
 * <b>M</b>itigate: een tegenmaatregel implementeren
 * <b>E</b>liminate: de interface geheel verwijderen
 * <b>T</b>ransfer: de verantwoordelijkheid overdragen aan een andere partij
 * <b>A</b>ccept: het risico voor lief nemen en niets doen
 
-*Tip: je kunt 2, 3A, B en C grotendeels in één keer maken door gebruik te maken een tabel met kolommen voor de interfaces, de STRIDE-letters, de scenario's, de prioriteiten en de tegenmaatregelen, en deze te sorteren op prioriteit. Zie bijvoorbeeld de Excel-sheet die op Blackboard staat. Denk er wel om dat je de **onderbouwing** van je prioritering erbij vermeldt!*
+*Tip: je kunt 2 t/m 5 grotendeels in één keer maken door gebruik te maken een tabel met kolommen voor de interfaces, de STRIDE-letters, de scenario's, de prioriteiten en de tegenmaatregelen, en deze te sorteren op prioriteit. Zie bijvoorbeeld de Excel-sheet die op Blackboard staat. Denk er wel om dat je de **onderbouwing** van je prioritering erbij vermeldt!*
 
 ## Tools voor het tekenen van DFD's
 
