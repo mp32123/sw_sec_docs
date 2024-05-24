@@ -20,16 +20,17 @@ Om het platform verder te verbeteren, overweegt het bedrijf samenwerkingen met z
 
 1.\ Teken het Data Flow Diagram van de beschreven casus. Tip: nummer de interfaces en data stores, zodat je er bij 2 en 3 gemakkelijk naar kunt verwijzen.
 
-2.\ Definieer welke privacyrisico’s er **per interface** (plekken waar data over een trust boundary gaat) én **per data store** in de DFD aanwezig zijn. Maak hierbij gebruik van de LINDDUN-afkorting om de types risico’s aan te geven in de DFD: 
-    * <b>L</b>inkability: data aan elkaar koppelen.
-    * <b>I</b>dentifiability: subject identificeren op basis van data.
-    * <b>N</b>on-repudiation: opgeslagen data niet kunnen aanpassen of verwijderen.
-    * <b>D</b>etectability: kunnen vaststellen dát er data is over een subject.
-    * <b>D</b>isclosure of information: data wordt ongevraagd openbaar.
-    * <b>U</b>nawareness: data wordt verwerkt zonder dat het subject het weet.
-    * <b>N</b>on-compliance: data wordt niet conform de wet- en regelgeving verwerkt.
+2.\ Definieer welke privacyrisico’s er **per interface** (plekken waar data over een trust boundary gaat) én **per data store** in de DFD aanwezig zijn. Maak hierbij gebruik van de LINDDUN-afkorting om de types risico’s aan te geven in de DFD:
 
-3.\ Geef per interface en data store minstens één concreet aanvalsscenario waarin één of meer van de door jou gekozen LINDDUN-letters terugkomen. Hierbij komt kijken:
+* <b>L</b>inkability: data aan elkaar koppelen.
+* <b>I</b>dentifiability: subject identificeren op basis van data.
+* <b>N</b>on-repudiation: opgeslagen data niet kunnen aanpassen of verwijderen.
+* <b>D</b>etectability: kunnen vaststellen dát er data is over een subject.
+* <b>D</b>isclosure of information: data wordt ongevraagd openbaar.
+* <b>U</b>nawareness: data wordt verwerkt zonder dat het subject het weet.
+* <b>N</b>on-compliance: data wordt niet conform de wet- en regelgeving verwerkt.
+
+3.\ Geef per interface en data store minstens één concreet aanvalsscenario waarin één of meer van de door jou gekozen LINDDUN-letters terugkomen. Hierbij komt ook kijken:
 
 * Wat voor privacygevoelige informatie er over de interface gaat of in de data store staat.
 * Wat voor probleem het is als deze informatie uitlekt, voor de verschillende stakeholders (denk aan de gebruiker, de leverancier, eventuele huisgenoten van de gebruiker, zorgverzekeraars).
