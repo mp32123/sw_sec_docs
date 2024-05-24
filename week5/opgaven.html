@@ -20,7 +20,7 @@
       
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.23">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.24">
     
     
       
@@ -750,34 +750,30 @@
 <h1 id="opgave-week-5-privacy-threat-modelling-van-een-slimme-spiegel">Opgave week 5: privacy threat modelling van een slimme spiegel<a class="headerlink" href="#opgave-week-5-privacy-threat-modelling-van-een-slimme-spiegel" title="Permanent link">&para;</a></h1>
 <p>We gaan deze week bezig met het bepalen van privacyrisico’s van een voorbeeldcasus aan de hand van de LINDDUN-methode. </p>
 <h2 id="casus">Casus<a class="headerlink" href="#casus" title="Permanent link">&para;</a></h2>
-<p>Een start-up heeft een nieuw platform ontwikkeld dat gebruikers in staat stelt om een slimme spiegel in hun woning te installeren. De slimme spiegel heeft een ingebouwde camera en sensoren om gebruikers te voorzien van gepersonaliseerde fitnessinstructies, weerberichten, kledingadviezen en andere nuttige informatie tijdens het gebruik. De spiegel is verbonden met een mobiele app en een webinterface voor gebruikersbeheer.</p>
-<p>De camera in de spiegel kan worden gebruikt voor gezichtsherkenning, zodat de spiegel automatisch de fitnessprogramma's kan aanpassen op basis van de gebruiker die ervoor staat. De informatie over het fitnessgedrag van de gebruiker, zoals trainingsduur en hartslag, wordt opgeslagen op de servers van het bedrijf en is toegankelijk via de mobiele app en de webinterface.</p>
-<p>Naast de fitnessinformatie slaat het bedrijf ook gegevens op over het kijkgedrag van gebruikers voor advertentiedoeleinden. Deze gegevens worden gebruikt om gerichte advertenties aan te bieden via de mobiele app.</p>
-<p>Om het platform verder te financieren, biedt het bedrijf een premium abonnement aan waarvoor gebruikers maandelijks betalen. Dit abonnement geeft toegang tot geavanceerde fitnessprogramma's, uitgebreide weer- en verkeersinformatie en exclusieve kledingadviezen.</p>
-<p>Het platform heeft een functie waarmee gebruikers hun slimme spiegel kunnen delen op sociale media. Via deze functie, die standaard aan staat, kunnen vrienden en volgers live meekijken met hun fitness-sessies via de mobiele app.</p>
-<p>Om het platform verder te verbeteren, overweegt het bedrijf samenwerkingen met zorgverzekeraars, waarbij gebruikers gezondheidsgegevens delen in ruil voor korting op hun premie.</p>
+<p>Een start-up heeft een nieuw platform ontwikkeld dat gebruikers in staat stelt om een slimme spiegel in hun woning te installeren. De slimme spiegel heeft een ingebouwde camera, inclusief motion-detection en eye-tracking. De spiegel fungeert ook als een scherm dat gebruikers kan voorzien van gepersonaliseerde fitnessinstructies, weerberichten, kledingadviezen en andere nuttige informatie tijdens het gebruik. In het scherm is tevens een touchscreen ingebouwd, zodat een gebruiker bij het eerste gebruik zijn naam kan opgeven en fitnessoefeningen kan uitkiezen. De spiegel staat in verbinding met de cloudomgeving van de leverancier.</p>
+<p>De camera in de spiegel kan worden gebruikt voor gezichtsherkenning, zodat de spiegel automatisch de fitnessprogramma's kan aanpassen op basis van de gebruiker die ervoor staat. De informatie over de lichaamsbouw en het fitnessgedrag van de gebruiker, zoals trainingsduur en intensiteit, wordt opgeslagen op de servers van het bedrijf.</p>
+<p>Naast de fitnessinformatie slaat het bedrijf ook gegevens op over het kijkgedrag van de gebruikers voor advertentiedoeleinden (via eye-tracking door de camera). Deze gegevens worden gebruikt om gerichte advertenties aan te bieden.</p>
+<p>Om het platform verder te financieren, biedt het bedrijf een premium abonnement aan waarvoor gebruikers maandelijks betalen. Dit abonnement geeft toegang tot geavanceerde fitnessprogramma's, uitgebreide weer- en verkeersinformatie en exclusieve kledingadviezen; dit alles zonder reclame.</p>
+<p>Het platform heeft een functie waarmee gebruikers hun slimme spiegel kunnen delen op sociale media. Via deze functie, die standaard aan staat, kunnen vrienden en volgers live meekijken met hun fitness-sessies.</p>
+<p>Om het platform verder te verbeteren, overweegt het bedrijf samenwerkingen met zorgverzekeraars, waarbij gebruikers gezondheidsgegevens delen in ruil voor korting op hun premie. Het idee hierachter is om met Machine Learning eventuele achteruitgang in gezondheid eerder te kunnen detecteren, om zo door preventie kosten te kunnen besparen.</p>
 <h2 id="opdrachten">Opdrachten<a class="headerlink" href="#opdrachten" title="Permanent link">&para;</a></h2>
-<p>1. Teken het Data Flow Diagram van de beschreven casus. </p>
-<p>2. Definieer welke privacyrisico’s er <strong>per interface</strong> (plekken waar data over een trust boundary gaat) én <strong>per data store</strong> in de DFD aanwezig zijn. Hierbij komt kijken:</p>
+<p>1. Teken het Data Flow Diagram van de beschreven casus. Tip: nummer de interfaces en data stores, zodat je er bij 2 en 3 gemakkelijk naar kunt verwijzen.</p>
+<p>2. Definieer welke privacyrisico’s er <strong>per interface</strong> (plekken waar data over een trust boundary gaat) én <strong>per data store</strong> in de DFD aanwezig zijn. Maak hierbij gebruik van de LINDDUN-afkorting om de types risico’s aan te geven in de DFD: 
+    * <b>L</b>inkability: data aan elkaar koppelen.
+    * <b>I</b>dentifiability: subject identificeren op basis van data.
+    * <b>N</b>on-repudiation: opgeslagen data niet kunnen aanpassen of verwijderen.
+    * <b>D</b>etectability: kunnen vaststellen dát er data is over een subject.
+    * <b>D</b>isclosure of information: data wordt ongevraagd openbaar.
+    * <b>U</b>nawareness: data wordt verwerkt zonder dat het subject het weet.
+    * <b>N</b>on-compliance: data wordt niet conform de wet- en regelgeving verwerkt.</p>
+<p>3. Geef per interface en data store minstens één concreet aanvalsscenario waarin één of meer van de door jou gekozen LINDDUN-letters terugkomen. Hierbij komt kijken:</p>
 <ul>
-<li>Wat voor privacygevoelige informatie er over de interface gaat of in de data store staat</li>
-<li>Wat voor probleem het is als deze informatie uitlekt, voor de verschillende stakeholders (bijv. gebruiker, leverancier, eventuele huisgenoten van de gebruiker etc.)</li>
-<li>Waar mogelijk gebruik maken van de LINDDUN-afkorting om de types risico’s aan te geven in de DFD: <ul>
-<li><b>L</b>inkability: data aan elkaar koppelen</li>
-<li><b>I</b>dentifiability: subject identificeren op basis van data</li>
-<li><b>N</b>on-repudiation: opgeslagen data niet kunnen aanpassen of verwijderen</li>
-<li><b>D</b>etectability: kunnen vaststellen dát er data is over een subject</li>
-<li><b>D</b>isclosure of information: data openbaar maken</li>
-<li><b>U</b>nawareness: data wordt verwerkt zonder dat het subject het weet</li>
-<li><b>N</b>on-compliance: data wordt niet conform de wet- en regelgeving verwerkt</li>
+<li>Wat voor privacygevoelige informatie er over de interface gaat of in de data store staat.</li>
+<li>Wat voor probleem het is als deze informatie uitlekt, voor de verschillende stakeholders (denk aan de gebruiker, de leverancier, eventuele huisgenoten van de gebruiker, zorgverzekeraars).</li>
 </ul>
-</li>
-</ul>
-<p>3. </p>
-<p>A. Bepaal wat de risicoscenario’s zijn.</p>
-<p>B. Prioriteer deze risico’s en onderbouw deze prioritering ook.</p>
-<p>C. Bedenk zo veel mogelijke maatregelen om deze risico’s te verminderen.</p>
-<p><em>Tip: je kunt 2, 3A, B en C in één keer maken door gebruik te maken één of meer tabellen met kolommen voor de interfaces / data stores, de LINDDUN-letters, de scenario's, de stakeholders, de prioriteiten en de tegenmaatregelen. Zie bijvoorbeeld de Excel-sheet die op Blackboard staat. Denk er wel om dat je de <strong>onderbouwing</strong> van je prioritering erbij vermeldt!</em></p>
+<p>4. Maak nu een lijst van de interfaces, gesorteerd op prioriteit, dus de in jouw optiek meest kwetsbare bovenaan. Onderbouw je keuze!</p>
+<p>5. Bedenk voor de top 3 van kwetsbare interfaces zo veel mogelijk maatregelen om de gevonden risico’s te verminderen.</p>
+<p><em>Tip: je kunt 2 t/m 5 grotendeels in één keer maken door gebruik te maken een tabel met kolommen voor de interfaces en data stores, de LINDDUN-letters, de scenario's (incl. type data en stakeholders), de prioriteiten en de tegenmaatregelen, en deze te sorteren op prioriteit. Zie bijvoorbeeld de Excel-sheet die op Blackboard staat. Denk er wel om dat je de <strong>onderbouwing</strong> van je prioritering erbij vermeldt!</em></p>
 
 
 
@@ -827,7 +823,7 @@
     <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Gekopieerd naar klembord", "clipboard.copy": "Kopi\u00ebren naar klembord", "search.result.more.one": "1 extra overeenkomst op deze pagina", "search.result.more.other": "# extra overeenkomsten op deze pagina", "search.result.none": "Geen overeenkomende documenten", "search.result.one": "1 overeenkomende document", "search.result.other": "# overeenkomende documenten", "search.result.placeholder": "Typ om te beginnen met zoeken", "search.result.term.missing": "Ontbreekt", "select.version": "Selecteer versie"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.ebd0bdb7.min.js"></script>
+      <script src="../assets/javascripts/bundle.081f42fc.min.js"></script>
       
         <script src="../js/imgs.js"></script>
       
