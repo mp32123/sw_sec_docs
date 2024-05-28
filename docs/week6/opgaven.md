@@ -21,7 +21,7 @@ Het moge duidelijk zijn dat, als Initech dit per se wil doen, het heel zorgvuldi
 
 ### Opdracht 1
 
-Noem 3 activiteiten die jij als engineer<sup>*</sup> kunt doen om tot een zo veilig mogelijke applicatie te komen. Leg bij elke activiteit uit in welke fase je deze toepast (Requirements, Ontwerp, Ontwikkeling, Testen en Deployment) en waarom deze bijdraagt aan een veilige applicatie.
+Noem 3 activiteiten die jij als engineer<sup>*</sup> kunt doen om tot een zo veilig mogelijke applicatie te komen. Leg bij elke activiteit uit in welke fase je deze toepast (Requirements, Ontwerp, Ontwikkeling, Testen of Deployment) en waarom deze bijdraagt aan een veilige applicatie.
 
 _Voorbeeld: in de Testfase draaien wij als ontwikkelteam een SAST-tool over de code om veelvoorkomende fouten er alvast uit te halen._
 
@@ -36,6 +36,10 @@ _Voorbeeld: er moet een security-expert (intern of van een extern bureau) bij he
 ### Oplevering
 
 Maak van bovenstaande zes punten een lopend verhaal, en voeg een korte inleiding en conclusie toe. Schrijf het in de vorm van een advies aan het management van de firma Initech. Richtlijn: 1 A4'tje, ongeveer 300 woorden.
+
+## Hoe moet je het geheel inleveren?
+
+Het threat modelling-rapport en het advies aan Initech (deel 1 en 2) mogen worden samengevoegd in één document en als doc(x) of pdf worden ingeleverd via het Inleverpunt.
 
 -----
 <sup>*</sup> _Lees hier, afhankelijk van je gekozen richting, software engineer danwel network & security engineer._
