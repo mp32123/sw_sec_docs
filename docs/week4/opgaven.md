@@ -48,8 +48,8 @@ Het bedrijf heeft ook plannen om samen te werken met supermarkten om automatisch
 
 De DFD is de basis voor de opdracht van deze (en volgende) week. Je mag hem op papier tekenen of desnoods in MS Paint, maar er zijn betere (gratis) tools beschikbaar die je het leven wat gemakkelijker kunnen maken, zoals:
 
-* [LucidChart](https://www.lucidchart.com/pages/data-flow-diagram)
-* [Draw.io](https://app.diagrams.net/) met [deze plugin](https://github.com/michenriksen/drawio-threatmodeling)
+* [Draw.io](https://app.diagrams.net/), met DFD-ondersteuning toegevoegd via 'Meer vormen'/'More shapes'
+* [LucidChart](https://www.lucidchart.com/pages/data-flow-diagram), gratis versie met max. 60 elementen
 * [Miro](https://miro.com/templates/data-flow-diagram/)
 * [Drawboard PDF](https://www.drawboard.com/pdf/)
 * [GraphViz](https://graphviz.org/)
