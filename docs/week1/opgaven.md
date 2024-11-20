@@ -69,7 +69,9 @@ Om dit werkend te krijgen, zijn er enkele aandachtspunten:
 
 Lever een kort verslagje in over deze "penetration test" (pentest), inclusief screenshots van je Hydra-aanroeptijden, metingen, conclusies en drie tegenmaatregelen. (50%)
 
-<sup>*</sup> Geen eigen webapp (meer) paraat? [Hier](https://github.com/hanze-hbo-ict/sw_sec_docs/tree/master/src/pract-wk1) kun je er eentje vinden die je ook mag gebruiken. Vraag eventueel je werkcollegedocent om hulp om deze aan de praat te krijgen.
+<sup>*</sup> Geen eigen webapp (meer) paraat? [Hier](https://github.com/hanze-hbo-ict/sw_sec_docs/tree/master/src/pract-wk1) kun je er eentje vinden die je ook mag gebruiken.
+In de README staat ook [een link naar een image op DockerHub](https://hub.docker.com/r/tomerikroos/webapp-hydra), nog gemakkelijker.
+Vraag eventueel je werkcollegedocent om hulp om de app aan de praat te krijgen.
 
 ## Deel 2: Fuzzing met Radamsa
 
