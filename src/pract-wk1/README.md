@@ -8,7 +8,9 @@ Daarna kan de webapp gedraaid worden. Makkelijker is het om de webapp te pullen 
 
 ## Docker
 
-[Download de image van DockerHub](https://hub.docker.com/r/tomerikroos/webapp-hydra) en draai hem als container. 
+[Download de image van DockerHub](https://hub.docker.com/r/tomerikroos/webapp-hydra) en draai hem als container.
+Let erop dat je bij de "Optional settings" de host-poort 5000 koppelt aan poort 5000 van de container.
+Daarna kun je via localhost:5000 bij de webapp.
 
 ## Bestanden
 

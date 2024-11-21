@@ -11,3 +11,5 @@ COPY app.py app.py
 ADD mijnproject mijnproject
 
 CMD [ "python3", "-m" , "flask", "run", "--host=0.0.0.0"]
+
+EXPOSE 5000
