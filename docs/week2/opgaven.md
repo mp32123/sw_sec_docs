@@ -6,7 +6,7 @@ In dit practicum gaan we aan de slag met het opsporen van beveiligingsproblemen 
 
 [Download](https://www.zaproxy.org/download/) de software. Voltooi de installatie en start de software op. Krijg je tijdens de installatie een foutmelding met betrekking tot de Java-JDK of -JRE? Het kan helpen om [de JDK van Adoptium](https://adoptium.net/) te installeren.
 
-Om ZAP te leren kennen, begin je met een "Automated scan". Als OWASP ZAP is opgestart kun je hier direct voor kiezen. Na deze keuze kan er een URL ingevoerd worden. Dit is de URL naar een webapplicatie, inclusief de poort. Kies hierna "Aanval". OWASP ZAP zal de gekozen website inladen en past o.a. een fuzzer toe op plekken waar data ingevoerd kan worden. Alle gevonden kwetsbaarheden en uitgevoerde requests worden in de onderste balk gelogd.
+Om ZAP te leren kennen, begin je met een "Automated scan". Als OWASP ZAP is opgestart kun je hier direct voor kiezen. Na deze keuze kan er een URL ingevoerd worden. Dit is de URL naar een webapplicatie, inclusief de poort. Kies hierna "Aanval". OWASP ZAP zal de gekozen website inladen en past o.a. een fuzzer toe op plekken waar data ingevoerd kan worden. Alle gevonden kwetsbaarheden en uitgevoerde requests worden in de onderste balk gelogd. **Gebruik nu nog niet de Juiceshop**, maar kies bijvoorbeeld je eigen webapp van het vak Webtech. Je zult verbaasd staan hoeveel kwetsbaarheden ZAP zal vinden!
 
 Als je kiest voor "Manual Explore", kun je met een browser naar keuze door een opgegeven website navigeren, terwijl alle requests worden gelogd en eventueel (met aangebrachte wijzigingen) later opnieuw verzonden kunnen worden.
  
