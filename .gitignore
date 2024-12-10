@@ -10,3 +10,4 @@ src/pract-wk3/.coverage
 src/pract-wk3/__pycache__/test_data.cpython-38-pytest-6.2.3.pyc
 *.pyc
 .coverage
+swsecdocs_venv
