@@ -18,7 +18,7 @@
       
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.47">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.48">
     
     
       
@@ -616,6 +616,17 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Opgave week 7 – netwerksecurity
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="opgaven.html" class="md-nav__link md-nav__link--active">
         
   
@@ -625,6 +636,58 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Inhoudsopgave">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Inhoudsopgave
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#side-channel-attack" class="md-nav__link">
+    <span class="md-ellipsis">
+      Side-Channel Attack
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Side-Channel Attack">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#introductie" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introductie
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#opdracht" class="md-nav__link">
+    <span class="md-ellipsis">
+      Opdracht
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -658,6 +721,47 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Inhoudsopgave
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#side-channel-attack" class="md-nav__link">
+    <span class="md-ellipsis">
+      Side-Channel Attack
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Side-Channel Attack">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#introductie" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introductie
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#opdracht" class="md-nav__link">
+    <span class="md-ellipsis">
+      Opdracht
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -673,7 +777,84 @@
 
 <h1 id="opgave-week-7-netwerksecurity">Opgave week 7 – netwerksecurity<a class="headerlink" href="#opgave-week-7-netwerksecurity" title="Permanent link">&para;</a></h1>
 <p>Deze opgave is speciaal voor de Deeltijd-variant van het vak Security.</p>
-<p>De opgave zal tijdig voor aanvang van de cursus hier gepubliceerd worden.</p>
+<h2 id="side-channel-attack">Side-Channel Attack<a class="headerlink" href="#side-channel-attack" title="Permanent link">&para;</a></h2>
+<h3 id="introductie">Introductie<a class="headerlink" href="#introductie" title="Permanent link">&para;</a></h3>
+<p>Je probeert in te loggen op een website, waarna je als reactie krijgt dat het wachtwoord niet klopt. Kun je het antwoord van de server gebruiken om het wachtwoord te kraken? </p>
+<p>Ja. Tenminste, als er geen rekening is gehouden met het risico van een timing attack. Een Timing Attack is een vorm van Side-Channel Attack waarbij de responstijd van de server gebruikt wordt om letter voor letter een wachtwoord te kraken. </p>
+<p>Neem als voorbeeld de volgende functie:</p>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">check_password</span><span class="p">(</span><span class="n">actual_password</span><span class="p">,</span> <span class="n">provided_password</span><span class="p">):</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">provided_password</span><span class="p">)</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">actual_password</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">provided_password</span><span class="p">)):</span>
+            <span class="k">if</span> <span class="n">provided_password</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">!=</span> <span class="n">actual_password</span><span class="p">[</span><span class="n">i</span><span class="p">]:</span>
+                <span class="k">return</span><span class="p">(</span><span class="s2">&quot;Incorrect password. Access Denied.&quot;</span><span class="p">)</span>
+        <span class="k">return</span><span class="p">(</span><span class="s2">&quot;Password correct. Access Granted.&quot;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span><span class="p">(</span><span class="s2">&quot;Incorrect password. Access Denied.&quot;</span><span class="p">)</span>
+</code></pre></div>
+<p>De functie gaat karakter voor karakter het gegeven wachtwoord bij langs en kijkt of het overeenkomt met het daadwerkelijke wachtwoord.
+Zodra die een verkeerd karakter tegenkomt eindigt de functie en wordt de toegang geweigerd; pas als alle karakters zijn gecheckt wordt de toegang verleend. </p>
+<p>Dit betekent dus dat hoe meer karakters (op een rij, vanaf het eerste karakter) juist zijn, hoe vaker de loop wordt herhaald, en dus hoe langer het duurt voor de functie een antwoord teruggeeft!  </p>
+<p>Met deze kennis zouden we kunnen proberen om het wachtwoord te kraken, en dat is ook precies wat we in deze opdracht gaan doen.  </p>
+<h3 id="opdracht">Opdracht<a class="headerlink" href="#opdracht" title="Permanent link">&para;</a></h3>
+<p>Er zal binnen het netwerk een simpele server opgezet worden waar je kunt inloggen met je studentencode en een (voor jullie) onbekend wachtwoord.
+De gegevens hiervoor volgen nog, zodra de server draait.
+Voor testdoeleinden is het (eerst) ook mogelijk om <a href="#lokale-server">met een lokale server te werken</a>.</p>
+<p>Je krijgt cadeau dat het wachtwoord alléén uit kleine letters en cijfers bestaat.
+Deze server werkt aan de achterkant praktisch hetzelfde als de bovenstaande functie, en je kunt hem dus ook op dezelfde manier uitbuiten om het wachtwoord te kraken.
+Hiervoor maak je gebruik van <a href="https://github.com/hanze-hbo-ict/sw_sec_docs/tree/master/src/pract-wk7/client.py">het bestand client.py</a> dat al enkele functies bevat om de verbinding tot stand te laten komen: <code>client_connect()</code> is een backend-functie die de directe koppeling met de server regelt en eventuele errors afvangt. <code>call_server()</code> maakt daar weer gebruik van, en kun je direct aanroepen in je oplossing. </p>
+<p>NB: gebruik géén andere soorten aanvallen om het wachtwoord te proberen kraken! De server is niet bijzonder robuust en als je hem platgooit heb je zowel jezelf als alle andere studenten ermee. 
+De functie <code>call_server()</code> mag naar wens worden aangepast, maar zorg dat je de regel met <code>time.sleep(0.001)</code> laat staan; dit zorgt ervoor dat jullie de server niet per ongeluk DDoS’en met zijn allen. Het verbindingsgedrag van de clients wordt overigens bijgehouden.  </p>
+<p>Hierna staan de eisen van het lab journal en een stappenplan dat je kunt aanhouden om de opdracht te maken. </p>
+<h4 id="stappenplan">Stappenplan<a class="headerlink" href="#stappenplan" title="Permanent link">&para;</a></h4>
+<ol>
+<li>
+<p>Controleer of de functionaliteit van de verbinding: werkt de test-aanroep onderaan de code? </p>
+</li>
+<li>
+<p>Als de verbinding werkt zul je eerst een manier nodig hebben om te timen hoe lang de server erover doet om een antwoord te sturen. Pas de code aan zodat je voor elke inlogpoging ziet hoe veel tijd er tussen het versturen van de credentials en het ontvangen van het antwoord zit. </p>
+</li>
+<li>
+<p>Nu je kunt meten hoe lang de server doet over een antwoord kunnen we beginnen met kraken! Stap één is het bepalen van de lengte van het wachtwoord. Schrijf een functie die de responstijd van wachtwoorden van verschillende lengte meet, en deze gebruikt om de juiste lengte te bepalen.
+Denk goed na over waar in de code je het tijdsverschil meet.<br>
+<em>Hint: variabele vertraging in het netwerk voegt willekeur toe aan de responstijd.</em><br>
+Wat kun je doen om je metingen betrouwbaarder te maken?<br>
+Denk hierbij bv. aan statistische analyse. </p>
+</li>
+<li>
+<p>Nu je de juiste lengte hebt kun je beginnen met het kraken van het wachtwoord zelf.
+Doe dit door eerst een ontwerp te maken met pseudo-code en er met zijn tweeën naar te kijken alvorens je het implementeert.
+Doe dit vóórdat je het internet raadpleegt voor hulp!<br>
+<em>Hint: je zult teken voor teken aan de slag moeten gaan!</em><br>
+NB: het wachtwoord bestaat uit alleen kleine letters en cijfers. Mocht je je aanval willen testen met een gebruiker waarvan het wachtwoord bekend is kun je studentnummer 000000 gebruiken, deze heeft het wachtwoord hunter2. </p>
+</li>
+</ol>
+<h4 id="lab-journal">Lab journal<a class="headerlink" href="#lab-journal" title="Permanent link">&para;</a></h4>
+<p>Zorg dat je in het “Discussie”-onderdeel de volgende vragen behandelt: </p>
+<ul>
+<li>Hoe ben je omgegaan met de variabele vertraging van het netwerk? Welke oplossingen heb je geprobeerd die niet werkten, en waarom werkten ze niet? </li>
+<li>Aansluitend op bovenstaande onderdeel: obstakels die je tijdens het maken van de opgave bent tegengekomen en hoe je ze overkwam.  </li>
+</ul>
+<p>Noem in het “Resultaten”-onderdeel ook het “gestolen” wachtwoord van beide studenten (die van de opgave dus – je echte wachtwoorden mag je houden 😉).</p>
+<ul>
+<li>Als je het wachtwoord niet hebt kunnen vinden resulteert dat niet per se een onvoldoende, maar je zult dan wel een erg goede verslaglegging van je ontwerp- en troubleshooting-processen moeten vastleggen, en bij de demonstratie kunnen aantonen dat je goed over alle obstakels hebt nagedacht. </li>
+</ul>
+<h4 id="inleveren">Inleveren<a class="headerlink" href="#inleveren" title="Permanent link">&para;</a></h4>
+<p>Voor deze weekopgave lever je de volgender onderdelen in: </p>
+<ul>
+<li>Jullie versie van het client.py bestand met de code die je hebt gebruikt om de server te kraken, voorzien van eigen commentaar.</li>
+<li>Een .pdf met dezelfde code + commentaar. Dit voor het beoordelen middels Blackboard.</li>
+<li>Een .pdf van de eerste volledige versie van je pseudo-code (als je je pseudo-code schriftelijk hebt gemaakt is een .pdf met/van een foto ook goed).</li>
+<li>Een .pdf van het lab journal.</li>
+</ul>
+<h4 id="lokale-server">Lokale server<a class="headerlink" href="#lokale-server" title="Permanent link">&para;</a></h4>
+<p>Als je wil werken aan je code, maar geen toegang hebt tot de server kun je gebruik maken van een lokale versie middels Docker. Zorg dat je Docker geïnstalleerd hebt (en de map met docker.exe hebt toegevoegd aan je PATH), en voer de volgende commando’s uit: </p>
+<p><code>docker pull jjmellens/timingattack:latest</code></p>
+<p><code>docker run -d -p 3840:3840 --name timingattack jjmellens/timingattack</code></p>
+<p>Als het goed is draait er nu een Docker-container met daarop een versie van de server (je kunt het nog even controleren met <code>docker ps</code>).
+De server op de docker-container bevat overigens alleen de users 000000 met wachtwoord hunter2. </p>
+<p>NB: de Docker-server draait lokaal op je eigen machine en heeft dus geen last van netwerk-interferentie.
+Dat betekent dat een aanval die alleen is getest op de Docker server hoogstwaarschijnlijk niet werkt op de echte server.
+Houd hier dus rekening mee en zorg dat je je oplossing ook op locatie test, en host de docker-server bij voorkeur op een ander apparaat dan de machine vanwaar je de aanval uitvoert. </p>
 
 
 
