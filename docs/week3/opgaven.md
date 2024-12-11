@@ -24,7 +24,7 @@ Tijdens deze opdracht kijken we naar de rol die security tooling kan vervullen i
 
 Voor je begint met je daadwerkelijke analyse is het bijzonder handig om wat extra informatie tot je te nemen. Lees vooral eens onderstaande bronnen door:
 
- * De [BSIMM software security activity list](https://www.bsimm.com/framework/) is een software-security-framework dat in de praktijk vaak gebruikt wordt. Het framework is onderverdeeld in vier domeinen met elk drie aspecten van het softwareontwikkelingsproces. Onder elk van deze aspecten kun je vervolgens lezen over de verscheidene activiteiten die in de praktijk worden gebruikt. 
+ * De [BSIMM software security activity list](https://www.blackduck.com/services/security-program/bsimm-maturity-model.html) is een software-security-framework dat in de praktijk vaak gebruikt wordt. Het framework is onderverdeeld in vier domeinen met elk drie aspecten van het softwareontwikkelingsproces. Onder elk van deze aspecten kun je vervolgens lezen over de verscheidene activiteiten die in de praktijk worden gebruikt. 
  * In [deze whitepaper van de versimpelde implementatie van Microsofts SDL](https://www.microsoft.com/en-us/download/details.aspx?id=12379) kun je lezen over de verschillende eisen die Microsoft stelt aan hun eigen ontwikkelproces. 
 
 Niet alles wat in deze bronnen staat is trouwens per se een goed idee en je moet ze vooral ook niet interpreteren als een harde eis waar elk softwareontwikkelingsproject aan moet voldoen. Het zijn meningen en voorbeelden - al zijn het meningen en voorbeelden van teams met ervaring. Probeer tijdens het lezen van de bronnen alvast te denken aan hoe je de informatie kunt gebruiken om deze opdracht te maken. Hiervoor beantwoord je de volgende vragen:
