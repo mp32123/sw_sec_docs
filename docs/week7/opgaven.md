@@ -32,9 +32,8 @@ Met deze kennis zouden we kunnen proberen om het wachtwoord te kraken, en dat is
 
 ### Opdracht 
 
-Er zal binnen het netwerk een simpele server opgezet worden waar je kunt inloggen met je studentencode en een (voor jullie) onbekend wachtwoord.
-De gegevens hiervoor volgen nog, zodra de server draait.
-Voor testdoeleinden is het (eerst) ook mogelijk om [met een lokale server te werken](#lokale-server).
+Er is een simpele server opgezet worden waar je kunt inloggen met je studentencode en een (voor jullie) onbekend wachtwoord. Deze is via de Eduroam-wifi op ZP11 toegankelijk via IP 20.224.29.49 en poort 8080.
+Voor testdoeleinden is het mogelijk om eerst [met een lokale server te werken](#lokale-server).
 
 Je krijgt cadeau dat het wachtwoord alléén uit kleine letters en cijfers bestaat.
 Deze server werkt aan de achterkant praktisch hetzelfde als de bovenstaande functie, en je kunt hem dus ook op dezelfde manier uitbuiten om het wachtwoord te kraken.
@@ -43,7 +42,7 @@ Hiervoor maak je gebruik van [het bestand client.py](https://github.com/hanze-hb
 NB: gebruik géén andere soorten aanvallen om het wachtwoord te proberen kraken! De server is niet bijzonder robuust en als je hem platgooit heb je zowel jezelf als alle andere studenten ermee. 
 De functie ``call_server()`` mag naar wens worden aangepast, maar zorg dat je de regel met ``time.sleep(0.001)`` laat staan; dit zorgt ervoor dat jullie de server niet per ongeluk DDoS’en met zijn allen. Het verbindingsgedrag van de clients wordt overigens bijgehouden.  
 
-Hierna staan de eisen van het lab journal en een stappenplan dat je kunt aanhouden om de opdracht te maken. 
+Hierna staan de eisen aan het verslag en een stappenplan dat je kunt aanhouden om de opdracht te maken. 
  
 #### Stappenplan 
 
@@ -55,33 +54,33 @@ Hierna staan de eisen van het lab journal en een stappenplan dat je kunt aanhoud
 Denk goed na over waar in de code je het tijdsverschil meet.<br>
 _Hint: variabele vertraging in het netwerk voegt willekeur toe aan de responstijd._<br>
 Wat kun je doen om je metingen betrouwbaarder te maken?<br>
-Denk hierbij bv. aan statistische analyse. 
+Denk hierbij bijvoorbeeld aan een statistische analyse. 
 
 1. Nu je de juiste lengte hebt kun je beginnen met het kraken van het wachtwoord zelf.
-Doe dit door eerst een ontwerp te maken met pseudo-code en er met zijn tweeën naar te kijken alvorens je het implementeert.
+Doe dit door eerst een ontwerp te maken met [pseudo-code](https://en.wikipedia.org/wiki/Pseudocode) en er met zijn tweeën naar te kijken alvorens je het implementeert.
 Doe dit vóórdat je het internet raadpleegt voor hulp!<br>
 _Hint: je zult teken voor teken aan de slag moeten gaan!_<br>
-NB: het wachtwoord bestaat uit alleen kleine letters en cijfers. Mocht je je aanval willen testen met een gebruiker waarvan het wachtwoord bekend is kun je studentnummer 000000 gebruiken, deze heeft het wachtwoord hunter2. 
+NB: het wachtwoord bestaat uit alleen kleine letters en cijfers. Mocht je je aanval willen testen met een gebruiker waarvan het wachtwoord bekend is, dan kun je studentnummer _000000_ gebruiken, deze heeft het wachtwoord _hunter2_. 
 
-#### Lab journal 
+#### Verslag 
 
-Zorg dat je in het “Discussie”-onderdeel de volgende vragen behandelt: 
+Voeg een hoofdstuk “Discussie” toe waarin je de volgende vragen behandelt: 
 
 * Hoe ben je omgegaan met de variabele vertraging van het netwerk? Welke oplossingen heb je geprobeerd die niet werkten, en waarom werkten ze niet? 
-* Aansluitend op bovenstaande onderdeel: obstakels die je tijdens het maken van de opgave bent tegengekomen en hoe je ze overkwam.  
+* Aansluitend op bovenstaande onderdeel: obstakels die je tijdens het maken van de opgave bent tegengekomen en hoe je ze opgelost hebt.  
 
-Noem in het “Resultaten”-onderdeel ook het “gestolen” wachtwoord van beide studenten (die van de opgave dus – je echte wachtwoorden mag je houden 😉).
+Noem in het hoofdstuk “Resultaten” ook het “gestolen” wachtwoord van jou / jullie beiden (die van de opgave dus – je echte wachtwoorden mag je houden 😉).
 
-* Als je het wachtwoord niet hebt kunnen vinden resulteert dat niet per se een onvoldoende, maar je zult dan wel een erg goede verslaglegging van je ontwerp- en troubleshooting-processen moeten vastleggen, en bij de demonstratie kunnen aantonen dat je goed over alle obstakels hebt nagedacht. 
+Als je het wachtwoord niet hebt kunnen vinden resulteert dat niet per se een onvoldoende, maar je zult dan wel een erg goede verslaglegging van je ontwerp- en troubleshooting-processen moeten vastleggen, en bij de demonstratie kunnen aantonen dat je goed over alle obstakels hebt nagedacht. 
 
 #### Inleveren 
 
-Voor deze weekopgave lever je de volgender onderdelen in: 
+Voor deze weekopgave lever je de volgende onderdelen in: 
 
 * Jullie versie van het client.py bestand met de code die je hebt gebruikt om de server te kraken, voorzien van eigen commentaar.
 * Een .pdf met dezelfde code + commentaar. Dit voor het beoordelen middels Blackboard.
 * Een .pdf van de eerste volledige versie van je pseudo-code (als je je pseudo-code schriftelijk hebt gemaakt is een .pdf met/van een foto ook goed).
-* Een .pdf van het lab journal.
+* Een .pdf van het verslag.
 
 #### Lokale server 
 
@@ -91,9 +90,9 @@ Als je wil werken aan je code, maar geen toegang hebt tot de server kun je gebru
 
 ``docker run -d -p 3840:3840 --name timingattack jjmellens/timingattack``
 
-Als het goed is draait er nu een Docker-container met daarop een versie van de server (je kunt het nog even controleren met ``docker ps``).
-De server op de docker-container bevat overigens alleen de users 000000 met wachtwoord hunter2. 
+Als het goed is draait er nu een Docker-container met daarop een versie van de server. Je kunt het nog even controleren met ``docker ps`` en/of door, bijvoorbeeld met Postman, een Websocket-verbinding te maken met ``localhost:3840``.
+De server op de docker-container bevat overigens alleen de user _000000_ met wachtwoord _hunter2_. 
 
 NB: de Docker-server draait lokaal op je eigen machine en heeft dus geen last van netwerk-interferentie.
 Dat betekent dat een aanval die alleen is getest op de Docker server hoogstwaarschijnlijk niet werkt op de echte server.
-Houd hier dus rekening mee en zorg dat je je oplossing ook op locatie test, en host de docker-server bij voorkeur op een ander apparaat dan de machine vanwaar je de aanval uitvoert. 
+Houd hier dus rekening mee en zorg dat je je oplossing ook op locatie test. Tip: host de Docker-server bij voorkeur op een ander apparaat dan de machine vanwaar je de aanval uitvoert. 
