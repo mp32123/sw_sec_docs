@@ -18,7 +18,7 @@
       
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.48">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.49">
     
     
       
@@ -796,15 +796,14 @@ Zodra die een verkeerd karakter tegenkomt eindigt de functie en wordt de toegang
 <p>Dit betekent dus dat hoe meer karakters (op een rij, vanaf het eerste karakter) juist zijn, hoe vaker de loop wordt herhaald, en dus hoe langer het duurt voor de functie een antwoord teruggeeft!  </p>
 <p>Met deze kennis zouden we kunnen proberen om het wachtwoord te kraken, en dat is ook precies wat we in deze opdracht gaan doen.  </p>
 <h3 id="opdracht">Opdracht<a class="headerlink" href="#opdracht" title="Permanent link">&para;</a></h3>
-<p>Er zal binnen het netwerk een simpele server opgezet worden waar je kunt inloggen met je studentencode en een (voor jullie) onbekend wachtwoord.
-De gegevens hiervoor volgen nog, zodra de server draait.
-Voor testdoeleinden is het (eerst) ook mogelijk om <a href="#lokale-server">met een lokale server te werken</a>.</p>
+<p>Er is een simpele server opgezet worden waar je kunt inloggen met je studentencode en een (voor jullie) onbekend wachtwoord. Deze is via de Eduroam-wifi op ZP11 toegankelijk via IP 20.224.29.49 en poort 8080.
+Voor testdoeleinden is het mogelijk om eerst <a href="#lokale-server">met een lokale server te werken</a>.</p>
 <p>Je krijgt cadeau dat het wachtwoord alléén uit kleine letters en cijfers bestaat.
 Deze server werkt aan de achterkant praktisch hetzelfde als de bovenstaande functie, en je kunt hem dus ook op dezelfde manier uitbuiten om het wachtwoord te kraken.
 Hiervoor maak je gebruik van <a href="https://github.com/hanze-hbo-ict/sw_sec_docs/tree/master/src/pract-wk7/client.py">het bestand client.py</a> dat al enkele functies bevat om de verbinding tot stand te laten komen: <code>client_connect()</code> is een backend-functie die de directe koppeling met de server regelt en eventuele errors afvangt. <code>call_server()</code> maakt daar weer gebruik van, en kun je direct aanroepen in je oplossing. </p>
 <p>NB: gebruik géén andere soorten aanvallen om het wachtwoord te proberen kraken! De server is niet bijzonder robuust en als je hem platgooit heb je zowel jezelf als alle andere studenten ermee. 
 De functie <code>call_server()</code> mag naar wens worden aangepast, maar zorg dat je de regel met <code>time.sleep(0.001)</code> laat staan; dit zorgt ervoor dat jullie de server niet per ongeluk DDoS’en met zijn allen. Het verbindingsgedrag van de clients wordt overigens bijgehouden.  </p>
-<p>Hierna staan de eisen van het lab journal en een stappenplan dat je kunt aanhouden om de opdracht te maken. </p>
+<p>Hierna staan de eisen aan het verslag en een stappenplan dat je kunt aanhouden om de opdracht te maken. </p>
 <h4 id="stappenplan">Stappenplan<a class="headerlink" href="#stappenplan" title="Permanent link">&para;</a></h4>
 <ol>
 <li>
@@ -818,43 +817,41 @@ De functie <code>call_server()</code> mag naar wens worden aangepast, maar zorg 
 Denk goed na over waar in de code je het tijdsverschil meet.<br>
 <em>Hint: variabele vertraging in het netwerk voegt willekeur toe aan de responstijd.</em><br>
 Wat kun je doen om je metingen betrouwbaarder te maken?<br>
-Denk hierbij bv. aan statistische analyse. </p>
+Denk hierbij bijvoorbeeld aan een statistische analyse. </p>
 </li>
 <li>
 <p>Nu je de juiste lengte hebt kun je beginnen met het kraken van het wachtwoord zelf.
-Doe dit door eerst een ontwerp te maken met pseudo-code en er met zijn tweeën naar te kijken alvorens je het implementeert.
+Doe dit door eerst een ontwerp te maken met <a href="https://en.wikipedia.org/wiki/Pseudocode">pseudo-code</a> en er met zijn tweeën naar te kijken alvorens je het implementeert.
 Doe dit vóórdat je het internet raadpleegt voor hulp!<br>
 <em>Hint: je zult teken voor teken aan de slag moeten gaan!</em><br>
-NB: het wachtwoord bestaat uit alleen kleine letters en cijfers. Mocht je je aanval willen testen met een gebruiker waarvan het wachtwoord bekend is kun je studentnummer 000000 gebruiken, deze heeft het wachtwoord hunter2. </p>
+NB: het wachtwoord bestaat uit alleen kleine letters en cijfers. Mocht je je aanval willen testen met een gebruiker waarvan het wachtwoord bekend is, dan kun je studentnummer <em>000000</em> gebruiken, deze heeft het wachtwoord <em>hunter2</em>. </p>
 </li>
 </ol>
-<h4 id="lab-journal">Lab journal<a class="headerlink" href="#lab-journal" title="Permanent link">&para;</a></h4>
-<p>Zorg dat je in het “Discussie”-onderdeel de volgende vragen behandelt: </p>
+<h4 id="verslag">Verslag<a class="headerlink" href="#verslag" title="Permanent link">&para;</a></h4>
+<p>Voeg een hoofdstuk “Discussie” toe waarin je de volgende vragen behandelt: </p>
 <ul>
 <li>Hoe ben je omgegaan met de variabele vertraging van het netwerk? Welke oplossingen heb je geprobeerd die niet werkten, en waarom werkten ze niet? </li>
-<li>Aansluitend op bovenstaande onderdeel: obstakels die je tijdens het maken van de opgave bent tegengekomen en hoe je ze overkwam.  </li>
+<li>Aansluitend op bovenstaande onderdeel: obstakels die je tijdens het maken van de opgave bent tegengekomen en hoe je ze opgelost hebt.  </li>
 </ul>
-<p>Noem in het “Resultaten”-onderdeel ook het “gestolen” wachtwoord van beide studenten (die van de opgave dus – je echte wachtwoorden mag je houden 😉).</p>
-<ul>
-<li>Als je het wachtwoord niet hebt kunnen vinden resulteert dat niet per se een onvoldoende, maar je zult dan wel een erg goede verslaglegging van je ontwerp- en troubleshooting-processen moeten vastleggen, en bij de demonstratie kunnen aantonen dat je goed over alle obstakels hebt nagedacht. </li>
-</ul>
+<p>Noem in het hoofdstuk “Resultaten” ook het “gestolen” wachtwoord van jou / jullie beiden (die van de opgave dus – je echte wachtwoorden mag je houden 😉).</p>
+<p>Als je het wachtwoord niet hebt kunnen vinden resulteert dat niet per se een onvoldoende, maar je zult dan wel een erg goede verslaglegging van je ontwerp- en troubleshooting-processen moeten vastleggen, en bij de demonstratie kunnen aantonen dat je goed over alle obstakels hebt nagedacht. </p>
 <h4 id="inleveren">Inleveren<a class="headerlink" href="#inleveren" title="Permanent link">&para;</a></h4>
-<p>Voor deze weekopgave lever je de volgender onderdelen in: </p>
+<p>Voor deze weekopgave lever je de volgende onderdelen in: </p>
 <ul>
 <li>Jullie versie van het client.py bestand met de code die je hebt gebruikt om de server te kraken, voorzien van eigen commentaar.</li>
 <li>Een .pdf met dezelfde code + commentaar. Dit voor het beoordelen middels Blackboard.</li>
 <li>Een .pdf van de eerste volledige versie van je pseudo-code (als je je pseudo-code schriftelijk hebt gemaakt is een .pdf met/van een foto ook goed).</li>
-<li>Een .pdf van het lab journal.</li>
+<li>Een .pdf van het verslag.</li>
 </ul>
 <h4 id="lokale-server">Lokale server<a class="headerlink" href="#lokale-server" title="Permanent link">&para;</a></h4>
 <p>Als je wil werken aan je code, maar geen toegang hebt tot de server kun je gebruik maken van een lokale versie middels Docker. Zorg dat je Docker geïnstalleerd hebt (en de map met docker.exe hebt toegevoegd aan je PATH), en voer de volgende commando’s uit: </p>
 <p><code>docker pull jjmellens/timingattack:latest</code></p>
 <p><code>docker run -d -p 3840:3840 --name timingattack jjmellens/timingattack</code></p>
-<p>Als het goed is draait er nu een Docker-container met daarop een versie van de server (je kunt het nog even controleren met <code>docker ps</code>).
-De server op de docker-container bevat overigens alleen de users 000000 met wachtwoord hunter2. </p>
+<p>Als het goed is draait er nu een Docker-container met daarop een versie van de server. Je kunt het nog even controleren met <code>docker ps</code> en/of door, bijvoorbeeld met Postman, een Websocket-verbinding te maken met <code>localhost:3840</code>.
+De server op de docker-container bevat overigens alleen de user <em>000000</em> met wachtwoord <em>hunter2</em>. </p>
 <p>NB: de Docker-server draait lokaal op je eigen machine en heeft dus geen last van netwerk-interferentie.
 Dat betekent dat een aanval die alleen is getest op de Docker server hoogstwaarschijnlijk niet werkt op de echte server.
-Houd hier dus rekening mee en zorg dat je je oplossing ook op locatie test, en host de docker-server bij voorkeur op een ander apparaat dan de machine vanwaar je de aanval uitvoert. </p>
+Houd hier dus rekening mee en zorg dat je je oplossing ook op locatie test. Tip: host de Docker-server bij voorkeur op een ander apparaat dan de machine vanwaar je de aanval uitvoert. </p>
 
 
 
@@ -904,7 +901,7 @@ Houd hier dus rekening mee en zorg dat je je oplossing ook op locatie test, en h
     <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Gekopieerd naar klembord", "clipboard.copy": "Kopi\u00ebren naar klembord", "search.result.more.one": "1 extra overeenkomst op deze pagina", "search.result.more.other": "# extra overeenkomsten op deze pagina", "search.result.none": "Geen overeenkomende documenten", "search.result.one": "1 overeenkomende document", "search.result.other": "# overeenkomende documenten", "search.result.placeholder": "Typ om te beginnen met zoeken", "search.result.term.missing": "Ontbreekt", "select.version": "Selecteer versie"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.83f73b43.min.js"></script>
+      <script src="../assets/javascripts/bundle.88dd0f4e.min.js"></script>
       
         <script src="../js/imgs.js"></script>
       
