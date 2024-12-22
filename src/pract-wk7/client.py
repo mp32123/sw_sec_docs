@@ -18,14 +18,20 @@ async def client_connect(username, password, variance=0.0):
         reply -- string of server's response to login attempt
     """
 
-    server_address = "ws://20.224.193.77:3840"
-    #server_address = "ws://127.0.0.1:3840"
+    #server_address = "ws://20.224.29.49:8080"
+    server_address = "ws://127.0.0.1:3840"
     
     while True:
         try:
             async with websockets.connect(server_address) as websocket:
-                await websocket.send(dumps([username,password,variance]))
+
+                # The (local) Docker server does not accept variance.
+                # When switching to the Hanze server, you can add the variance parameter to the request.
+                await websocket.send(dumps([username, password]))
+                #await websocket.send(dumps([username, password, variance]))
+
                 reply = await websocket.recv()
+
             return loads(reply)
         except:
             continue
@@ -49,9 +55,9 @@ def call_server(username, password, variance=0.0):
         reply -- string of server's response to login attempt
     """
 
-    reply = asyncio.get_event_loop().run_until_complete(client_connect(username,password,variance))
+    reply = asyncio.get_event_loop().run_until_complete(client_connect(username, password, variance))
     sleep(0.001) # Wait so as to not overload the server with 90 students at once!
     return (reply)
 
 # Test basic server connectivity & functionality
-print(call_server('test','test'))
+print(call_server('test', 'test'))
