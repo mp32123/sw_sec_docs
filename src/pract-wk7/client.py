@@ -55,7 +55,13 @@ def call_server(username, password, variance=0.0):
         reply -- string of server's response to login attempt
     """
 
-    reply = asyncio.get_event_loop().run_until_complete(client_connect(username, password, variance))
+    loop = asyncio.new_event_loop()
+    asyncio.set_event_loop(loop)
+    try:
+        reply = asyncio.run(client_connect(username, password, variance))
+    except KeyboardInterrupt:
+        pass
+
     sleep(0.001) # Wait so as to not overload the server with 90 students at once!
     return (reply)
 
