@@ -782,7 +782,7 @@
 <p>Je probeert in te loggen op een website, waarna je als reactie krijgt dat het wachtwoord niet klopt. Kun je het antwoord van de server gebruiken om het wachtwoord te kraken? </p>
 <p>Ja. Tenminste, als er geen rekening is gehouden met het risico van een timing attack. Een Timing Attack is een vorm van Side-Channel Attack waarbij de responstijd van de server gebruikt wordt om letter voor letter een wachtwoord te kraken. </p>
 <p>Neem als voorbeeld de volgende functie:</p>
-<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">check_password</span><span class="p">(</span><span class="n">actual_password</span><span class="p">,</span> <span class="n">provided_password</span><span class="p">):</span>
+<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">check_password</span><span class="p">(</span><span class="n">actual_password</span><span class="p">,</span> <span class="n">provided_password</span><span class="p">):</span>
     <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">provided_password</span><span class="p">)</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">actual_password</span><span class="p">):</span>
         <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">provided_password</span><span class="p">)):</span>
             <span class="k">if</span> <span class="n">provided_password</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">!=</span> <span class="n">actual_password</span><span class="p">[</span><span class="n">i</span><span class="p">]:</span>
@@ -801,7 +801,7 @@ Voor testdoeleinden is het mogelijk om eerst <a href="#lokale-server">met een lo
 <p>Je krijgt cadeau dat het wachtwoord alléén uit kleine letters en cijfers bestaat.
 Deze server werkt aan de achterkant praktisch hetzelfde als de bovenstaande functie, en je kunt hem dus ook op dezelfde manier uitbuiten om het wachtwoord te kraken.
 Hiervoor maak je gebruik van <a href="https://github.com/hanze-hbo-ict/sw_sec_docs/tree/master/src/pract-wk7/client.py">het bestand client.py</a> dat al enkele functies bevat om de verbinding tot stand te laten komen: <code>client_connect()</code> is een backend-functie die de directe koppeling met de server regelt en eventuele errors afvangt. <code>call_server()</code> maakt daar weer gebruik van, en kun je direct aanroepen in je oplossing. </p>
-<p>NB: gebruik géén andere soorten aanvallen om het wachtwoord te proberen kraken! De server is niet bijzonder robuust en als je hem platgooit heb je zowel jezelf als alle andere studenten ermee. 
+<p>NB: gebruik géén andere soorten aanvallen om het wachtwoord te proberen te kraken! De server is niet bijzonder robuust en als je hem platgooit heb je zowel jezelf als alle andere studenten ermee. 
 De functie <code>call_server()</code> mag naar wens worden aangepast, maar zorg dat je de regel met <code>time.sleep(0.001)</code> laat staan; dit zorgt ervoor dat jullie de server niet per ongeluk DDoS’en met zijn allen. Het verbindingsgedrag van de clients wordt overigens bijgehouden.  </p>
 <p>Hierna staan de eisen aan het verslag en een stappenplan dat je kunt aanhouden om de opdracht te maken. </p>
 <h4 id="stappenplan">Stappenplan<a class="headerlink" href="#stappenplan" title="Permanent link">&para;</a></h4>
@@ -828,13 +828,48 @@ NB: het wachtwoord bestaat uit alleen kleine letters en cijfers. Mocht je je aan
 </li>
 </ol>
 <h4 id="verslag">Verslag<a class="headerlink" href="#verslag" title="Permanent link">&para;</a></h4>
-<p>Voeg een hoofdstuk “Discussie” toe waarin je de volgende vragen behandelt: </p>
+<p>Het verslag is een <em>lab journal</em> waarin we alle denk- en ontwikkelstappen kunnen nalezen, evenals de uitkomsten en conclusies. De hoofdstukindeling dient als volgt te zijn:</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>Abstract</em></td>
+<td>Behandelt kort alle gevraagde onderwerpen (intro, methodiek, resultaten en discussie)</td>
+</tr>
+<tr>
+<td><em>Introductie</em></td>
+<td>Omschrijft in eigen woorden duidelijk de doelstellingen</td>
+</tr>
+<tr>
+<td><em>Methodiek</em></td>
+<td>Omschrijft volledig &amp; repliceerbaar plan van aanpak<br>Benoemt alle relevante gebruikte technieken en processen</td>
+</tr>
+<tr>
+<td><em>Resultaten</em></td>
+<td>Omschrijft duidelijk en volledig de uitkomst van opdracht</td>
+</tr>
+<tr>
+<td><em>Discussie</em></td>
+<td>Reflecteert op mate waarin doelstelling is behaald<br>Reflecteert op minstens één succes &amp; één verbeterpunt van/voor eigen werken</td>
+</tr>
+<tr>
+<td><em>Bronvermelding</em></td>
+<td>Bronvermelding, netjes &amp; systematisch</td>
+</tr>
+</tbody>
+</table>
+<p>In het hoofdstuk “Discussie” behandel je de volgende vragen: </p>
 <ul>
 <li>Hoe ben je omgegaan met de variabele vertraging van het netwerk? Welke oplossingen heb je geprobeerd die niet werkten, en waarom werkten ze niet? </li>
 <li>Aansluitend op bovenstaande onderdeel: obstakels die je tijdens het maken van de opgave bent tegengekomen en hoe je ze opgelost hebt.  </li>
 </ul>
 <p>Noem in het hoofdstuk “Resultaten” ook het “gestolen” wachtwoord van jou / jullie beiden (die van de opgave dus – je echte wachtwoorden mag je houden 😉).</p>
-<p>Als je het wachtwoord niet hebt kunnen vinden resulteert dat niet per se een onvoldoende, maar je zult dan wel een erg goede verslaglegging van je ontwerp- en troubleshooting-processen moeten vastleggen, en bij de demonstratie kunnen aantonen dat je goed over alle obstakels hebt nagedacht. </p>
+<p>Als je het wachtwoord niet hebt kunnen vinden resulteert dat niet per se een onvoldoende, maar je zult dan wel een erg goede verslaglegging van je ontwerp- en troubleshooting-processen moeten vastleggen en kunnen aantonen dat je goed over alle obstakels hebt nagedacht. </p>
 <h4 id="inleveren">Inleveren<a class="headerlink" href="#inleveren" title="Permanent link">&para;</a></h4>
 <p>Voor deze weekopgave lever je de volgende onderdelen in: </p>
 <ul>
