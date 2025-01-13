@@ -39,7 +39,7 @@ Je krijgt cadeau dat het wachtwoord alléén uit kleine letters en cijfers besta
 Deze server werkt aan de achterkant praktisch hetzelfde als de bovenstaande functie, en je kunt hem dus ook op dezelfde manier uitbuiten om het wachtwoord te kraken.
 Hiervoor maak je gebruik van [het bestand client.py](https://github.com/hanze-hbo-ict/sw_sec_docs/tree/master/src/pract-wk7/client.py) dat al enkele functies bevat om de verbinding tot stand te laten komen: ``client_connect()`` is een backend-functie die de directe koppeling met de server regelt en eventuele errors afvangt. ``call_server()`` maakt daar weer gebruik van, en kun je direct aanroepen in je oplossing. 
 
-NB: gebruik géén andere soorten aanvallen om het wachtwoord te proberen kraken! De server is niet bijzonder robuust en als je hem platgooit heb je zowel jezelf als alle andere studenten ermee. 
+NB: gebruik géén andere soorten aanvallen om het wachtwoord te proberen te kraken! De server is niet bijzonder robuust en als je hem platgooit heb je zowel jezelf als alle andere studenten ermee. 
 De functie ``call_server()`` mag naar wens worden aangepast, maar zorg dat je de regel met ``time.sleep(0.001)`` laat staan; dit zorgt ervoor dat jullie de server niet per ongeluk DDoS’en met zijn allen. Het verbindingsgedrag van de clients wordt overigens bijgehouden.  
 
 Hierna staan de eisen aan het verslag en een stappenplan dat je kunt aanhouden om de opdracht te maken. 
@@ -62,16 +62,27 @@ Doe dit vóórdat je het internet raadpleegt voor hulp!<br>
 _Hint: je zult teken voor teken aan de slag moeten gaan!_<br>
 NB: het wachtwoord bestaat uit alleen kleine letters en cijfers. Mocht je je aanval willen testen met een gebruiker waarvan het wachtwoord bekend is, dan kun je studentnummer _000000_ gebruiken, deze heeft het wachtwoord _hunter2_. 
 
-#### Verslag 
+#### Verslag
 
-Voeg een hoofdstuk “Discussie” toe waarin je de volgende vragen behandelt: 
+Het verslag is een _lab journal_ waarin we alle denk- en ontwikkelstappen kunnen nalezen, evenals de uitkomsten en conclusies. De hoofdstukindeling dient als volgt te zijn:
+
+|       |       |
+| ----- | ----- |
+| *Abstract* | Behandelt kort alle gevraagde onderwerpen (intro, methodiek, resultaten en discussie) |
+| *Introductie* | Omschrijft in eigen woorden duidelijk de doelstellingen |
+| *Methodiek* | Omschrijft volledig & repliceerbaar plan van aanpak<br>Benoemt alle relevante gebruikte technieken en processen |
+| *Resultaten* | Omschrijft duidelijk en volledig de uitkomst van opdracht |
+| *Discussie* | Reflecteert op mate waarin doelstelling is behaald<br>Reflecteert op minstens één succes & één verbeterpunt van/voor eigen werken |
+| *Bronvermelding* | Bronvermelding, netjes & systematisch |
+
+In het hoofdstuk “Discussie” behandel je de volgende vragen: 
 
 * Hoe ben je omgegaan met de variabele vertraging van het netwerk? Welke oplossingen heb je geprobeerd die niet werkten, en waarom werkten ze niet? 
 * Aansluitend op bovenstaande onderdeel: obstakels die je tijdens het maken van de opgave bent tegengekomen en hoe je ze opgelost hebt.  
 
 Noem in het hoofdstuk “Resultaten” ook het “gestolen” wachtwoord van jou / jullie beiden (die van de opgave dus – je echte wachtwoorden mag je houden 😉).
 
-Als je het wachtwoord niet hebt kunnen vinden resulteert dat niet per se een onvoldoende, maar je zult dan wel een erg goede verslaglegging van je ontwerp- en troubleshooting-processen moeten vastleggen, en bij de demonstratie kunnen aantonen dat je goed over alle obstakels hebt nagedacht. 
+Als je het wachtwoord niet hebt kunnen vinden resulteert dat niet per se een onvoldoende, maar je zult dan wel een erg goede verslaglegging van je ontwerp- en troubleshooting-processen moeten vastleggen en kunnen aantonen dat je goed over alle obstakels hebt nagedacht. 
 
 #### Inleveren 
 
