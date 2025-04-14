@@ -1,8 +1,8 @@
 # Opgaven week 5: cryptografie en privacy threat modelling
 
-We gaan deze week bezig met het bepalen van privacyrisico’s van een voorbeeldcasus aan de hand van de LINDDUN-methode. 
+We gaan ons deze week verdiepen in de wondere wereld van de cryptografie, om de technieken die zo belangrijk zijn voor security en privacy beter te begrijpen. Daarnaast gaan we bezig met het bepalen van privacyrisico’s van een voorbeeldcasus aan de hand van de LINDDUN-methode. 
 
-## Deel 1: cryptografie
+## Deel 1: cryptografie (50%)
 
 [Download](https://www.cryptool.org/en/ct2/downloads/) en installeer CrypTool 2 (op Windows). [In deze video](https://www.youtube.com/watch?v=nTEj-lZ2V38) kun je zien hoe je het onder Linux kunt installeren.
 
@@ -28,7 +28,7 @@ Zoals je hebt gezien, zijn substitutiealgoritmes gemakkelijk te kraken met frequ
 
 Maak voor deze opdracht een nieuwe workspace aan.
 
-1.2.a.\ Plaats een AES Visualization in de workspace. Sluit hier twee Text Inputs op aan, eentje voor de key en eentje voor de te versleutelen tekst. Om het helemaal goed te laten werken, zet je tussen elke Text Input en de AES een String Decode, die tekst omzet in bytes. Sluit tot slot een Text Output aan op de AES. Druk op Play en klik met Next door de visualisatie heen die in de AES-component wordt getoond. Als je het principe op een gegeven moment snapt, kun je met Skip Round de zaken wat versnellen.
+1.2.a.\ Plaats een AES Visualization in de workspace. Sluit hier twee Text Inputs op aan, eentje voor de key en eentje voor de te versleutelen tekst. Om het helemaal goed te laten werken, zet je tussen elke Text Input en de AES een String Decode, die tekst omzet in bytes. Sluit tot slot een Text Output aan op de AES. Druk op Play en klik met Next door de visualisatie heen die in de AES-component wordt getoond. Als je het principe op een gegeven moment snapt, kun je met _Skip Round_ de zaken wat versnellen.
 
 1.2.b.\ Vervang de AES Visualization door een gewone AES-component, met Action: Encrypt. Verifieer dat de output (de geëncodeerde versie van de invoertekst) niet verandert.
 
@@ -44,17 +44,17 @@ Maak voor deze opdracht weer een nieuwe workspace aan.
 
 1.3.a.\ Plaats een RSA-component met Action: Encryption in de workspace. Maak een RSA Key Generator aan (de standaardwaardes zijn prima) en sluit deze op de juiste manier aan op de RSA (N en e). Op de Message-input van de RSA sluit je een Text Input met de te versleutelen tekst aan, via een String Decode. De Message-output van de RSA (Byte[]) schrijf je naar een Text Output.
 
-1.3.b.\ Plaats een tweede RSA-component, nu met Action: Decryption) in de workspace. Sluit hem aan op de Message-output van de RSA, en op de Key Generator (N en d). De output gaat weer via een String Encode naar een Text Output, waar je als het goed is de oorspronkelijke tekst weer ziet verschijnen.
+1.3.b.\ Plaats een tweede RSA-component, nu met Action: Decryption, in de workspace. Sluit hem aan op de Message-output van de RSA, en op de Key Generator (N en d). De output gaat weer via een String Encode naar een Text Output, waar je als het goed is de oorspronkelijke tekst weer ziet verschijnen.
 
 1.3.c.\ (optioneel, maar wel leuk) Werk samen met een klasgenoot. Deel je publieke sleutel (N en d) met diegene en vraag om jou een daarmee gecodeerd bericht terug te sturen. Ontsleutel dit met je private sleutel (N en e). Als dit gelukt is, dan draai je de rollen om.
 
 Graag een screenshot van je RSA-workspace, plus een samenvatting in eigen woorden van hoe het algoritme werkt (max. 5 regels).
 
-## Deel 2: privacy threat modelling van een slimme spiegel
+## Deel 2: privacy threat modelling (50%)
 
 We gebruiken hiervoor dezelfde casus als vorige week. De DFD kun je dus hergebruiken!
 
-2.1.\ Pak je Data Flow Diagram van vorige week erbij. Tip: nummer behalve de interfaces (wat je al gedaan had) nu ook de data stores, zodat je er bij 2 en 3 gemakkelijk naar kunt verwijzen.
+2.1.\ Pak je Data Flow Diagram van vorige week erbij. Tip: nummer behalve de interfaces (wat je al gedaan had) nu ook de data stores, zodat je er bij 2.2 en 2.3 gemakkelijk naar kunt verwijzen.
 
 2.2.\ Definieer welke privacyrisico’s er **per interface** (plekken waar data over een trust boundary gaat) én **per data store** in de DFD aanwezig zijn. Maak hierbij gebruik van de LINDDUN-afkorting om de types risico’s aan te geven in de DFD:
 
@@ -69,7 +69,7 @@ We gebruiken hiervoor dezelfde casus als vorige week. De DFD kun je dus hergebru
 2.3.\ Geef per interface en data store minstens één concreet aanvalsscenario waarin één of meer van de door jou gekozen LINDDUN-letters terugkomen. Hierbij komt ook kijken:
 
 * Wat voor privacygevoelige informatie er over de interface gaat of in de data store staat.
-* Wat voor probleem het is als deze informatie uitlekt, voor de verschillende stakeholders (denk aan de gebruiker, de leverancier, eventuele huisgenoten van de gebruiker, zorgverzekeraars).
+* Wat voor probleem het is als deze informatie uitlekt, voor de verschillende stakeholders (denk aan studenten, de leveranciers van de systemen, de Hanze).
 
 2.4.\ Maak nu een lijst van de interfaces, gesorteerd op prioriteit, dus de in jouw optiek meest kwetsbare bovenaan. Onderbouw je keuze!
 
