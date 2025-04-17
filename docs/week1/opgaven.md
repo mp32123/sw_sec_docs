@@ -12,6 +12,8 @@ Windows-gebruikers moeten eerst het [Windows Subsystem for Linux](https://learn.
 
 #### Mogelijke problemen en oplossingen bij WSL
 
+Heb je WSL al geïnstalleerd maar krijg je de melding "Windows Subsystem for Linux has no installed distributions"? Probeer het volgende commando te geven (op de commandline): ``wsl install -d ubuntu``
+
 Mocht je tijdens het clonen van een Github-repository de foutmelding "Unable to resolve github.com in WSL" krijgen, dan de volgende stappen doorlopen om de default nameserver aan te passen:
 
 * ``sudo nano /etc/wsl.conf``
@@ -33,7 +35,7 @@ nameserver 8.8.4.4
 
 We beginnen nu met de installatie van [Hydra](https://github.com/vanhauser-thc/thc-hydra). 
 
-Allereerst willen we er zeker van zijn dat alle relevante packages goed geinstalleerd en up-to-date zijn. Dit doen we door allereerst de package-manager zelf te updaten.
+Allereerst willen we er zeker van zijn dat alle relevante packages goed geïnstalleerd en up-to-date zijn. De eerste stap is om de package-manager zelf te updaten.
 ```
 sudo apt update
 sudo apt install libssl-dev libssh-dev libidn11-dev libpcre3-dev libgtk2.0-dev libmysqlclient-dev libpq-dev libsvn-dev
@@ -51,7 +53,7 @@ Onderstaande code is een voorbeeldcommando op het login-formulier van een lokale
 
 ``hydra -l henk@hanze.nl -x 4:4:1 127.0.0.1 -s 5000 http-post-form "/login:email=^USER^&password=^PASS^:Inlog mislukt."``
 
-Let op: ondanks dat het misschien op meerdere regels wordt weergegeven, is bovenstaande één commmando dat op één regel dient te worden uitgevoerd! De volgorde die is weergegeven werkt onder Windows; Mac-gebruikers moeten mogelijk de volgorde van de argumenten iets aanpassen.
+Let op: ondanks dat het misschien op meerdere regels wordt weergegeven, is bovenstaande één commmando dat op één regel dient te worden uitgevoerd! De volgorde die is weergegeven werkt onder Windows; Mac-gebruikers moeten mogelijk de volgorde van de argumenten aanpassen (de -s-parameter vóór het IP-adres).
 
 Om dit werkend te krijgen, zijn er enkele aandachtspunten:
 
