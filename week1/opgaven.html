@@ -20,7 +20,7 @@
       
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.11">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.12">
     
     
       
@@ -28,7 +28,7 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.4af4bdda.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.2afb09e1.min.css">
       
         
         <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
@@ -944,6 +944,7 @@
 <h3 id="hydra-installeren-1-voor-windows">Hydra installeren (1 - voor Windows)<a class="headerlink" href="#hydra-installeren-1-voor-windows" title="Permanent link">&para;</a></h3>
 <p>Windows-gebruikers moeten eerst het <a href="https://learn.microsoft.com/en-us/windows/wsl/install">Windows Subsystem for Linux</a> (WSL) installeren. De standaard-distributie, Ubuntu, is prima. Na installatie beschik je over een Linux-prompt en kun je onderstaande opdrachten uitvoeren (en nog veel meer - zo heb je WSL nodig om Docker, waar we volgende week mee bezig gaan, te kunnen draaien). <a href="https://overthewire.org/wargames/">Wargames van Over the Wire</a> is een web-app waar je interactief veel over het gebruiken van verschillende Linuxtools kunt leren. Een must voor ICT'ers. Advies is om te beginnen met de Bandit-wargame. Lees <a href="https://www.howtogeek.com/426749/how-to-access-your-linux-wsl-files-in-windows-10/">hier</a> hoe je bestanden van en naar je Linux-omgeving kunt kopiëren.</p>
 <h4 id="mogelijke-problemen-en-oplossingen-bij-wsl">Mogelijke problemen en oplossingen bij WSL<a class="headerlink" href="#mogelijke-problemen-en-oplossingen-bij-wsl" title="Permanent link">&para;</a></h4>
+<p>Heb je WSL al geïnstalleerd maar krijg je de melding "Windows Subsystem for Linux has no installed distributions"? Probeer het volgende commando te geven (op de commandline): <code>wsl install -d ubuntu</code></p>
 <p>Mocht je tijdens het clonen van een Github-repository de foutmelding "Unable to resolve github.com in WSL" krijgen, dan de volgende stappen doorlopen om de default nameserver aan te passen:</p>
 <ul>
 <li><code>sudo nano /etc/wsl.conf</code></li>
@@ -961,7 +962,7 @@ nameserver 8.8.4.4
 </ul>
 <h3 id="hydra-installeren-2">Hydra installeren (2)<a class="headerlink" href="#hydra-installeren-2" title="Permanent link">&para;</a></h3>
 <p>We beginnen nu met de installatie van <a href="https://github.com/vanhauser-thc/thc-hydra">Hydra</a>. </p>
-<p>Allereerst willen we er zeker van zijn dat alle relevante packages goed geinstalleerd en up-to-date zijn. Dit doen we door allereerst de package-manager zelf te updaten.
+<p>Allereerst willen we er zeker van zijn dat alle relevante packages goed geïnstalleerd en up-to-date zijn. De eerste stap is om de package-manager zelf te updaten.
 <div class="highlight"><pre><span></span><code>sudo apt update
 sudo apt install libssl-dev libssh-dev libidn11-dev libpcre3-dev libgtk2.0-dev libmysqlclient-dev libpq-dev libsvn-dev
 </code></pre></div></p>
@@ -973,7 +974,7 @@ sudo apt install libssl-dev libssh-dev libidn11-dev libpcre3-dev libgtk2.0-dev l
 <h3 id="hydra-draaien-op-een-webapp">Hydra draaien op een webapp<a class="headerlink" href="#hydra-draaien-op-een-webapp" title="Permanent link">&para;</a></h3>
 <p>Onderstaande code is een voorbeeldcommando op het login-formulier van een lokale Flask-webapp, draaiend op poort 5000. Hydra probeert hier voor gebruiker (email) "<a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#104;&#101;&#110;&#107;&#64;&#104;&#97;&#110;&#122;&#101;&#46;&#110;&#108;">&#104;&#101;&#110;&#107;&#64;&#104;&#97;&#110;&#122;&#101;&#46;&#110;&#108;</a>" alle wachtwoorden met 4 cijfers. Bestudeer de <a href="https://github.com/vanhauser-thc/thc-hydra">documentatie van Hydra</a> om te leren hoe de -x-optie en de andere parameters precies werken.</p>
 <p><code>hydra -l henk@hanze.nl -x 4:4:1 127.0.0.1 -s 5000 http-post-form "/login:email=^USER^&amp;password=^PASS^:Inlog mislukt."</code></p>
-<p>Let op: ondanks dat het misschien op meerdere regels wordt weergegeven, is bovenstaande één commmando dat op één regel dient te worden uitgevoerd! De volgorde die is weergegeven werkt onder Windows; Mac-gebruikers moeten mogelijk de volgorde van de argumenten iets aanpassen.</p>
+<p>Let op: ondanks dat het misschien op meerdere regels wordt weergegeven, is bovenstaande één commmando dat op één regel dient te worden uitgevoerd! De volgorde die is weergegeven werkt onder Windows; Mac-gebruikers moeten mogelijk de volgorde van de argumenten aanpassen (de -s-parameter vóór het IP-adres).</p>
 <p>Om dit werkend te krijgen, zijn er enkele aandachtspunten:</p>
 <ul>
 <li>Zet de <a href="https://www.geeksforgeeks.org/csrf-protection-in-flask/">CSRF-controle</a> uit door <code>app.config['WTF_CSRF_ENABLED'] = False</code> in je code op te nemen, op de plek waar je ook de andere configuratie, zoals de <code>SECRET_KEY</code>, instelt.</li>
