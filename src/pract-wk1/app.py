@@ -30,6 +30,7 @@ def login():
     form = LoginForm()
     if request.method == 'POST':
         if form.validate_on_submit():
+            print(f"Login-poging gedetecteerd! User: {form.email.data}, pass: {form.password.data}")
             user = User.query.filter_by(email=form.email.data).first()
             if user is not None and user.check_password(form.password.data):
                 login_user(user)
