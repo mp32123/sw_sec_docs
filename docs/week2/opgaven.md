@@ -56,7 +56,7 @@ Toon je antwoord aan met de PDF van je bestelling waar een negatief te betalen b
 Enkele suggesties om te proberen:
 
 * Laat een review achter onder andermans naam.
-* Laat d.m.v. Cross-Site Scripting (XSS) de website een ongewenste pop-up openen. *Tip: Met behulp van alert() in javascript is het mogelijk om een pop-up venster te openen. Het hoorcollege van week 2 bevat voorbeeldcode die je hiervoor kunt gebruiken.*
+* Laat d.m.v. Cross-Site Scripting (XSS) de website een ongewenste pop-up openen. *Tip: Met behulp van alert() in javascript is het mogelijk om een pop-up venster te openen. De slides van week 2 bevatten voorbeeldcode die je hiervoor kunt gebruiken.*
 * Ontdek het patroon in de kortingscoupons en maak je eigen coupon om tot wel 90% korting te krijgen!
 
 Of bedenk zelf iets!

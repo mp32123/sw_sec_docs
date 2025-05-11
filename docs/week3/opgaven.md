@@ -4,10 +4,11 @@ Deze week gaan we bezig met een technische opgave én doen we zelfstandig onderz
 
 ## Deel 1: problemen oplossen in een webapplicatie (40%)
 
-[Hier](https://github.com/hanze-hbo-ict/sw_sec_docs/tree/master/src/pract-wk3/vulnerable-webapp/) hebben we een eenvoudige python/flask-webapp klaargezet, met drie grote kwetsbaarheden erin. Het is de bedoeling dat je deze kwetsbaarheden opspoort en voor elk een mitigatie aanbrengt in de code. Lees eerst de README en zorg dat de app up-and-running is. De kwetsbaarheden betreffen:
+[Hier](https://github.com/hanze-hbo-ict/sw_sec_docs/tree/master/src/pract-wk3/vulnerable-webapp/) hebben we een eenvoudige python/flask-webapp klaargezet, met drie grote kwetsbaarheden erin. Het is de bedoeling dat je deze kwetsbaarheden opspoort en voor elk een mitigatie aanbrengt in de code. Lees eerst de README en zorg dat de app up-and-running is. Voor Windows-gebruikers: deze app hoef je *niet* in WSL of als Docker-container te draaien.
+De kwetsbaarheden betreffen:
 
 * De manier waarop wachtwoorden worden opgeslagen (40%);
-* CSRF, of beter: het gebrek daaraan, op het stemformulier (20%);
+* CSRF op het stemformulier (20%);
 * _Authorization bypass_, ook wel bekend als [Insecure direct object reference](https://cheatsheetseries.owasp.org/cheatsheets/Insecure_Direct_Object_Reference_Prevention_Cheat_Sheet.html), in bepaalde URL's (40%).
 
 Dat je anoniem mag stemmen is **niet** één van de drie bugs. Kom je er niet uit? Overleg met klasgenoten en/of de practicumdocent.

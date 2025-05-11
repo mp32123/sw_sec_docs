@@ -71,7 +71,7 @@ We gebruiken hiervoor dezelfde casus als vorige week. De DFD kun je dus hergebru
 * Wat voor privacygevoelige informatie er over de interface gaat of in de data store staat.
 * Wat voor probleem het is als deze informatie uitlekt, voor de verschillende stakeholders (denk aan studenten, de leveranciers van de systemen, de Hanze).
 
-2.4.\ Maak nu een lijst van de interfaces, gesorteerd op prioriteit, dus de in jouw optiek meest kwetsbare bovenaan. Onderbouw je keuze!
+2.4.\ Maak nu een lijst van de interfaces en data stores, gesorteerd op prioriteit, dus de in jouw optiek meest kwetsbare bovenaan. Onderbouw je keuze!
 
 2.5.\ Bedenk voor de top 3 van kwetsbare interfaces zo veel mogelijk maatregelen om de gevonden risico’s te verminderen.
 
