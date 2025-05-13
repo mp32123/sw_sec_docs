@@ -4,6 +4,7 @@ from flask_login import login_user, login_required, logout_user, current_user
 from electionapp.admin.models import User
 from electionapp.voting.models import Vote, Party
 from electionapp.admin.forms import LoginForm, RegistrationForm
+from werkzeug.security import generate_password_hash
 
 admin_blueprint = Blueprint('admin', __name__, template_folder='templates')
 
@@ -32,8 +33,9 @@ def login():
 def register():
     form = RegistrationForm()
     if form.validate_on_submit():
+        hashed_password = generate_password_hash(form.password.data)
         # Add to db
-        user = User(username=form.username.data, password=form.password.data, polpref=form.polpref.data)
+        user = User(username=form.username.data, password=hashed_password, polpref=form.polpref.data)
         db.session.add(user)
         db.session.commit()
 

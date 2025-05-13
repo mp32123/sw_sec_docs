@@ -7,13 +7,13 @@ voting_blueprint = Blueprint('voting', __name__, template_folder='templates')
 
 @voting_blueprint.route('/form')
 def form():
-    form = VotingForm(meta={'csrf': False})
+    form = VotingForm()
     form.party.choices = [(p.id, p.name) for p in Party.query.order_by('name')]
     return render_template('vote.html', form=form)
 
 @voting_blueprint.route('/vote', methods=['post'])
 def vote():
-    form = VotingForm(meta={'csrf': False})
+    form = VotingForm()
     form.party.choices = [(p.id, p.name) for p in Party.query.order_by('name')]
     if form.validate_on_submit():
         # Add to db
