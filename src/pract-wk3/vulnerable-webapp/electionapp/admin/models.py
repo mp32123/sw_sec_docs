@@ -1,5 +1,6 @@
 from electionapp import db, login_manager
 from flask_login import UserMixin
+from werkzeug.security import check_password_hash
 
 @login_manager.user_loader
 def load_user(user_id):
@@ -7,7 +8,7 @@ def load_user(user_id):
 
 class User(db.Model, UserMixin):
     __tablename__ = 'users'
-    id = db.Column(db.Integer, primary_key = True)
+    id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(64), unique=True, index=True)
     password = db.Column(db.String(128))
     polpref = db.Column(db.String(128), nullable=True)
@@ -17,5 +18,5 @@ class User(db.Model, UserMixin):
         self.password = password
         self.polpref = polpref
 
-    def check_password(self, password):
-        return self.password == password
+    def check_password(self, password):  # Now it's inside the class
+        return check_password_hash(self.password, password)
